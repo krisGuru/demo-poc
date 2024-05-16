@@ -16,11 +16,11 @@ const VideoPlayer: React.FC = () => {
         },
         {
           src: './video/third-video.mp4',
-          description: 'Third Video',
+          description: 'The art of managing sound within the home cinema space , for an enthralling sound experience out of every cinema watching experience.',
         },
         {
           src: './video/second-video.mp4',
-          description: 'Second Video',
+          description: 'Interior Designer Chirag Mehta of Nine Degree design Studio designed For religious yet fun loving family of five.',
         },
       ]
     },
@@ -31,15 +31,15 @@ const VideoPlayer: React.FC = () => {
       queue_order: [
         {
           src: './video/second-video.mp4',
-          description: 'Second Video',
+          description: 'Interior Designer Chirag Mehta of Nine Degree design Studio designed For religious yet fun loving family of five.',
         },
         {
           src: './video/first-video.mp4',
-          description: 'First Video',
+          description: 'The art of managing sound within the home cinema space , for an enthralling sound experience out of every cinema watching experience.',
         },
         {
           src: './video/third-video.mp4',
-          description: 'Third Video',
+          description: 'The art of managing sound within the home cinema space , for an enthralling sound experience out of every cinema watching experience.',
         },
       ]
     },
@@ -50,15 +50,15 @@ const VideoPlayer: React.FC = () => {
       queue_order: [
         {
           src: './video/third-video.mp4',
-          description: 'Third Video',
+          description: 'The art of managing sound within the home cinema space , for an enthralling sound experience out of every cinema watching experience.',
         },
         {
           src: './video/first-video.mp4',
-          description: 'First Video',
+          description: 'The art of managing sound within the home cinema space , for an enthralling sound experience out of every cinema watching experience.',
         },
         {
           src: './video/second-video.mp4',
-          description: 'Second Video',
+          description: 'Interior Designer Chirag Mehta of Nine Degree design Studio designed For religious yet fun loving family of five.',
         },
       ]
     },

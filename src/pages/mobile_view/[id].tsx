@@ -10,15 +10,15 @@ const FullvideoPlayer: React.FC = () => {
 
     const firstVideo = {
         src: '/video/first-video.mp4',
-        description: 'Video 1',
+        description: 'The art of managing sound within the home cinema space , for an enthralling sound experience out of every cinema watching experience.',
     };
     const secondVideo = {
         src: '/video/second-video.mp4',
-        description: 'Video 2',
+        description: 'Interior Designer Chirag Mehta of Nine Degree design Studio designed For religious yet fun loving family of five.',
     };
     const thirdVideo = {
         src: '/video/third-video.mp4',
-        description: 'Video 3',
+        description: 'The art of managing sound within the home cinema space , for an enthralling sound experience out of every cinema watching experience.',
     };
 
     const queueList = [
