@@ -14,7 +14,7 @@ const LoopVideo:React.FC<{
     };
     index: number;
     openModal: (
-      index: object,
+      index: number,
       data: {
         videoSrc: string;
         description: string;
@@ -63,8 +63,9 @@ const LoopVideo:React.FC<{
                 loop={false}
                 controls={false}
                 playsInline
-                onDoubleClick={e=>openModal({
-                  index: index,
+                onDoubleClick={e=>openModal(
+                index,
+                {
                   videoSrc: data.src,
                   description: data.description,
                   queueOrder: data.queue_order

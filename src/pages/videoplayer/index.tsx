@@ -107,14 +107,12 @@ const VideoPlayer: React.FC = () => {
   };
 
   const openModal = (
-      index: object,
+      index: number,
       video: {description: string, videoSrc: string, queueOrder: {src: string, description: string}[]},
       currentVideo: React.RefObject<HTMLVideoElement>
     ) => {
-      if (isMobileDevice || isTabletDevice) {
-        // redirect to new swipable page
-        console.log(index)
-        window.location.href=`/mobile_view/${index.index}`
+      if ((isMobileDevice || isTabletDevice)) {
+        window.location.href=`/mobile_view/${index}`
       }
       else{
         document.querySelectorAll('video').forEach((video) => video.pause());
