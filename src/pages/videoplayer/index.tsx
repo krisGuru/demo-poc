@@ -65,6 +65,22 @@ const VideoPlayer: React.FC = () => {
   ]);
   const [autoplayAllowed, setAutoplayAllowed] = useState(false);
   const [videoFullScreen, setVideoFullScreen] = useState(false);
+
+  const [isMobileDevice, setIsMobileDevice] = useState(false);
+  const [isTabletDevice, setIsTabletDevice] = useState(false);
+  const [isDesktopDevice, setIsDesktopDevice] = useState(false);
+
+  useEffect(() => {
+    const userAgent = navigator.userAgent;
+    if (userAgent.match(/Android/i) || userAgent.match(/webOS/i) || userAgent.match(/iPhone/i) || userAgent.match(/iPad/i) || userAgent.match(/iPod/i) || userAgent.match(/BlackBerry/i) || userAgent.match(/Windows Phone/i)) {
+      setIsMobileDevice(true);
+    } else if (userAgent.match(/iPad/i) || userAgent.match(/Android/i)) {
+      setIsTabletDevice(true);
+    } else {
+      setIsDesktopDevice(true);
+    }
+  }, []);
+
   const [currentVideo, setCurrentVideo] = useState<{
     videoSrc: string;
     description: string;
@@ -90,13 +106,21 @@ const VideoPlayer: React.FC = () => {
   };
 
   const openModal = (
+      index: object,
       video: {description: string, videoSrc: string, queueOrder: {src: string, description: string}[]},
       currentVideo: React.RefObject<HTMLVideoElement>
     ) => {
-    document.querySelectorAll('video').forEach((video) => video.pause());
-    setCurrentVideo(video);
-    setVideoFullScreen(true);
-    setPausedVideo(currentVideo.current);
+      if (isMobileDevice || isTabletDevice) {
+        // redirect to new swipable page
+        console.log(index)
+        window.location.href=`/mobile_view/${index.index}`
+      }
+      else{
+        document.querySelectorAll('video').forEach((video) => video.pause());
+        setCurrentVideo(video);
+        setVideoFullScreen(true);
+        setPausedVideo(currentVideo.current);    
+      }
   };
 
   const closeModal = () => {
