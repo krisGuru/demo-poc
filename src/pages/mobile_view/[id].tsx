@@ -53,12 +53,12 @@ const FullvideoPlayer: React.FC = () => {
   const [isMuted, setIsMuted] = useState(true);
 
   const handlers = useSwipeable({
-    onSwipedUp: (eventData) => {
+    onSwipedDown: (eventData) => {
       if (currentVideoIndex !== 0 && eventData.absY > eventData.absX) {
         setCurrentVideoIndex(currentVideoIndex - 1);
       }
     },
-    onSwipedDown: (eventData) => {
+    onSwipedUp: (eventData) => {
       if (currentVideoIndex !== queueOrder.length - 1 && eventData.absY > eventData.absX) {
         setCurrentVideoIndex(currentVideoIndex + 1);
       }
