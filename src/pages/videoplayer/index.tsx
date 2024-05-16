@@ -71,10 +71,11 @@ const VideoPlayer: React.FC = () => {
   const [isDesktopDevice, setIsDesktopDevice] = useState(false);
 
   useEffect(() => {
-    const userAgent = navigator.userAgent;
-    if (userAgent.match(/Android/i) || userAgent.match(/webOS/i) || userAgent.match(/iPhone/i) || userAgent.match(/iPad/i) || userAgent.match(/iPod/i) || userAgent.match(/BlackBerry/i) || userAgent.match(/Windows Phone/i)) {
+    // width wise mobile or tablet detect
+    const width = window.innerWidth;
+    if (width < 768) {
       setIsMobileDevice(true);
-    } else if (userAgent.match(/iPad/i) || userAgent.match(/Android/i)) {
+    } else if (width < 1024) {
       setIsTabletDevice(true);
     } else {
       setIsDesktopDevice(true);
