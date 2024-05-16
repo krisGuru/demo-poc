@@ -108,12 +108,12 @@ const FullvideoPlayer: React.FC = () => {
                 onTouchStart={handleTouchVideo}
               />
               <div className="absolute bottom-20 right-2 p-4 flex flex-col items-end">
-                <FaPhone className="text-3xl text-white align-center " style={{ transform: 'rotate(90deg)', marginTop:'60rem' }} />
-                <FaWhatsapp className="text-3xl text-white  mt-5" />
-                <FaShareSquare className="text-3xl text-white mt-5" />
+                <FaPhone className="text-2xl text-white align-center " style={{ transform: 'rotate(90deg)', marginTop:'60rem' }} />
+                <FaWhatsapp className="text-2xl text-white  mt-2" />
+                <FaShareSquare className="text-2xl text-white mt-2" />
               </div>
               <div className="absolute bottom-0 left-0 p-4 bg-black bg-opacity-50 text-white">
-                <p>{queueOrder[currentVideoIndex].description}</p>
+                <p className='text-sm'>{queueOrder[currentVideoIndex].description}</p>
               </div>
             </div>
             )
