@@ -53,10 +53,21 @@ const LoopVideo:React.FC<{
         };
   return (
     <div>
-          <div className="my-5" key={index}>
+          <div className="my-7" key={index}>
             <div className="video-cards relative">
-              <small className='text-sm text-white absolute font-semibold ml-2'>{data.title}</small>
+              <div className='absolute' style={{zIndex: 1000}}>
+                <div className='relative flex gap-2 items-center text-white m-3'
+                style={{textShadow: '1px 1px 0 black;'}}>
+                  <img src="https://cdn.iconscout.com/icon/free/png-256/free-avatar-370-456322.png" alt="" className='rounded w-12'/>
+                  <strong className='text-base'>{data.title}</strong>
+                  <button className='text-base p-1 px-3 rounded-md' style={{boxShadow: '1px 1px 0 black;'}}>
+                    <span style={{textShadow: '1px 1px 0 black;'}}>Follow</span>
+                  </button>
+                </div>
+              </div>
+              <div className='relative w-full flex justify-center align-middle' style={{minHeight: '800px'}}>
               <video
+              style={{maxWidth:'100%', maxHeight: '100%'}}
                 ref={videoRef}
                 autoPlay={true}
                 muted={true}
@@ -75,6 +86,7 @@ const LoopVideo:React.FC<{
               >
                 <source src={data.src} type="video/mp4" />
               </video>
+              </div>
               <div className="absolute bottom-2 right-2"> 
                 <button className="unmute-btn text-white bg-transparent border-none outline-none"
                 onClick={() => setIsMuted(!isMuted)}>
@@ -87,14 +99,15 @@ const LoopVideo:React.FC<{
                 Get Quote
               </a>
               <div style={{display:"flex", gap: "1rem", marginTop: "1rem", marginLeft: "1rem"}}>
-                <FaPhone style={{ transform: 'rotate(90deg)' }}/>
-                <FaWhatsapp />
-                <FaShareSquare />
+                <FaPhone className='text-2xl' style={{ transform: 'rotate(90deg)' }}/>
+                <FaWhatsapp className='text-2xl'/>
+                <FaShareSquare className='text-2xl' />
               </div>
             </div>
             <div className="video-description text-black"> {/* Description container */}
-              <p className='text-sm'><strong>{data.title}</strong> {data.description}</p>
+              <p className='text-xl lg:text-base'><strong>{data.title}</strong> {data.description}</p>
             </div>
+            <p className='relative mx-2 text-base opacity-80'>2 hours ago</p>
           </div>
     </div>
   )
