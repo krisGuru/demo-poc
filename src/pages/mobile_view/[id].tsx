@@ -109,8 +109,8 @@ const FullvideoPlayer: React.FC = () => {
               />
               <div className="absolute bottom-20 right-2 p-4 flex flex-col items-end">
                 <FaPhone className="text-3xl text-white align-center " style={{ transform: 'rotate(90deg)', marginTop:'60rem' }} />
-                <FaWhatsapp className="text-3xl text-white  mt-10" />
-                <FaShareSquare className="text-3xl text-white mt-10" />
+                <FaWhatsapp className="text-3xl text-white  mt-5" />
+                <FaShareSquare className="text-3xl text-white mt-5" />
               </div>
               <div className="absolute bottom-0 left-0 p-4 bg-black bg-opacity-50 text-white">
                 <p>{queueOrder[currentVideoIndex].description}</p>
