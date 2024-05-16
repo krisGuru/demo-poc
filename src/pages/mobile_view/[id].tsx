@@ -107,7 +107,7 @@ const FullvideoPlayer: React.FC = () => {
                 muted={isMuted}
                 onTouchStart={handleTouchVideo}
               />
-              <div className="absolute bottom-20 left-0 p-4 flex flex-col items-end">
+              <div className="absolute bottom-20 right-10 p-4 flex flex-col items-end">
                 <FaPhone className="text-6xl text-white align-center " style={{ transform: 'rotate(90deg)', marginTop:'60rem' }} />
                 <FaWhatsapp className="text-6xl text-white  mt-10" />
                 <FaShareSquare className="text-6xl text-white mt-10" />
