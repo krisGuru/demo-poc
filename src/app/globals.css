@@ -40,7 +40,7 @@ h1{
 }
 
 nav{
-  background-color: rgb(13, 9, 123);
+  background-color: rgb(252, 252, 252);
 }
 
 nav ul{
@@ -141,4 +141,35 @@ nav ul li a{
   .w-1\/5 {
     width: 100%;
   }
+  #side-menu{
+    @apply bottom-0 left-0 w-full block;
+  }
+  #side-menu ul{
+    @apply flex justify-around;
+  }
+  .menu-label{
+    @apply hidden;
+  }
+}
+
+@media (min-width: 768px){
+  #side-menu{
+    @apply block top-0 left-0 h-screen border-2 p-4 space-y-4 pl-0 w-2/12 ;
+  }
+  #side-menu ul{
+    @apply ml-6;
+  }
+}
+
+#side-menu{
+  @apply fixed bg-white text-black font-normal;
+  z-index: 1001;
+}
+
+#side-menu ul li{
+  @apply mt-5;
+}
+
+#side-menu ul li a{
+  @apply flex gap-5 items-center;
 }
