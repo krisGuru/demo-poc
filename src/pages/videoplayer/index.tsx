@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './../../app/globals.css';
 import LoopVideo from '@/components/LoopVideo';
 import FullscreenVideoPlayer from '@/components/FullscreenVideoPlayer';
+import SideNav from '@/components/SideNav';
 
 const VideoPlayer: React.FC = () => {
   const [videoSources, setVideoSources] = useState([
@@ -176,6 +177,7 @@ const VideoPlayer: React.FC = () => {
 
   return (
     <>
+    <SideNav/>
     <div id="video-post-container" className="p-5">
       {videoFullScreen ? <FullscreenVideoPlayer
       videoSrc={currentVideo.videoSrc}
