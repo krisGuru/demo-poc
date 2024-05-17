@@ -5,6 +5,7 @@ import { useRouter } from 'next/router';
 import React, { useRef, useState, useEffect } from 'react';
 import { useSwipeable } from 'react-swipeable';
 import ContactActions from '@/components/ContactActions';
+import ShowDescription from '@/components/ShowDescription';
 
 const FullvideoPlayer: React.FC = () => {
 
@@ -118,7 +119,7 @@ const FullvideoPlayer: React.FC = () => {
                 <div className='flex gap-2 items-center'>
                 <PublisherProfile title={'Builder Profile'} />
                 </div>
-                <p className='text-sm mt-1'>{queueOrder[currentVideoIndex].description}</p>
+                <ShowDescription description={queueOrder[currentVideoIndex].description} />
               </div>
             </div>
             )

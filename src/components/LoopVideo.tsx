@@ -4,6 +4,7 @@ import { MdRefresh } from 'react-icons/md';
 import { createRoot } from 'react-dom/client';
 import PublisherProfile from './PublisherProfile';
 import ContactActions from './ContactActions';
+import ShowDescription from './ShowDescription';
 
 const LoopVideo:React.FC<{
     data: {
@@ -92,7 +93,8 @@ const LoopVideo:React.FC<{
               <ContactActions getQuote={true} />
             </div>
             <div className="video-description text-black">
-              <p className='text-xl lg:text-base '><strong>{data.title}</strong> {data.description}</p>
+              <p className='text-xl lg:text-base '><strong>{data.title}</strong></p>
+              <ShowDescription description={data.description} />
             </div>
             <p className='relative mx-2 text-base opacity-80'>2 hours ago</p>
           </div>

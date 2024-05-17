@@ -1,5 +1,6 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { FaArrowRight, FaArrowLeft } from 'react-icons/fa';
+import ShowDescription from './ShowDescription';
 
 const FullscreenVideoPlayer: React.FC<{
   videoSrc: string;
@@ -67,7 +68,7 @@ const FullscreenVideoPlayer: React.FC<{
                     x
                   </button>
                 </div>
-                <p>{queueOrder[currentVideoIndex].description}</p>
+                <ShowDescription description={queueOrder[currentVideoIndex].description} />
               </div>
             </>
           )}
