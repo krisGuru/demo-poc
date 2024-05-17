@@ -111,9 +111,6 @@ const FullvideoPlayer: React.FC = () => {
                 <div className='text-white mt-3'>
                 <ContactActions getQuote={false} />
                 </div>
-                {/* <FaPhone className="text-2xl text-white align-center fa-phone" />
-                <FaWhatsapp className="text-2xl text-white  mt-3" />
-                <FaShareSquare className="text-2xl text-white mt-3" /> */}
               </div>
               <div className="absolute bottom-0 left-0 p-4 text-white text-shadow">
                 <div className='flex gap-2 items-center'>
