@@ -56,13 +56,25 @@ nav ul li a{
 }
 
 #video-post-container{
-  width: 700px;
+  width: 400px;
   margin: 0 auto;
 }
 
 #video-post-container video{
-  max-height: 600px;
+  /* max-height: 600px; */
+  max-width: 100%;
+  max-height: 100%;
   margin: 0 auto;
+}
+
+.mobile-fullscreen video, .fullscreen-video video{
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+}
+
+.fa-phone{
+  transform: rotate(90deg);
 }
 
 .video-cards{

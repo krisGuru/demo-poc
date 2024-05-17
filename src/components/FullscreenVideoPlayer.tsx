@@ -80,10 +80,9 @@ const FullscreenVideoPlayer: React.FC<{
       {queueOrder.length > 0 && (
         <>
           {isMobile ? (
-            <div className="w-full h-full relative">
+            <div className="w-full h-full relative fullscreen-video">
               <video
                 ref={videoRef}
-                style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'cover' }}
                 src={queueOrder[currentVideoIndex].src}
                 autoPlay={isMobile}
                 controls={false}
@@ -91,7 +90,7 @@ const FullscreenVideoPlayer: React.FC<{
                 onTouchStart={handleTouchVideo}
               />
               <div className="absolute top-0 right-0 p-4 flex flex-col items-end">
-                <FaPhone className="text-6xl text-white align-center " style={{ transform: 'rotate(90deg)', marginTop:'60rem' }} />
+                <FaPhone className="text-6xl text-white align-center fa-phone" style={{ marginTop:'60rem' }} />
                 <FaWhatsapp className="text-6xl text-white  mt-10" />
                 <FaShareSquare className="text-6xl text-white mt-10" />
               </div>
@@ -101,7 +100,7 @@ const FullscreenVideoPlayer: React.FC<{
             </div>
           ) : (
             <>
-              <div className="w-4/5 relative">
+              <div className="w-4/5 relative fullscreen-video">
                 {currentVideoIndex !== 0 && (
                   <button onClick={() => setCurrentVideoIndex(currentVideoIndex - 1)} className="mt-5 text-white absolute top-1/2 left-2">
                     <FaArrowLeft className="ml-1" />
@@ -118,7 +117,6 @@ const FullscreenVideoPlayer: React.FC<{
                 )}
                 <video
                   ref={videoRef}
-                  style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'cover' }}
                   src={queueOrder[currentVideoIndex].src}
                   autoPlay
                   controls={false}

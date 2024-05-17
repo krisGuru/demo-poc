@@ -65,9 +65,8 @@ const LoopVideo:React.FC<{
                   </button>
                 </div>
               </div>
-              <div className='relative w-full flex justify-center align-middle' style={{minHeight: '800px'}}>
+              <div className='relative w-full flex justify-center align-middle' style={{minHeight: '600px'}}>
               <video
-              style={{maxWidth:'100%', maxHeight: '100%'}}
                 ref={videoRef}
                 autoPlay={true}
                 muted={true}
@@ -99,7 +98,7 @@ const LoopVideo:React.FC<{
                 Get Quote
               </a>
               <div style={{display:"flex", gap: "1rem", marginTop: "1rem", marginLeft: "1rem"}}>
-                <FaPhone className='text-2xl' style={{ transform: 'rotate(90deg)' }}/>
+                <FaPhone className='text-2xl fa-phone' />
                 <FaWhatsapp className='text-2xl'/>
                 <FaShareSquare className='text-2xl' />
               </div>
