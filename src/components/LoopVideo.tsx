@@ -3,6 +3,8 @@ import { FaVolumeUp, FaVolumeMute,
     FaPhone, FaWhatsapp, FaShareSquare } from 'react-icons/fa';
 import { MdRefresh } from 'react-icons/md';
 import { createRoot } from 'react-dom/client';
+import FollowButton from './FollowButton';
+import ContactIcons from './ContactIcons';
 
 const LoopVideo:React.FC<{
     data: {
@@ -56,11 +58,12 @@ const LoopVideo:React.FC<{
             <div className="video-cards relative">
               <div className='absolute' style={{zIndex: 1000}}>
                 <div className='relative flex gap-2 items-center text-white m-3 text-shadow'>
-                  <img src="https://cdn.iconscout.com/icon/free/png-256/free-avatar-370-456322.png" alt="" className='rounded w-12'/>
+                  {/* <img src="https://cdn.iconscout.com/icon/free/png-256/free-avatar-370-456322.png" alt="" className='rounded w-12'/>
                   <strong className='text-base'>{data.title}</strong>
                   <button className='text-base p-1 px-3 rounded-md text-shadow'>
                     <span className='text-shadow'>Follow</span>
-                  </button>
+                  </button> */}
+                  <FollowButton src={''} description={''} queue_order={[]} title={data.title}/>
                 </div>
               </div>
               <div className='relative w-full flex justify-center align-middle' style={{minHeight: '600px'}}>
@@ -96,9 +99,10 @@ const LoopVideo:React.FC<{
                 Get Quote
               </a>
               <div style={{display:"flex", gap: "1rem", marginTop: "1rem", marginLeft: "1rem"}}>
-                <FaPhone className='text-2xl fa-phone' />
+                {/* <FaPhone className='text-2xl fa-phone' />
                 <FaWhatsapp className='text-2xl'/>
-                <FaShareSquare className='text-2xl' />
+                <FaShareSquare className='text-2xl' /> */}
+                <ContactIcons/>
               </div>
             </div>
             <div className="video-description text-black"> {/* Description container */}

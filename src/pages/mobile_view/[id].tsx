@@ -1,10 +1,13 @@
 
+import FollowButton from '@/components/FollowButton';
 import './../../app/globals.css';
 import { useRouter } from 'next/router';
 import React, { useRef, useState, useEffect } from 'react';
 import { FaArrowRight, FaArrowLeft,
-  FaPhone, FaWhatsapp, FaShareSquare } from 'react-icons/fa';
+  FaPhone, FaWhatsapp, FaShareSquare, 
+  FaIcons} from 'react-icons/fa';
 import { useSwipeable } from 'react-swipeable';
+import ContactIcons from '@/components/ContactIcons';
 
 const FullvideoPlayer: React.FC = () => {
 
@@ -107,15 +110,16 @@ const FullvideoPlayer: React.FC = () => {
                 onTouchStart={handleTouchVideo}
               />
               <div className="absolute right-0 p-2 text-shadow" style={{ bottom: '130px'}}>
-                <FaPhone className="text-2xl text-white align-center fa-phone" />
+                <div className='text-white mt-3'>
+                <ContactIcons/>
+                </div>
+                {/* <FaPhone className="text-2xl text-white align-center fa-phone" />
                 <FaWhatsapp className="text-2xl text-white  mt-3" />
-                <FaShareSquare className="text-2xl text-white mt-3" />
+                <FaShareSquare className="text-2xl text-white mt-3" /> */}
               </div>
               <div className="absolute bottom-0 left-0 p-4 text-white text-shadow">
                 <div className='flex gap-2 items-center'>
-                  <img src="https://cdn.iconscout.com/icon/free/png-256/free-avatar-370-456322.png" alt="" className='rounded w-8'/>
-                  <strong className='text-sm'>Builder Profile</strong>
-                  <button className='text-xs p-0 px-2 rounded'>Follow</button>
+                <FollowButton src={''} description={''} queue_order={[]} title={'Builder Profile'} />
                 </div>
                 <p className='text-sm mt-1'>{queueOrder[currentVideoIndex].description}</p>
               </div>
