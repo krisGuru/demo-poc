@@ -6,6 +6,17 @@ const ContactActions: React.FC<{
 }> = ({
   getQuote=false
 }) => {
+  const telephoneOpen = () => {
+    window.open("tel:+919843044456", "_blank")
+  }
+  const whatsappOpen = () => {
+    const phoneNumber = "+919843044456";
+    const whatsappLink = `https://wa.me/${phoneNumber}`;
+    window.open(whatsappLink, "_blank");
+  }
+  const shareOpen = () => {
+    // navigator.clipboard.writeText("post-link-comes-here")
+  }
   return (
     <>
     {
@@ -16,9 +27,9 @@ const ContactActions: React.FC<{
       </>
     }
       <div style={{display:"flex", gap: "1rem", marginTop: "1rem", marginLeft: "1rem"}}>
-        <FaPhone className='text-2xl fa-phone' />
-        <FaWhatsapp className='text-2xl'/>
-        <FaShareSquare className='text-2xl' />
+        <FaPhone className='text-2xl fa-phone' onClick={telephoneOpen} />
+        <FaWhatsapp className='text-2xl' onClick={whatsappOpen}/>
+        <FaShareSquare className='text-2xl' onClick={shareOpen} />
       </div>
     </>
   )
