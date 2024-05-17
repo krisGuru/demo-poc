@@ -3,6 +3,9 @@ import './../../app/globals.css';
 import LoopVideo from '@/components/LoopVideo';
 import FullscreenVideoPlayer from '@/components/FullscreenVideoPlayer';
 import SideNav from '@/components/SideNav';
+import PublisherProfile from '@/components/PublisherProfile';
+import ContactActions from '@/components/ContactActions';
+import CarouselSlider from '@/components/CarouselSlider';
 
 const VideoPlayer: React.FC = () => {
   const [videoSources, setVideoSources] = useState([
@@ -65,6 +68,13 @@ const VideoPlayer: React.FC = () => {
           description: 'Interior Designer Chirag Mehta of Nine Degree design Studio designed For religious yet fun loving family of five.',
         },
       ]
+    },
+    {
+      type: 'image',
+      src: 'https://www.trade4asia.com/ProductImg/inf.jpg',
+      title: 'The Audio Cube',
+      description: 'The art of managing sound within the home cinema space , for an enthralling sound experience out of every cinema watching experience.',
+      queue_order: []
     },
   ]);
   const [autoplayAllowed, setAutoplayAllowed] = useState(false);
@@ -179,21 +189,44 @@ const VideoPlayer: React.FC = () => {
     <>
     <SideNav/>
     <div id="video-post-container" className="p-5">
-      {videoFullScreen ? <FullscreenVideoPlayer
+    {
+      videoFullScreen && <FullscreenVideoPlayer
       videoSrc={currentVideo.videoSrc}
       description={currentVideo.description}
       onClose={closeModal}
       queueOrder={currentVideo.queueOrder}
-      /> : <></>}
+      />
+    }
+ 
       {videoSources.map((data, index) => {
-        if (data.type==='video'){
-          return (
-            <LoopVideo
-            key={index}
-            data={data} index={index} openModal={openModal}
+        if (data.type==='video')
+          return <LoopVideo key={index} data={data}
+            index={index} openModal={openModal}
             handlePlayPauseVideo={handlePlayPauseVideo} />
+        else if(data.type==='image'){
+          return (
+            <>
+              <div>
+                <div className='flex'>
+                    <PublisherProfile title={data.title} />
+                </div>
+                <img src={data.src} alt="" className='w-full h-full'/>
+                <div>
+                  <ContactActions getQuote={true} />
+                </div>
+                <div className='flex gap-2 items-center'>
+                  <PublisherProfile title='Home'/>
+                  </div>
+                  <div>
+                  <CarouselSlider/>
+                  <ContactActions getQuote={true} />
+              <p className='text-xl lg:text-base '><strong>{data.title}</strong> {data.description}</p>
+
+                </div>
+              </div>
+            </>
           );
-        }    
+        }
       })}
     </div>
     </>
