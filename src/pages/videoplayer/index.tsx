@@ -5,6 +5,7 @@ import FullscreenVideoPlayer from '@/components/FullscreenVideoPlayer';
 import SideNav from '@/components/SideNav';
 import CarouselComponent from '@/components/CarouselComponent';
 import ImagePost from '@/components/ImagePost';
+import HeaderCarousel from '@/components/HeaderCarousel';
 
 const VideoPlayer: React.FC = () => {
   const [videoSources, setVideoSources] = useState<{
@@ -213,6 +214,7 @@ const VideoPlayer: React.FC = () => {
     <>
     <SideNav/>
     <div id="video-post-container" className="p-5">
+      <HeaderCarousel />
       {
         videoFullScreen && <FullscreenVideoPlayer
         videoSrc={currentVideo.videoSrc}
