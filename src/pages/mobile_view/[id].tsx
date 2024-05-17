@@ -3,9 +3,6 @@ import FollowButton from '@/components/FollowButton';
 import './../../app/globals.css';
 import { useRouter } from 'next/router';
 import React, { useRef, useState, useEffect } from 'react';
-import { FaArrowRight, FaArrowLeft,
-  FaPhone, FaWhatsapp, FaShareSquare, 
-  FaIcons} from 'react-icons/fa';
 import { useSwipeable } from 'react-swipeable';
 import ContactIcons from '@/components/ContactIcons';
 
