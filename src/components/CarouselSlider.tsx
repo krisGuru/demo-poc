@@ -1,13 +1,10 @@
 import React, { useState } from 'react';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 
-const CarouselSlider = () => {
+const CarouselSlider: React.FC<{
+  slides: { id: number; image: string; alt: string }[];
+}> = ({slides}) => {
   const [currentSlide, setCurrentSlide] = useState(0);
-
-  const slides = [
-    { id: 1, image: '/images/image-1.jpg', alt: 'Slide 1' },
-    { id: 2, image: '/images/image-3.jpg', alt: 'Slide 2' },
-  ];
 
   const prevSlide = (e) => {
     e.preventDefault(); 
