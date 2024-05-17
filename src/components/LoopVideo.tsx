@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
-import { FaVolumeUp, FaVolumeMute, FaArrowRight, FaArrowLeft,
+import { FaVolumeUp, FaVolumeMute, 
     FaPhone, FaWhatsapp, FaShareSquare } from 'react-icons/fa';
-import ReactDOM from 'react-dom';
 import { MdRefresh } from 'react-icons/md';
 import { createRoot } from 'react-dom/client';
 
