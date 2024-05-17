@@ -1,6 +1,6 @@
 import React from 'react'
 
-const FollowButton = (
+const PublisherProfile = (
   data: {
     src: string;
     description: string;
@@ -18,6 +18,6 @@ const FollowButton = (
   )
 }
 
-export default FollowButton
+export default PublisherProfile
 
 

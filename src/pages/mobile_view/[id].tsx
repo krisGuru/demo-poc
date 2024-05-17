@@ -1,5 +1,5 @@
 
-import FollowButton from '@/components/FollowButton';
+import PublisherProfile from '@/components/PublisherProfile';
 import './../../app/globals.css';
 import { useRouter } from 'next/router';
 import React, { useRef, useState, useEffect } from 'react';
@@ -116,7 +116,7 @@ const FullvideoPlayer: React.FC = () => {
               </div>
               <div className="absolute bottom-0 left-0 p-4 text-white text-shadow">
                 <div className='flex gap-2 items-center'>
-                <FollowButton src={''} description={''} queue_order={[]} title={'Builder Profile'} />
+                <PublisherProfile src={''} description={''} queue_order={[]} title={'Builder Profile'} />
                 </div>
                 <p className='text-sm mt-1'>{queueOrder[currentVideoIndex].description}</p>
               </div>

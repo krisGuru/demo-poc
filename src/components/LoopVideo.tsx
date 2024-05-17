@@ -3,7 +3,7 @@ import { FaVolumeUp, FaVolumeMute,
     FaPhone, FaWhatsapp, FaShareSquare } from 'react-icons/fa';
 import { MdRefresh } from 'react-icons/md';
 import { createRoot } from 'react-dom/client';
-import FollowButton from './FollowButton';
+import PublisherProfile from './PublisherProfile';
 import ContactIcons from './ContactIcons';
 
 const LoopVideo:React.FC<{
@@ -63,7 +63,7 @@ const LoopVideo:React.FC<{
                   <button className='text-base p-1 px-3 rounded-md text-shadow'>
                     <span className='text-shadow'>Follow</span>
                   </button> */}
-                  <FollowButton src={''} description={''} queue_order={[]} title={data.title}/>
+                  <PublisherProfile src={''} description={''} queue_order={[]} title={data.title}/>
                 </div>
               </div>
               <div className='relative w-full flex justify-center align-middle' style={{minHeight: '600px'}}>
