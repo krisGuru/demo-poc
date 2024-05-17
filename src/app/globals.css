@@ -145,13 +145,16 @@ nav ul li a{
     @apply bottom-0 left-0 w-full block;
   }
   #side-menu ul{
-    @apply flex justify-around;
+    @apply flex justify-around mb-4;
   }
   .menu-label{
     @apply hidden;
   }
   #contact-actions{
-    @apply flex flex-col gap-3 mt-4 ml-4;
+    @apply flex gap-3 mt-4 ml-4;
+  }
+  .full-screen #contact-actions{
+    @apply flex flex-col;
   }
 }
 
@@ -178,4 +181,21 @@ nav ul li a{
 
 #side-menu ul li a{
   @apply flex gap-5 items-center;
+}
+
+.image-carousel {
+  @apply w-full;
+  overflow-x: auto; /* Enable horizontal scroll */
+  white-space: nowrap; /* Prevent line breaks */
+  scroll-snap-type: x mandatory; /* Enable scroll snapping (optional) */
+  scroll-snap-align: start; /* Align images to viewport (optional) */
+  padding: 20px 5px;
+}
+
+.images-card{
+  @apply inline-block mr-3;
+}
+
+.image-carousel img {
+  @apply w-20 h-20 rounded-full inline-block mr-3;
 }
