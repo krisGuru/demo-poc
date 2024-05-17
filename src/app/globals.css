@@ -150,6 +150,9 @@ nav ul li a{
   .menu-label{
     @apply hidden;
   }
+  #contact-actions{
+    @apply flex flex-col gap-3 mt-4 ml-4;
+  }
 }
 
 @media (min-width: 768px){
@@ -158,6 +161,9 @@ nav ul li a{
   }
   #side-menu ul{
     @apply ml-6;
+  }
+  #contact-actions{
+    @apply flex gap-4 mt-4 ml-4;
   }
 }
 

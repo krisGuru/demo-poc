@@ -26,7 +26,7 @@ const ContactActions: React.FC<{
         </a>
       </>
     }
-      <div style={{display:"flex", gap: "1rem", marginTop: "1rem", marginLeft: "1rem"}}>
+      <div id='contact-actions'>
         <FaPhone className='text-2xl fa-phone' onClick={telephoneOpen} />
         <FaWhatsapp className='text-2xl' onClick={whatsappOpen}/>
         <FaShareSquare className='text-2xl' onClick={shareOpen} />
