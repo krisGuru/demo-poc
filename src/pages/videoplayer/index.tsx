@@ -6,6 +6,7 @@ import FullscreenVideoPlayer from '@/components/FullscreenVideoPlayer';
 const VideoPlayer: React.FC = () => {
   const [videoSources, setVideoSources] = useState([
     {
+      type:'video',
       src:'./video/first-video.mp4',
       title:'Aristo Coimbatore',
       description: 'The art of managing sound within the home cinema space , for an enthralling sound experience out of every cinema watching experience.',
@@ -25,6 +26,7 @@ const VideoPlayer: React.FC = () => {
       ]
     },
     {
+      type:'video',
       src:'./video/second-video.mp4',
       title:'Nine Degree Design Studio',
       description: 'Interior Designer Chirag Mehta of Nine Degree design Studio designed For religious yet fun loving family of five.',
@@ -44,6 +46,7 @@ const VideoPlayer: React.FC = () => {
       ]
     },
     {
+      type:'video',
       src:'./video/third-video.mp4',
       title: 'The Audio Cube', 
       description: 'The art of managing sound within the home cinema space , for an enthralling sound experience out of every cinema watching experience.',
@@ -181,12 +184,14 @@ const VideoPlayer: React.FC = () => {
       queueOrder={currentVideo.queueOrder}
       /> : <></>}
       {videoSources.map((data, index) => {
-        return (
-          <LoopVideo
-          key={index}
-          data={data} index={index} openModal={openModal}
-          handlePlayPauseVideo={handlePlayPauseVideo} />
-        );
+        if (data.type==='video'){
+          return (
+            <LoopVideo
+            key={index}
+            data={data} index={index} openModal={openModal}
+            handlePlayPauseVideo={handlePlayPauseVideo} />
+          );
+        }    
       })}
     </div>
     </>
