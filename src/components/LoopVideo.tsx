@@ -55,12 +55,11 @@ const LoopVideo:React.FC<{
           <div className="my-7" key={index}>
             <div className="video-cards relative">
               <div className='absolute' style={{zIndex: 1000}}>
-                <div className='relative flex gap-2 items-center text-white m-3'
-                style={{textShadow: '1px 1px 0 black;'}}>
+                <div className='relative flex gap-2 items-center text-white m-3 text-shadow'>
                   <img src="https://cdn.iconscout.com/icon/free/png-256/free-avatar-370-456322.png" alt="" className='rounded w-12'/>
                   <strong className='text-base'>{data.title}</strong>
-                  <button className='text-base p-1 px-3 rounded-md' style={{boxShadow: '1px 1px 0 black;'}}>
-                    <span style={{textShadow: '1px 1px 0 black;'}}>Follow</span>
+                  <button className='text-base p-1 px-3 rounded-md text-shadow'>
+                    <span className='text-shadow'>Follow</span>
                   </button>
                 </div>
               </div>

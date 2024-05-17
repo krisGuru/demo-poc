@@ -104,6 +104,10 @@ nav ul li a{
   z-index: 1100;
 }
 
+.text-shadow{
+  text-shadow: 1px 1px 0 black !important;
+}
+
 .left-1\/2 {
   left: 50%;
 }

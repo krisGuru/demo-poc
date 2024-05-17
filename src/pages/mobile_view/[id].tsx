@@ -106,12 +106,12 @@ const FullvideoPlayer: React.FC = () => {
                 muted={isMuted}
                 onTouchStart={handleTouchVideo}
               />
-              <div className="absolute right-0 p-2" style={{textShadow: '1px 1px 0 black;', bottom: '130px'}}>
+              <div className="absolute right-0 p-2 text-shadow" style={{ bottom: '130px'}}>
                 <FaPhone className="text-2xl text-white align-center fa-phone" />
                 <FaWhatsapp className="text-2xl text-white  mt-3" />
                 <FaShareSquare className="text-2xl text-white mt-3" />
               </div>
-              <div className="absolute bottom-0 left-0 p-4 text-white" style={{textShadow: '1px 1px 0 black;'}}>
+              <div className="absolute bottom-0 left-0 p-4 text-white text-shadow">
                 <div className='flex gap-2 items-center'>
                   <img src="https://cdn.iconscout.com/icon/free/png-256/free-avatar-370-456322.png" alt="" className='rounded w-8'/>
                   <strong className='text-sm'>Builder Profile</strong>
