@@ -6,7 +6,7 @@ const ShowDescription: React.FC<{description: string}> = ({description}) => {
         setIsEllipsis(false);
     }
     useEffect(() => {
-        if (description.length > 100) {
+        if (description.length > 50) {
             setIsEllipsis(true);
         }
     }, [description]);
@@ -14,7 +14,7 @@ const ShowDescription: React.FC<{description: string}> = ({description}) => {
     return <>
         {
             isEllipsis ? <>
-                <p>{description.substring(0, 100)}... <button style={{border: 'none'}}
+                <p>{description.substring(0, 50)}... <button style={{border: 'none', padding:'0', margin:'0'}}
                     onClick={readMore}>Read More</button></p>
             </> : <p>{description}</p>
         }
