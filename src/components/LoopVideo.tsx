@@ -4,7 +4,7 @@ import { FaVolumeUp, FaVolumeMute,
 import { MdRefresh } from 'react-icons/md';
 import { createRoot } from 'react-dom/client';
 import PublisherProfile from './PublisherProfile';
-import ContactIcons from './ContactIcons';
+import ContactActions from './ContactActions';
 
 const LoopVideo:React.FC<{
     data: {
@@ -102,7 +102,7 @@ const LoopVideo:React.FC<{
                 {/* <FaPhone className='text-2xl fa-phone' />
                 <FaWhatsapp className='text-2xl'/>
                 <FaShareSquare className='text-2xl' /> */}
-                <ContactIcons/>
+                <ContactActions/>
               </div>
             </div>
             <div className="video-description text-black"> {/* Description container */}

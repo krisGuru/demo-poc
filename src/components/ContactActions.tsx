@@ -1,7 +1,7 @@
 import React from 'react'
 import { FaPhone, FaWhatsapp, FaShareSquare } from 'react-icons/fa'
 
-const Icons = () => {
+const ContactActions = () => {
   return (
     <>
       <FaPhone className='text-2xl fa-phone' />
@@ -11,4 +11,4 @@ const Icons = () => {
   )
 }
 
-export default Icons;
+export default ContactActions;

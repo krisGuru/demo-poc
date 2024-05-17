@@ -4,7 +4,7 @@ import './../../app/globals.css';
 import { useRouter } from 'next/router';
 import React, { useRef, useState, useEffect } from 'react';
 import { useSwipeable } from 'react-swipeable';
-import ContactIcons from '@/components/ContactIcons';
+import ContactActions from '@/components/ContactActions';
 
 const FullvideoPlayer: React.FC = () => {
 
@@ -108,7 +108,7 @@ const FullvideoPlayer: React.FC = () => {
               />
               <div className="absolute right-0 p-2 text-shadow" style={{ bottom: '130px'}}>
                 <div className='text-white mt-3'>
-                <ContactIcons/>
+                <ContactActions/>
                 </div>
                 {/* <FaPhone className="text-2xl text-white align-center fa-phone" />
                 <FaWhatsapp className="text-2xl text-white  mt-3" />
