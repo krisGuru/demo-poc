@@ -3,12 +3,21 @@ import './../../app/globals.css';
 import LoopVideo from '@/components/LoopVideo';
 import FullscreenVideoPlayer from '@/components/FullscreenVideoPlayer';
 import SideNav from '@/components/SideNav';
-import PublisherProfile from '@/components/PublisherProfile';
-import ContactActions from '@/components/ContactActions';
-import CarouselSlider from '@/components/CarouselSlider';
+import CarouselComponent from '@/components/CarouselComponent';
+import ImagePost from '@/components/ImagePost';
 
 const VideoPlayer: React.FC = () => {
-  const [videoSources, setVideoSources] = useState([
+  const [videoSources, setVideoSources] = useState<{
+    type: string;
+    src: string;
+    title: string;
+    description: string;
+    queue_order: {
+      src: string;
+      description: string;
+    }[];
+    queue_images: { id: number; image: string; alt: string }[];
+  }[]>([
     {
       type:'video',
       src:'./video/first-video.mp4',
@@ -27,7 +36,8 @@ const VideoPlayer: React.FC = () => {
           src: './video/second-video.mp4',
           description: 'Interior Designer Chirag Mehta of Nine Degree design Studio designed For religious yet fun loving family of five.',
         },
-      ]
+      ],
+      queue_images: []
     },
     {
       type:'video',
@@ -47,7 +57,8 @@ const VideoPlayer: React.FC = () => {
           src: './video/third-video.mp4',
           description: 'The art of managing sound within the home cinema space , for an enthralling sound experience out of every cinema watching experience.',
         },
-      ]
+      ],
+      queue_images: []
     },
     {
       type:'video',
@@ -67,14 +78,27 @@ const VideoPlayer: React.FC = () => {
           src: './video/second-video.mp4',
           description: 'Interior Designer Chirag Mehta of Nine Degree design Studio designed For religious yet fun loving family of five.',
         },
-      ]
+      ],
+      queue_images: []
     },
     {
       type: 'image',
       src: 'https://www.trade4asia.com/ProductImg/inf.jpg',
       title: 'The Audio Cube',
       description: 'The art of managing sound within the home cinema space , for an enthralling sound experience out of every cinema watching experience.',
-      queue_order: []
+      queue_order: [],
+      queue_images: []
+    },
+    {
+      type: 'gallery',
+      src: '',
+      title: 'The Audio Cube',
+      description: 'The art of managing sound within the home cinema space , for an enthralling sound experience out of every cinema watching experience.',
+      queue_order: [],
+      queue_images: [
+        { id: 1, image: '/images/image-1.jpg', alt: 'Slide 1' },
+        { id: 2, image: '/images/image-3.jpg', alt: 'Slide 2' },
+      ]
     },
   ]);
   const [autoplayAllowed, setAutoplayAllowed] = useState(false);
@@ -189,44 +213,25 @@ const VideoPlayer: React.FC = () => {
     <>
     <SideNav/>
     <div id="video-post-container" className="p-5">
-    {
-      videoFullScreen && <FullscreenVideoPlayer
-      videoSrc={currentVideo.videoSrc}
-      description={currentVideo.description}
-      onClose={closeModal}
-      queueOrder={currentVideo.queueOrder}
-      />
-    }
- 
+      {
+        videoFullScreen && <FullscreenVideoPlayer
+        videoSrc={currentVideo.videoSrc}
+        description={currentVideo.description}
+        onClose={closeModal}
+        queueOrder={currentVideo.queueOrder}
+        />
+      }
       {videoSources.map((data, index) => {
         if (data.type==='video')
           return <LoopVideo key={index} data={data}
             index={index} openModal={openModal}
             handlePlayPauseVideo={handlePlayPauseVideo} />
-        else if(data.type==='image'){
-          return (
-            <>
-              <div>
-                <div className='flex'>
-                    <PublisherProfile title={data.title} />
-                </div>
-                <img src={data.src} alt="" className='w-full h-full'/>
-                <div>
-                  <ContactActions getQuote={true} />
-                </div>
-                <div className='flex gap-2 items-center'>
-                  <PublisherProfile title='Home'/>
-                  </div>
-                  <div>
-                  <CarouselSlider/>
-                  <ContactActions getQuote={true} />
-              <p className='text-xl lg:text-base '><strong>{data.title}</strong> {data.description}</p>
-
-                </div>
-              </div>
-            </>
-          );
-        }
+        else if(data.type==='image')
+          return <ImagePost key={index} src={data.src}
+            title={data.title} description={data.description} />
+        else if(data.type==='gallery')
+          return <CarouselComponent title={data.title} key={index}
+            description={data.description} queue_images={data.queue_images} />
       })}
     </div>
     </>
