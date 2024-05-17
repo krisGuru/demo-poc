@@ -236,6 +236,7 @@ const VideoPlayer: React.FC = () => {
             description={data.description} queue_images={data.queue_images} />
       })}
     </div>
+    <div className='mt-10'>&nbsp;</div>
     </>
   );
 };
