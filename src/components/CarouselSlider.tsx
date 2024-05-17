@@ -6,13 +6,11 @@ const CarouselSlider: React.FC<{
 }> = ({slides}) => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  const prevSlide = (e) => {
-    e.preventDefault(); 
+  const prevSlide = () => {
     setCurrentSlide(currentSlide === 0 ? slides.length - 1 : currentSlide - 1);
   };
 
-  const nextSlide = (e) => {
-    e.preventDefault(); 
+  const nextSlide = () => {
     setCurrentSlide(currentSlide === slides.length - 1 ? 0 : currentSlide + 1);
   };
 

@@ -2,7 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 import { FaHome, FaVideo, FaSearch, FaFilm } from 'react-icons/fa';
 
-const SideNav: React.FC<> = () => {
+const SideNav = () => {
   return <>
     <div id='side-menu'>
         <ul>
