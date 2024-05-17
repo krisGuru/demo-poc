@@ -3,9 +3,14 @@ import PublisherProfile from '@/components/PublisherProfile';
 import './../../app/globals.css';
 import { useRouter } from 'next/router';
 import React, { useRef, useState, useEffect } from 'react';
-import { useSwipeable } from 'react-swipeable';
 import ContactActions from '@/components/ContactActions';
 import ShowDescription from '@/components/ShowDescription';
+import {Swiper, SwiperSlide} from 'swiper/react';
+
+import 'swiper/css';
+import 'swiper/css/pagination';
+
+import { Pagination } from 'swiper/modules';
 
 const FullvideoPlayer: React.FC = () => {
 
@@ -49,75 +54,61 @@ const FullvideoPlayer: React.FC = () => {
     src: '',
     description: '',
   }]);
-  const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
+  const [currentVideoRef, setCurrentVideoRef] = useState<HTMLVideoElement | null>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isMuted, setIsMuted] = useState(true);
 
-  const handlers = useSwipeable({
-    onSwipedDown: (eventData) => {
-      if (currentVideoIndex !== 0 && eventData.absY > eventData.absX) {
-        setCurrentVideoIndex(currentVideoIndex - 1);
-      }
-    },
-    onSwipedUp: (eventData) => {
-      if (currentVideoIndex !== queueOrder.length - 1 && eventData.absY > eventData.absX) {
-        setCurrentVideoIndex(currentVideoIndex + 1);
-      }
-    },
-    // preventDefaultTouchmoveEvent: true,
-  });
-
-  useEffect(() => {
-    const handleTouchMove = (e: TouchEvent) => {
-      e.preventDefault();
-    };
-  
-    window.addEventListener('touchmove', handleTouchMove, { passive: false });
-  
-    return () => {
-      window.removeEventListener('touchmove', handleTouchMove);
-    };
-  }, []);
-
-  useEffect(() => {
-    if (videoRef.current) {
-      videoRef.current.play();
-    }
-  }, [currentVideoIndex]);
 
   const handleTouchVideo = () => {
-    if (videoRef.current) {
-      setIsMuted(!isMuted);
-      videoRef.current.muted = !isMuted;
-    }
+    setIsMuted(!isMuted);
   };
 
+  const slideChange = (swiper: any) => {
+    document.querySelectorAll('video').forEach((video) => video.pause());
+    const video = swiper.slides[swiper.activeIndex].querySelector('video');
+    if (video) {
+      video.muted = isMuted;
+      video.play();
+    }
+  }
+
   return (
-    <div {...handlers} className="fixed inset-0 bg-black z-50 flex">
+    <div className="fixed inset-0 bg-black z-50 flex">
       {queueOrder.length > 0 && (
         <>
           {
             (
             <div className="w-full h-full relative mobile-fullscreen">
-              <video
-                ref={videoRef}
-                src={queueOrder[currentVideoIndex].src}
-                autoPlay={true}
-                controls={false}
-                muted={isMuted}
-                onTouchStart={handleTouchVideo}
-              />
-              <div className="absolute right-0 p-2 text-shadow" style={{ bottom: '130px'}}>
-                <div className='text-white mt-3 full-screen'>
-                <ContactActions getQuote={false} />
-                </div>
-              </div>
-              <div className="absolute bottom-0 left-0 p-4 text-white text-shadow">
-                <div className='flex gap-2 items-center'>
-                <PublisherProfile title={'Builder Profile'} />
-                </div>
-                <ShowDescription description={queueOrder[currentVideoIndex].description} />
-              </div>
+              <Swiper
+              style={{width: '100%', height: '100%'}}
+              direction={'vertical'}
+              modules={[Pagination]}
+              onSlideChange={slideChange}
+              className='mySwiper'>
+                {queueOrder.map((video, index) => (
+                  <SwiperSlide key={index}>
+                    <video
+                      src={video.src}
+                      autoPlay={true}
+                      controls={false}
+                      muted={isMuted}
+                      ref={videoRef}
+                      onTouchStart={handleTouchVideo}
+                    />
+                    <div className="absolute right-0 p-2 text-shadow" style={{ bottom: '130px'}}>
+                      <div className='text-white mt-3 full-screen'>
+                      <ContactActions getQuote={false} />
+                      </div>
+                    </div>
+                    <div className="absolute bottom-0 left-0 p-4 text-white text-shadow">
+                      <div className='flex gap-2 items-center'>
+                      <PublisherProfile title={'Builder Profile'} />
+                      </div>
+                      <ShowDescription description={video.description} />
+                    </div>
+                  </SwiperSlide>
+                ))}
+              </Swiper>
             </div>
             )
           }
