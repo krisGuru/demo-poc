@@ -63,7 +63,7 @@ const LoopVideo:React.FC<{
                   <button className='text-base p-1 px-3 rounded-md text-shadow'>
                     <span className='text-shadow'>Follow</span>
                   </button> */}
-                  <PublisherProfile src={''} description={''} queue_order={[]} title={data.title}/>
+                  <PublisherProfile title={data.title}/>
                 </div>
               </div>
               <div className='relative w-full flex justify-center align-middle' style={{minHeight: '600px'}}>

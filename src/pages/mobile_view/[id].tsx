@@ -116,7 +116,7 @@ const FullvideoPlayer: React.FC = () => {
               </div>
               <div className="absolute bottom-0 left-0 p-4 text-white text-shadow">
                 <div className='flex gap-2 items-center'>
-                <PublisherProfile src={''} description={''} queue_order={[]} title={'Builder Profile'} />
+                <PublisherProfile title={'Builder Profile'} />
                 </div>
                 <p className='text-sm mt-1'>{queueOrder[currentVideoIndex].description}</p>
               </div>
