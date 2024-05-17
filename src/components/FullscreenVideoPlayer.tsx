@@ -1,7 +1,5 @@
 import React, { useRef, useState, useEffect } from 'react';
-import { FaArrowRight, FaArrowLeft,
-  FaPhone, FaWhatsapp, FaShareSquare } from 'react-icons/fa';
-import { useSwipeable } from 'react-swipeable';
+import { FaArrowRight, FaArrowLeft } from 'react-icons/fa';
 
 const FullscreenVideoPlayer: React.FC<{
   videoSrc: string;
@@ -9,24 +7,8 @@ const FullscreenVideoPlayer: React.FC<{
   onClose: () => void;
   queueOrder: { src: string; description: string }[];
 }> = ({ videoSrc, description, onClose, queueOrder }) => {
-  const isMobile = window.innerWidth < 768;
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
   const videoRef = useRef<HTMLVideoElement>(null);
-  const [isMuted, setIsMuted] = useState(isMobile);
-
-  const handlers = useSwipeable({
-    onSwipedUp: (eventData) => {
-      if (currentVideoIndex !== 0 && eventData.absY > eventData.absX) {
-        setCurrentVideoIndex(currentVideoIndex - 1);
-      }
-    },
-    onSwipedDown: (eventData) => {
-      if (currentVideoIndex !== queueOrder.length - 1 && eventData.absY > eventData.absX) {
-        setCurrentVideoIndex(currentVideoIndex + 1);
-      }
-    },
-    // preventDefaultTouchmoveEvent: true,
-  });
 
   useEffect(() => {
     const handleEsc = (event: KeyboardEvent) => {
@@ -50,55 +32,12 @@ const FullscreenVideoPlayer: React.FC<{
     };
   }, [onClose, currentVideoIndex]);
 
-  useEffect(() => {
-    const handleTouchMove = (e: TouchEvent) => {
-      e.preventDefault();
-    };
-  
-    window.addEventListener('touchmove', handleTouchMove, { passive: false });
-  
-    return () => {
-      window.removeEventListener('touchmove', handleTouchMove);
-    };
-  }, []);
-
-  useEffect(() => {
-    if (isMobile && videoRef.current) {
-      videoRef.current.play();
-    }
-  }, [isMobile, currentVideoIndex]);
-
-  const handleTouchVideo = () => {
-    if (videoRef.current) {
-      setIsMuted(!isMuted);
-      videoRef.current.muted = !isMuted;
-    }
-  };
-
   return (
-    <div {...handlers} className="fixed inset-0 bg-black z-50 flex">
+    <div className="fixed inset-0 bg-black z-50 flex" style={{zIndex: 1100}}>
       {queueOrder.length > 0 && (
         <>
-          {isMobile ? (
-            <div className="w-full h-full relative fullscreen-video">
-              <video
-                ref={videoRef}
-                src={queueOrder[currentVideoIndex].src}
-                autoPlay={isMobile}
-                controls={false}
-                muted={isMuted}
-                onTouchStart={handleTouchVideo}
-              />
-              <div className="absolute top-0 right-0 p-4 flex flex-col items-end">
-                <FaPhone className="text-6xl text-white align-center fa-phone" style={{ marginTop:'60rem' }} />
-                <FaWhatsapp className="text-6xl text-white  mt-10" />
-                <FaShareSquare className="text-6xl text-white mt-10" />
-              </div>
-              <div className="absolute bottom-0 left-0 right-0 p-4 bg-black bg-opacity-50 text-white">
-                <p>{queueOrder[currentVideoIndex].description}</p>
-              </div>
-            </div>
-          ) : (
+          {
+           (
             <>
               <div className="w-4/5 relative fullscreen-video">
                 {currentVideoIndex !== 0 && (
