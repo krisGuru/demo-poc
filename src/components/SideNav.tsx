@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
-import { FaHome, FaVideo, FaSearch, FaFilm } from 'react-icons/fa';
+import { FaHome, FaSearch, FaFilm, FaPlus } from 'react-icons/fa';
 
 const SideNav = () => {
   return <>
@@ -16,6 +16,12 @@ const SideNav = () => {
                 <Link href="#">
                   <FaSearch className='text-2xl' />
                   <label htmlFor="" className='menu-label'>Search</label>
+                </Link>
+            </li>
+            <li>
+                <Link href="#">
+                  <FaPlus className='text-2xl' />
+                  <label htmlFor="" className='menu-label'>Add Post</label>
                 </Link>
             </li>
             <li>
