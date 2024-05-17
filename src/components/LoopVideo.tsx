@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
-import { FaVolumeUp, FaVolumeMute, 
-    FaPhone, FaWhatsapp, FaShareSquare } from 'react-icons/fa';
+import { FaVolumeUp, FaVolumeMute } from 'react-icons/fa';
 import { MdRefresh } from 'react-icons/md';
 import { createRoot } from 'react-dom/client';
 import PublisherProfile from './PublisherProfile';
@@ -58,11 +57,6 @@ const LoopVideo:React.FC<{
             <div className="video-cards relative">
               <div className='absolute' style={{zIndex: 1000}}>
                 <div className='relative flex gap-2 items-center text-white m-3 text-shadow'>
-                  {/* <img src="https://cdn.iconscout.com/icon/free/png-256/free-avatar-370-456322.png" alt="" className='rounded w-12'/>
-                  <strong className='text-base'>{data.title}</strong>
-                  <button className='text-base p-1 px-3 rounded-md text-shadow'>
-                    <span className='text-shadow'>Follow</span>
-                  </button> */}
                   <PublisherProfile title={data.title}/>
                 </div>
               </div>
@@ -95,18 +89,10 @@ const LoopVideo:React.FC<{
               </div>
             </div>
             <div>
-              <a href="#" className='float-right text-sm mr-4 border border-gray-600 px-2 rounded'>
-                Get Quote
-              </a>
-              <div style={{display:"flex", gap: "1rem", marginTop: "1rem", marginLeft: "1rem"}}>
-                {/* <FaPhone className='text-2xl fa-phone' />
-                <FaWhatsapp className='text-2xl'/>
-                <FaShareSquare className='text-2xl' /> */}
-                <ContactActions/>
-              </div>
+              <ContactActions getQuote={true} />
             </div>
-            <div className="video-description text-black"> {/* Description container */}
-              <p className='text-xl lg:text-base'><strong>{data.title}</strong> {data.description}</p>
+            <div className="video-description text-black">
+              <p className='text-xl lg:text-base '><strong>{data.title}</strong> {data.description}</p>
             </div>
             <p className='relative mx-2 text-base opacity-80'>2 hours ago</p>
           </div>
