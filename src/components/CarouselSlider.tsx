@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import { FaAngleLeft, FaAngleRight } from 'react-icons/fa';
+import React from 'react';
 
 import {Navigation, Pagination, Scrollbar, A11y} from 'swiper/modules';
 import {Swiper, SwiperSlide} from 'swiper/react';
