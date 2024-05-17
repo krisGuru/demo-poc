@@ -108,7 +108,7 @@ const FullvideoPlayer: React.FC = () => {
                 onTouchStart={handleTouchVideo}
               />
               <div className="absolute right-0 p-2 text-shadow" style={{ bottom: '130px'}}>
-                <div className='text-white mt-3'>
+                <div className='text-white mt-3 full-screen'>
                 <ContactActions getQuote={false} />
                 </div>
               </div>
