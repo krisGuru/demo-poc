@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
+import { FaAngleLeft, FaAngleRight } from 'react-icons/fa';
 
 const CarouselSlider: React.FC<{
   slides: { id: number; image: string; alt: string }[];
@@ -31,16 +31,16 @@ const CarouselSlider: React.FC<{
         </div>
       </div>
       <button
-        className="carousel-control-prev absolute top-1/2 left-0 transform -translate-y-1/2 bg-gray-300 text-gray-600 p-2 rounded-r"
+        className="carousel-control-prev absolute top-1/2 left-0 transform -translate-y-1/2 bg-black-100 text-white p-1 rounded-r"
         onClick={prevSlide}
       >
-        <FaArrowLeft />
+        <FaAngleLeft />
       </button>
       <button
-        className="carousel-control-next absolute top-1/2 right-0 transform -translate-y-1/2 bg-gray-300 text-gray-600 p-2 rounded-l"
+        className="carousel-control-next absolute top-1/2 right-0 transform -translate-y-1/2 bg-black-100 text-white p-1 rounded-l"
         onClick={nextSlide}
       >
-        <FaArrowRight />
+        <FaAngleRight />
       </button>
     </div>
   );
