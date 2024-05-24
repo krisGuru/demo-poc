@@ -1,5 +1,13 @@
 import React from 'react';
 
+import {Navigation, Pagination, Scrollbar, A11y} from 'swiper/modules';
+import {Swiper, SwiperSlide} from 'swiper/react';
+
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
+
 const HeaderCarousel = () => {
     const images = [
         { src: 'https://media.designcafe.com/wp-content/uploads/2022/07/29185240/industrial-rustic-living-room-in-earthy-tones.jpg', alt: 'Image 1', title: 'Interior Design' },
@@ -16,20 +24,28 @@ const HeaderCarousel = () => {
         { src: 'https://media.designcafe.com/wp-content/uploads/2022/07/29185240/industrial-rustic-living-room-in-earthy-tones.jpg', alt: 'Image 4', title: 'Table Properties' },
     ]
   return (
-    <div className="image-carousel">
-      {images.map((image, index) => (
-        <>
-        <div className='images-card'>
-            <div>
-                <img key={index} src={image.src} alt={image.alt} />
-            </div>
-            <div>
-                <span>{image.title}</span>
-            </div>
-        </div>
-        </>
-      ))}
-    </div>
+    <Swiper className="image-carousel" modules={[Navigation, Pagination, Scrollbar, A11y]}
+    spaceBetween={50}
+    slidesPerView={3}
+    scrollbar={{ draggable: true }}
+    onSlideChange={() => console.log('slide change')}
+    onSwiper={(swiper) => console.log(swiper)}
+    >
+        {
+            images.map((image, index) => (
+                <SwiperSlide key={index}>
+                  <div className='images-card'>
+                      <div>
+                          <img key={index} src={image.src} alt={image.alt} />
+                      </div>
+                      <div>
+                          <span>{image.title}</span>
+                      </div>
+                  </div>
+                </SwiperSlide>
+            ))
+        }
+    </Swiper>
   );
 };
 
