@@ -35,7 +35,7 @@ const subcategorylist = () => {
                     className='w-full border border-gray-400 rounded' />
                     {
                         subcategoryData.map((data,index)=>(
-                            <div className='mt-3'>
+                            <div className='mt-3' key={index}>
                                 {data} 
                             </div>
                         ))
