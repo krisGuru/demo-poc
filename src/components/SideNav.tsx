@@ -9,25 +9,25 @@ const SideNav = () => {
             <li>
                 <Link href="/videoplayer">
                   <FaHome className='text-2xl' />
-                  <span>Home</span>
+                  <span className='menu-label'>Home</span>
                 </Link>
             </li>
             <li>
                 <Link href="/search">
                   <FaSearch className='text-2xl' />
-                  <span>Search</span>
+                  <span className='menu-label'>Search</span>
                 </Link>
             </li>
             <li>
                 <Link href="#">
                   <FaPlus className='text-2xl' />
-                  <span>Add Post</span>
+                  <span className='menu-label'>Add Post</span>
                 </Link>
             </li>
             <li>
                 <Link href="#">
                   <FaFilm className='text-2xl' />
-                  <span>Reel</span>
+                  <span className='menu-label'>Reel</span>
                 </Link>
             </li>
         </ul>
