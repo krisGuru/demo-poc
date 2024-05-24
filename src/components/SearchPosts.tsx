@@ -8,6 +8,7 @@ const SearchPosts = () => {
       description: 'description 1',
       thumbnail: './video/thumbnail-1.mp4',
       video: './video/first-video.mp4',
+      seq_no: 0
     },
     {
       id: 2,
@@ -15,6 +16,7 @@ const SearchPosts = () => {
       description: 'description 2',
       thumbnail: './video/thumbnail-2.mp4',
       video: './video/second-video.mp4',
+      seq_no: 1
     },
     {
       id: 3,
@@ -22,6 +24,7 @@ const SearchPosts = () => {
       description: 'description 3',
       thumbnail: './video/thumbnail-3.mp4',
       video:'./video/third-video.mp4',
+      seq_no: 2
     },
     {
       id: 4,
@@ -29,6 +32,7 @@ const SearchPosts = () => {
       description: 'description 4',
       thumbnail: './video/thumbnail-1.mp4',
       video: './video/first-video.mp4',
+      seq_no: 0
     },
     {
       id: 5,
@@ -36,6 +40,7 @@ const SearchPosts = () => {
       description: 'description 5',
       thumbnail: './video/thumbnail-2.mp4',
       video: './video/second-video.mp4',
+      seq_no: 1
     },
     {
       id: 1,
@@ -43,6 +48,7 @@ const SearchPosts = () => {
       description: 'description 1',
       thumbnail: './video/thumbnail-3.mp4',
       video:'./video/third-video.mp4',
+      seq_no: 2
     },
     {
       id: 2,
@@ -50,6 +56,7 @@ const SearchPosts = () => {
       description: 'description 2',
       thumbnail: './video/thumbnail-1.mp4',
       video: './video/first-video.mp4',
+      seq_no: 0
     },
     {
       id: 3,
@@ -57,6 +64,7 @@ const SearchPosts = () => {
       description: 'description 3',
       thumbnail: './video/thumbnail-2.mp4',
       video: './video/first-video.mp4',
+      seq_no: 1
     },
     {
       id: 4,
@@ -64,6 +72,7 @@ const SearchPosts = () => {
       description: 'description 4',
       thumbnail: './video/thumbnail-3.mp4',
       video: './video/first-video.mp4',
+      seq_no: 2
     },
     {
       id: 5,
@@ -71,6 +80,7 @@ const SearchPosts = () => {
       description: 'description 5',
       thumbnail: './video/thumbnail-1.mp4',
       video: './video/first-video.mp4',
+      seq_no: 0
     },
   ]
 
@@ -99,6 +109,9 @@ const SearchPosts = () => {
             className={`video-container `+((index===2||index===5) ? `row-span-2 h-full`: `h-48`)}
             >
                 <video src={video.thumbnail} muted={true}
+                onClick={(e)=>{
+                  window.location.href=`/mobile_view/${video.seq_no}`
+                }}
                 autoPlay={false} controls={false}></video>
             </div>)
         }
