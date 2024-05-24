@@ -6,7 +6,7 @@ import { useSearchParams } from 'next/navigation'
 import React, { useState } from 'react'
 import '../app/globals.css'
 
-const search = () => {
+const Search = () => {
     const [showFullList, setShowFullList] = useState(false);
     const searchParams = useSearchParams();
     const search = searchParams?.get('search');
@@ -48,4 +48,4 @@ const search = () => {
     )
 }
 
-export default search
+export default Search
