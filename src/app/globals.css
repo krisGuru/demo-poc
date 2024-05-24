@@ -117,16 +117,16 @@ nav ul li a{
 }
 
 .video-post {
-  display: flex; /* Make video card and description side-by-side */
-  flex-direction: column; /* Stack video card and description vertically */
-  width: fit-content; /* Allow variable video card width */
-  margin: 0 auto; /* Center video cards horizontally */
+  display: flex; 
+  flex-direction: column; 
+  width: fit-content; 
+  margin: 0 auto; 
 }
 
 .video-description {
   padding: 10px;
   margin-top: 5px;
-  width: 100%; /* Description container takes full video card width */
+  width: 100%;
 }
 
 @media (max-width: 767px) {
@@ -168,6 +168,18 @@ nav ul li a{
   #contact-actions{
     @apply flex gap-4 mt-4 ml-4;
   }
+  @media (max-width: 900px){
+    #side-menu {
+      @apply block top-0 left-0 h-screen border-2 p-4 space-y-4;
+      width: 25%;
+    }
+    #side-menu ul {
+      @apply ml-8; 
+    }
+    #contact-actions {
+      @apply flex gap-4 mt-4 ml-8; 
+    }
+  }
 }
 
 #side-menu{
@@ -202,7 +214,7 @@ nav ul li a{
 
 .video-container {
   position: relative;
-  width: 100%; /* Set the desired width */
+  width: 100%;
   overflow: hidden;
 }
 
