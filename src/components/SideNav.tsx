@@ -1,6 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
-import { FaHome, FaSearch, FaFilm, FaPlus } from 'react-icons/fa';
+import { IoSettingsOutline,IoSearch, IoHomeOutline } from "react-icons/io5";
+import { MdTrendingUp } from "react-icons/md";
 
 const SideNav = () => {
   return <>
@@ -8,26 +9,26 @@ const SideNav = () => {
         <ul>
             <li>
                 <Link href="/videoplayer">
-                  <FaHome className='text-2xl' />
+                  <IoHomeOutline className='text-2xl' />
                   <span className='menu-label'>Home</span>
                 </Link>
             </li>
             <li>
                 <Link href="/search">
-                  <FaSearch className='text-2xl' />
+                  < IoSearch  className='text-2xl' />
                   <span className='menu-label'>Search</span>
                 </Link>
             </li>
             <li>
                 <Link href="#">
-                  <FaPlus className='text-2xl' />
-                  <span className='menu-label'>Add Post</span>
+                  <MdTrendingUp className='text-2xl' />
+                  <span className='menu-label'>Trending</span>
                 </Link>
             </li>
             <li>
-                <Link href="#">
-                  <FaFilm className='text-2xl' />
-                  <span className='menu-label'>Reel</span>
+                <Link href="settings">
+                  <IoSettingsOutline  className='text-2xl' />
+                  <span className='menu-label'>Settings</span>
                 </Link>
             </li>
         </ul>
