@@ -7,6 +7,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
+import { MdTrendingUp } from 'react-icons/md';
 
 const TrendingCarousel = () => {
     const trending_tags = [
@@ -15,22 +16,7 @@ const TrendingCarousel = () => {
         'Coastal',
         'Doors',
         'Interior Designs',
-        'Kitchen',
-        'Bathroom',
-        'Traditional',
-        'Modern',
-        'Coastal',
-        'Doors',
-        'Interior Designs',
-        'Kitchen',
-        'Bathroom',
-        'Traditional',
-        'Modern',
-        'Coastal',
-        'Doors',
-        'Interior Designs',
-        'Kitchen',
-        'Bathroom',
+        'Kitchen'
     ]
   return (
     <Swiper className="image-carousel" modules={[Navigation, Pagination, Scrollbar, A11y]}
@@ -43,8 +29,9 @@ const TrendingCarousel = () => {
         {
             trending_tags.map((trend, index) => (
                 <SwiperSlide key={index}>
-                  <div className='trending_tags-card py-4'>
-                    <span>{trend}</span>
+                  <div className='trending_tags-card flex gap-2'>
+                    <MdTrendingUp className='text-lg' />
+                    <span className='text-sm truncate'>{trend}</span>
                   </div>
                 </SwiperSlide>
             ))
