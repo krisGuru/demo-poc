@@ -29,7 +29,7 @@ const search = () => {
     return (
         <>
             <SideNav />
-            <div id="video-post-container" className="p-5">
+            <div id="video-post-container" className="py-5">
                 <input className='w-full bg-gray-200 rounded-lg border border-gray-400'
                 type="text" placeholder='🔍 Search by category / name'
                 onMouseDown={navToTypeSearch} onKeyDown={searchResult}

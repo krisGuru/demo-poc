@@ -213,7 +213,7 @@ const VideoPlayer: React.FC = () => {
   return (
     <>
     <SideNav/>
-    <div id="video-post-container" className="p-5">
+    <div id="video-post-container" className="py-5">
       <HeaderCarousel />
       {
         videoFullScreen && <FullscreenVideoPlayer
