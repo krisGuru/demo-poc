@@ -2,45 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-input{
-  border: 1px solid #000;
-  padding: 5px;
-}
-
 button{
   border: 1px solid #ccc;
   padding: 10px 20px;
   margin: 10px;
   border-radius: 10px;
-}
-
-.d-flex{
-  display: flex;
-  gap: 10px;
-}
-.card{
-  border: 1px solid lightgray;
-  padding: 20px;
-}
-.d-grid-4{
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-}
-.d-grid-5{
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-}
-table, th, td {
-  border: 1px solid black;
-}
-
-
-h1{
-  font-size: 48px;
-}
-
-nav{
-  background-color: rgb(252, 252, 252);
 }
 
 nav ul{
@@ -197,10 +163,10 @@ nav ul li a{
 
 .image-carousel {
   @apply w-full;
-  overflow-x: auto; /* Enable horizontal scroll */
-  white-space: nowrap; /* Prevent line breaks */
-  scroll-snap-type: x mandatory; /* Enable scroll snapping (optional) */
-  scroll-snap-align: start; /* Align images to viewport (optional) */
+  overflow-x: auto;
+  white-space: nowrap;
+  scroll-snap-type: x mandatory;
+  scroll-snap-align: start; 
   padding: 20px 5px;
 }
 
