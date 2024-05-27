@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import './../../app/globals.css';
-import LoopVideo from '@/components/LoopVideo';
-import FullscreenVideoPlayer from '@/components/FullscreenVideoPlayer';
+import './../app/globals.css';
+import LoopVideo from '@/components/videoplayer/LoopVideo';
+import FullscreenVideoPlayer from '@/components/videoplayer/FullscreenVideoPlayer';
 import SideNav from '@/components/SideNav';
-import CarouselComponent from '@/components/CarouselComponent';
-import ImagePost from '@/components/ImagePost';
-import HeaderCarousel from '@/components/HeaderCarousel';
+import CarouselComponent from '@/components/videoplayer/CarouselComponent';
+import ImagePost from '@/components/videoplayer/ImagePost';
+import HeaderCarousel from '@/components/videoplayer/HeaderCarousel';
 
 const VideoPlayer: React.FC = () => {
   const [videoSources, setVideoSources] = useState<{

@@ -29,7 +29,7 @@ const TrendingCarousel = () => {
         {
             trending_tags.map((trend, index) => (
                 <SwiperSlide key={index}>
-                  <div className='trending_tags-card flex gap-2'>
+                  <div className='flex gap-2'>
                     <MdTrendingUp className='text-lg' />
                     <span className='text-sm truncate'>{trend}</span>
                   </div>

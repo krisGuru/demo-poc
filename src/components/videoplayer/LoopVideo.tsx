@@ -2,9 +2,9 @@ import React, { useEffect, useRef, useState } from 'react'
 import { FaVolumeUp, FaVolumeMute } from 'react-icons/fa';
 import { MdRefresh } from 'react-icons/md';
 import { createRoot } from 'react-dom/client';
-import PublisherProfile from './PublisherProfile';
-import ContactActions from './ContactActions';
-import ShowDescription from './ShowDescription';
+import PublisherProfile from './../PublisherProfile';
+import ContactActions from './../ContactActions';
+import ShowDescription from './../ShowDescription';
 
 const LoopVideo:React.FC<{
     data: {
@@ -61,7 +61,7 @@ const LoopVideo:React.FC<{
                   <PublisherProfile title={data.title}/>
                 </div>
               </div>
-              <div className='relative w-full flex justify-center align-middle' style={{minHeight: '600px'}}>
+              <div className='relative w-full flex justify-center align-middle min-h-[600]:'>
               <video
                 ref={videoRef}
                 autoPlay={true}

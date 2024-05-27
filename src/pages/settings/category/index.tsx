@@ -1,18 +1,15 @@
 import React from 'react'
-import '../app/globals.css'
+import '../../../app/globals.css'
 import SideNav from '@/components/SideNav'
 import Link from 'next/link'
 
-const subcategorylist = () => {
-    const subcategoryData = [
-        'Steel Door',
-        'Glass Door',
-        'Classic Wood Door',
-        'Antic style Wooden Door',
-        'Plywood Door',
-        'Slider Door',
-        'Autolock Door',
-        'Sensor Door'
+const categorylist = () => {
+    const categoryData=[
+        'Doors',
+        'Curtains',
+        'Furniture',
+        'Fixtures',
+        'Lighting',
     ]
   return (
     <>
@@ -26,17 +23,20 @@ const subcategorylist = () => {
                 </Link>
             </span>
             <div className='text-center'>
-                <h4 className='font-semibold'>Sub Category List</h4>
+                <h4 className='font-semibold'>Category List</h4>
             </div>
             <div className='p-2'>
                 <div className='mt-5 border border-gray-200 p-3'>
                     <input type="text" name="" id=""
-                    placeholder='Search Sub Category By Name'
+                    placeholder='Search Category By Name'
                     className='w-full border border-gray-400 rounded' />
                     {
-                        subcategoryData.map((data,index)=>(
+                        categoryData.map((data,index)=>(
                             <div className='mt-3' key={index}>
-                                {data} 
+                                <Link href={'/settings/subcategory'}>
+                                    <span className='float-right'>&gt;</span>
+                                    {data}
+                                </Link>
                             </div>
                         ))
                     }
@@ -44,8 +44,8 @@ const subcategorylist = () => {
             </div>
             <div className='absolute bottom-1 w-full'>
                 <button className='bg-green-500 text-white rounded-md w-full'
-                onClick={e=>{window.location.href='/addsubcategory'}}>
-                    Add sub category
+                onClick={e=>{window.location.href='/settings/category/add'}}>
+                    Add category
                 </button>
             </div>
         </div>
@@ -53,4 +53,4 @@ const subcategorylist = () => {
   )
 }
 
-export default subcategorylist
+export default categorylist

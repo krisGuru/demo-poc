@@ -80,11 +80,10 @@ const FullvideoPlayer: React.FC = () => {
             (
             <div className="w-full h-full relative mobile-fullscreen">
               <Swiper
-              style={{width: '100%', height: '100%'}}
               direction={'vertical'}
               modules={[Pagination]}
               onSlideChange={slideChange}
-              className='mySwiper'>
+              className='mySwiper w-full h-full'>
                 {queueOrder.map((video, index) => (
                   <SwiperSlide key={index}>
                     <video
@@ -95,7 +94,7 @@ const FullvideoPlayer: React.FC = () => {
                       ref={videoRef}
                       onTouchStart={handleTouchVideo}
                     />
-                    <div className="absolute right-0 p-2 text-shadow" style={{ bottom: '130px'}}>
+                    <div className="absolute right-0 p-2 text-shadow bottom-[130px]">
                       <div className='text-white mt-3 full-screen'>
                       <ContactActions getQuote={false} />
                       </div>

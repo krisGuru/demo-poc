@@ -1,5 +1,5 @@
 import React from 'react'
-import '../app/globals.css'
+import '../../../app/globals.css'
 import SideNav from '@/components/SideNav'
 import Link from 'next/link'
 
@@ -11,7 +11,7 @@ const addsubcategory = () => {
         </div>
         <div id="video-post-container" className="py-5">
             <span className='absolute font-semibold text-base pl-2 opacity-50'>
-                <Link href={'/subcategorylist'}>
+                <Link href={'/settings/subcategory'}>
                     &lt; Back
                 </Link>
             </span>
