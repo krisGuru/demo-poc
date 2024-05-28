@@ -121,7 +121,7 @@ button{
 }
 
 .image-carousel {
-  @apply w-full overflow-x-auto whitespace-nowrap snap-x snap-mandatory snap-start;
+  @apply w-full  whitespace-nowrap snap-x snap-mandatory snap-start;
   padding: 20px 5px;
 }
 
@@ -130,7 +130,15 @@ button{
 }
 
 .image-carousel img {
-  @apply w-20 h-20 rounded-full inline-block mr-3;
+  @apply w-16 h-16 rounded-full inline-block mr-3;
+}
+
+.image-carousel .mini img {
+  @apply w-8 h-8 rounded-full inline-block mr-3;
+}
+
+.image-carousel .mini .text-guide{
+  @apply hidden;
 }
 
 .video-container {
