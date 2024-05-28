@@ -3,6 +3,7 @@ import PublisherProfile from '../PublisherProfile'
 import CarouselSlider from './CarouselSlider'
 import ContactActions from '../ContactActions'
 import ShowDescription from '../ShowDescription'
+import GetQuote from '../GetQuote'
 
 const CarouselComponent: React.FC<{
     title: string,
@@ -16,9 +17,10 @@ const CarouselComponent: React.FC<{
   <div>
     <CarouselSlider slides={queue_images}/>
     <div>
+      <GetQuote />
       <ContactActions getQuote={true} />
     </div>
-    <p className='text-xl mt-2 lg:text-base '><strong>{title}</strong></p>
+    <p className='mt-2 text-base '><strong>{title}</strong></p>
     <ShowDescription description={description} />
   </div>
   <p className='relative text-base opacity-80'>2 hours ago</p>

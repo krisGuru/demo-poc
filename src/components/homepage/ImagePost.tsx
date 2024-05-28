@@ -2,6 +2,7 @@ import React from 'react'
 import ContactActions from '../ContactActions'
 import PublisherProfile from '../PublisherProfile'
 import ShowDescription from '../ShowDescription'
+import GetQuote from '../GetQuote'
 
 const ImagePost: React.FC<{
     title: string,
@@ -14,10 +15,11 @@ const ImagePost: React.FC<{
         </div>
         <img src={src} alt="" className='w-full h-full'/>
         <div>
-        <ContactActions getQuote={true} />
-        <p className='text-xl mt-2 lg:text-base '><strong>{title}</strong></p>
-        <ShowDescription description={description} />
-        <p className='relative  text-base opacity-80'>2 hours ago</p>
+            <GetQuote />
+            <ContactActions getQuote={true} />
+            <p className='mt-2 text-base '><strong>{title}</strong></p>
+            <ShowDescription description={description} />
+            <p className='relative  text-base opacity-80'>2 hours ago</p>
         </div>
     </div>
 }

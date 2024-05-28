@@ -5,6 +5,7 @@ import { createRoot } from 'react-dom/client';
 import PublisherProfile from '../PublisherProfile';
 import ContactActions from '../ContactActions';
 import ShowDescription from '../ShowDescription';
+import GetQuote from '../GetQuote';
 
 const LoopVideo:React.FC<{
     data: {
@@ -18,6 +19,7 @@ const LoopVideo:React.FC<{
       index: number,
       data: {
         videoSrc: string;
+        title: string;
         description: string;
         queueOrder: { src: string; description: string }[];
     }, videoRef: React.RefObject<HTMLVideoElement>) => void;
@@ -73,6 +75,7 @@ const LoopVideo:React.FC<{
                 index,
                 {
                   videoSrc: data.src,
+                  title: data.title,
                   description: data.description,
                   queueOrder: data.queue_order
                 }, videoRef)}
@@ -90,10 +93,11 @@ const LoopVideo:React.FC<{
               </div>
             </div>
             <div>
+              <GetQuote />
               <ContactActions getQuote={true} />
             </div>
             <div className="video-description text-black">
-              <p className='text-xl lg:text-base '><strong>{data.title}</strong></p>
+              <p className='text-base '><strong>{data.title}</strong></p>
               <ShowDescription description={data.description} />
             </div>
             <p className='relative mx-2 text-base opacity-80'>2 hours ago</p>

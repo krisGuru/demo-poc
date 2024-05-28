@@ -19,17 +19,10 @@ const ContactActions: React.FC<{
   }
   return (
     <>
-    {
-      getQuote && <>
-        <a href="#" className='float-right text-sm mr-4 border border-gray-600 px-2 rounded'>
-          Get Quote
-        </a>
-      </>
-    }
-      <div id='contact-actions'>
-        <FaPhone className='text-2xl fa-phone' onClick={telephoneOpen} />
-        <FaWhatsapp className='text-2xl' onClick={whatsappOpen}/>
-        <FaShareSquare className='text-2xl' onClick={shareOpen} />
+      <div id='contact-actions' className='float-right'>
+        <FaPhone className='text-xl fa-phone' onClick={telephoneOpen} />
+        <FaWhatsapp className='text-xl' onClick={whatsappOpen}/>
+        <FaShareSquare className='text-xl' onClick={shareOpen} />
       </div>
     </>
   )
