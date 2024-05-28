@@ -1,8 +1,8 @@
 import React from 'react'
-import PublisherProfile from './../PublisherProfile'
+import PublisherProfile from '../PublisherProfile'
 import CarouselSlider from './CarouselSlider'
-import ContactActions from './../ContactActions'
-import ShowDescription from './../ShowDescription'
+import ContactActions from '../ContactActions'
+import ShowDescription from '../ShowDescription'
 
 const CarouselComponent: React.FC<{
     title: string,

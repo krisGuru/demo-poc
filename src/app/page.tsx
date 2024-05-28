@@ -1,113 +1,246 @@
-import Image from "next/image";
+"use client";
 
-export default function Home() {
+import React, { useState, useEffect } from 'react';
+import './../app/globals.css';
+import LoopVideo from '@/components/homepage/LoopVideo';
+import FullscreenVideoPlayer from '@/components/homepage/FullscreenVideoPlayer';
+import SideNav from '@/components/SideNav';
+import CarouselComponent from '@/components/homepage/CarouselComponent';
+import ImagePost from '@/components/homepage/ImagePost';
+import HeaderCarousel from '@/components/homepage/HeaderCarousel';
+
+const VideoPlayer: React.FC = () => {
+  const [videoSources, setVideoSources] = useState<{
+    type: string;
+    src: string;
+    title: string;
+    description: string;
+    queue_order: {
+      src: string;
+      description: string;
+    }[];
+    queue_images: { id: number; image: string; alt: string }[];
+  }[]>([
+    {
+      type:'video',
+      src:'./video/first-video.mp4',
+      title:'Aristo Coimbatore',
+      description: 'The art of managing sound within the home cinema space , for an enthralling sound experience out of every cinema watching experience.',
+      queue_order: [
+        {
+          src: './video/first-video.mp4',
+          description: 'The art of managing sound within the home cinema space , for an enthralling sound experience out of every cinema watching experience.',
+        },
+        {
+          src: './video/third-video.mp4',
+          description: 'The art of managing sound within the home cinema space , for an enthralling sound experience out of every cinema watching experience.',
+        },
+        {
+          src: './video/second-video.mp4',
+          description: 'Interior Designer Chirag Mehta of Nine Degree design Studio designed For religious yet fun loving family of five.',
+        },
+      ],
+      queue_images: []
+    },
+    {
+      type:'video',
+      src:'./video/second-video.mp4',
+      title:'Nine Degree Design Studio',
+      description: 'Interior Designer Chirag Mehta of Nine Degree design Studio designed For religious yet fun loving family of five.',
+      queue_order: [
+        {
+          src: './video/second-video.mp4',
+          description: 'Interior Designer Chirag Mehta of Nine Degree design Studio designed For religious yet fun loving family of five.',
+        },
+        {
+          src: './video/first-video.mp4',
+          description: 'The art of managing sound within the home cinema space , for an enthralling sound experience out of every cinema watching experience.',
+        },
+        {
+          src: './video/third-video.mp4',
+          description: 'The art of managing sound within the home cinema space , for an enthralling sound experience out of every cinema watching experience.',
+        },
+      ],
+      queue_images: []
+    },
+    {
+      type:'video',
+      src:'./video/third-video.mp4',
+      title: 'The Audio Cube', 
+      description: 'The art of managing sound within the home cinema space , for an enthralling sound experience out of every cinema watching experience.',
+      queue_order: [
+        {
+          src: './video/third-video.mp4',
+          description: 'The art of managing sound within the home cinema space , for an enthralling sound experience out of every cinema watching experience.',
+        },
+        {
+          src: './video/first-video.mp4',
+          description: 'The art of managing sound within the home cinema space , for an enthralling sound experience out of every cinema watching experience.',
+        },
+        {
+          src: './video/second-video.mp4',
+          description: 'Interior Designer Chirag Mehta of Nine Degree design Studio designed For religious yet fun loving family of five.',
+        },
+      ],
+      queue_images: []
+    },
+    {
+      type: 'image',
+      src: 'https://www.trade4asia.com/ProductImg/inf.jpg',
+      title: 'The Audio Cube',
+      description: 'The art of managing sound within the home cinema space , for an enthralling sound experience out of every cinema watching experience.',
+      queue_order: [],
+      queue_images: []
+    },
+    {
+      type: 'gallery',
+      src: '',
+      title: 'The Audio Cube',
+      description: 'The art of managing sound within the home cinema space , for an enthralling sound experience out of every cinema watching experience.',
+      queue_order: [],
+      queue_images: [
+        { id: 1, image: '/images/image-1.jpg', alt: 'Slide 1' },
+        { id: 2, image: '/images/image-3.jpg', alt: 'Slide 2' },
+      ]
+    },
+  ]);
+  const [autoplayAllowed, setAutoplayAllowed] = useState(false);
+  const [videoFullScreen, setVideoFullScreen] = useState(false);
+
+  const [isMobileDevice, setIsMobileDevice] = useState(false);
+  const [isTabletDevice, setIsTabletDevice] = useState(false);
+  const [isDesktopDevice, setIsDesktopDevice] = useState(false);
+
+  useEffect(() => {
+    // width wise mobile or tablet detect
+    const width = window.innerWidth;
+    if (width < 768) {
+      setIsMobileDevice(true);
+    } else if (width < 1024) {
+      setIsTabletDevice(true);
+    } else {
+      setIsDesktopDevice(true);
+    }
+  }, []);
+
+  const [currentVideo, setCurrentVideo] = useState<{
+    videoSrc: string;
+    description: string;
+    queueOrder: { src: string; description: string }[];
+  }>({
+    videoSrc: '',
+    description: '',
+    queueOrder: []
+  });
+  const [pausedVideo, setPausedVideo] = useState<HTMLVideoElement | null>(null);
+
+  const handlePlayPauseVideo = (videoRef: React.RefObject<HTMLVideoElement>) => () => {
+    const video = videoRef.current;
+    if (video) {
+      if (video.paused) {
+        // react pause all videos
+        document.querySelectorAll('video').forEach((video) => video.pause());
+        video.play();
+      } else {
+        video.pause();
+      }
+    }
+  };
+
+  const openModal = (
+      index: number,
+      video: {description: string, videoSrc: string, queueOrder: {src: string, description: string}[]},
+      currentVideo: React.RefObject<HTMLVideoElement>
+    ) => {
+      if ((isMobileDevice || isTabletDevice)) {
+        window.location.href=`/mobile_view/${index}`
+      }
+      else{
+        document.querySelectorAll('video').forEach((video) => video.pause());
+        setCurrentVideo(video);
+        setVideoFullScreen(true);
+        setPausedVideo(currentVideo.current);    
+      }
+  };
+
+  const closeModal = () => {
+    setCurrentVideo({ videoSrc: '', description: '', queueOrder: [] });
+    setVideoFullScreen(false);
+    const video = pausedVideo;
+    if (video) {
+      if (video.paused) {
+        video.play();
+      }
+    }
+    setPausedVideo(null);
+  };
+
+  const handleMuteUnmute = (videoRef: React.RefObject<HTMLVideoElement>) => () => {
+    const video = videoRef.current;
+    if (video) {
+      video.muted = !video.muted;
+    }
+  };
+
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        const video = entry.target as HTMLVideoElement;
+        const isVisible = entry.intersectionRatio >= 0.8;
+        if (isVisible && autoplayAllowed) {
+          document.querySelectorAll('video').forEach((video) => video.pause());
+          video.play().catch(() => {
+            console.log('Autoplay was prevented by the browser');
+          });
+        } else {
+          video.pause();
+        }
+      });
+    }, { threshold: 0.8, rootMargin: '0px 0px -100px 0px' });
+
+    const currentVideoRefs = document.querySelectorAll('video');
+    currentVideoRefs.forEach((videoElement) => {
+      observer.observe(videoElement);
+    });
+
+    return () => {
+      observer.disconnect();
+    };
+  }, [videoSources, autoplayAllowed]);
+
+  useEffect(() => {
+    setAutoplayAllowed(true);
+  }, []);
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
+    <>
+    <SideNav/>
+    <div id="video-post-container" className="py-5">
+      <HeaderCarousel />
+      {
+        videoFullScreen && <FullscreenVideoPlayer
+        videoSrc={currentVideo.videoSrc}
+        description={currentVideo.description}
+        onClose={closeModal}
+        queueOrder={currentVideo.queueOrder}
         />
-      </div>
-
-      <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-balance text-sm opacity-50">
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+      }
+      {videoSources.map((data, index) => {
+        if (data.type==='video')
+          return <LoopVideo key={index} data={data}
+            index={index} openModal={openModal}
+            handlePlayPauseVideo={handlePlayPauseVideo} />
+        else if(data.type==='image')
+          return <ImagePost key={index} src={data.src}
+            title={data.title} description={data.description} />
+        else if(data.type==='gallery')
+          return <CarouselComponent title={data.title} key={index}
+            description={data.description} queue_images={data.queue_images} />
+      })}
+    </div>
+    <div className='mt-10'>&nbsp;</div>
+    </>
   );
-}
+};
+
+export default VideoPlayer;

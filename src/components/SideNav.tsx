@@ -8,7 +8,7 @@ const SideNav = () => {
     <div id='side-menu'>
         <ul>
             <li>
-                <Link href="/videoplayer">
+                <Link href="/">
                   <IoHomeOutline className='text-2xl' />
                   <span className='menu-label'>Home</span>
                 </Link>

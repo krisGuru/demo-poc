@@ -1,6 +1,6 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { FaArrowRight, FaArrowLeft } from 'react-icons/fa';
-import ShowDescription from './../ShowDescription';
+import ShowDescription from '../ShowDescription';
 
 const FullscreenVideoPlayer: React.FC<{
   videoSrc: string;

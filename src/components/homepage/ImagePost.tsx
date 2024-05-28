@@ -1,7 +1,7 @@
 import React from 'react'
-import ContactActions from './../ContactActions'
-import PublisherProfile from './../PublisherProfile'
-import ShowDescription from './../ShowDescription'
+import ContactActions from '../ContactActions'
+import PublisherProfile from '../PublisherProfile'
+import ShowDescription from '../ShowDescription'
 
 const ImagePost: React.FC<{
     title: string,
