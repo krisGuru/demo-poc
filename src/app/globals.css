@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+button{
+  border: 1px solid #ccc;
+  padding: 10px 20px;
+  margin: 10px;
+  border-radius: 10px;
+}
 
 #video-post-container{
   @apply w-[400px] mx-auto
@@ -133,4 +139,8 @@
 
 .video-container video {
   @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full object-cover;
+}
+
+.splashScreen {
+  @apply fixed top-0 left-0 w-full h-full flex justify-center items-center bg-white z-[9999];
 }

@@ -8,6 +8,7 @@ import SideNav from '@/components/SideNav';
 import CarouselComponent from '@/components/homepage/CarouselComponent';
 import ImagePost from '@/components/homepage/ImagePost';
 import HeaderCarousel from '@/components/homepage/HeaderCarousel';
+import SplashScreen from '@/components/SplashScreen';
 
 const VideoPlayer: React.FC = () => {
   const [videoSources, setVideoSources] = useState<{
@@ -214,6 +215,7 @@ const VideoPlayer: React.FC = () => {
 
   return (
     <>
+    <SplashScreen />
     <SideNav/>
     <div id="video-post-container" className="py-5">
       <HeaderCarousel />
