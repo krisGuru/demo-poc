@@ -5,9 +5,11 @@ const PublisherProfile: React.FC<{
 }> = ({title}) => {
   return (
     <>
-        <img src="https://cdn.iconscout.com/icon/free/png-256/free-avatar-370-456322.png" alt="" className='rounded w-8'/>
-        <strong className='text-base'>{title}</strong>
-        <button className='text-xs p-0 px-2 rounded'>View More</button>
+    <div className='flex items-center gap-3'>
+      <img src="https://cdn.iconscout.com/icon/free/png-256/free-avatar-370-456322.png" alt="" className='rounded w-8'/>
+      <strong className='text-base truncate'>{title}</strong>
+      <button className='text-xs p-0 px-2 rounded w-24'>View More</button>
+    </div>
     </>
   )
 }
