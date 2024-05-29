@@ -49,6 +49,11 @@ const FullscreenVideoPlayer: React.FC<{
                     <FaArrowLeft className="ml-1" />
                   </button>
                 )}
+                <div className="float-left text-white">
+                  <button onClick={onClose} className="mb-4">
+                    x
+                  </button>
+                </div>
                 {(queueOrder.length - 1) > currentVideoIndex && (
                   <div className="float-right h-full">
                     <div className="absolute top-1/2 right-2">
