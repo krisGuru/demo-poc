@@ -20,7 +20,7 @@ const SideNav = () => {
                 </Link>
             </li>
             <li>
-                <Link href="#">
+                <Link href="/trending">
                   <MdTrendingUp className='text-2xl' />
                   <span className='menu-label'>Trending</span>
                 </Link>
