@@ -34,7 +34,7 @@ const FullscreenVideoPlayer: React.FC<{
     return () => {
       document.removeEventListener('keydown', handleEsc);
     };
-  }, [onClose, currentVideoIndex]);
+  }, [onClose, currentVideoIndex, queueOrder.length]);
 
   return (
     <div className="fixed inset-0 bg-black z-50 flex" id='fullscreen-overlay'>
