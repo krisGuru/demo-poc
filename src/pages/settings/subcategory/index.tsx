@@ -43,7 +43,7 @@ const subcategorylist = () => {
                 </div>
             </div>
             <div className='absolute bottom-1 w-full'>
-                <button className='bg-green-500 text-white rounded-md w-full'
+                <button className='bg-green-500 text-white rounded-md w-96'
                 onClick={e=>{window.location.href='/settings/subcategory/add'}}>
                     Add sub category
                 </button>
