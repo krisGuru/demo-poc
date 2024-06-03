@@ -1,61 +1,51 @@
-import SideNav from '@/components/SideNav';
-import '../../app/globals.css';
-import SearchPosts from '@/components/search/SearchPosts';
-import TrendingCarousel from '@/components/TrendingCarousel';
-import SearchProfile from '@/components/search/SearchProfile';
-import { useSearchParams } from 'next/navigation';
+import SearchPosts from '@/components/search/SearchPosts'
+import SearchProfile from '@/components/search/SearchProfile'
+import SideNav from '@/components/SideNav'
+import TrendingCarousel from '@/components/search/TrendingCarousel'
+import { useSearchParams } from 'next/navigation'
+import React, { useState } from 'react'
+import '../../app/globals.css'
 
+const Search = () => {
+    const [showFullList, setShowFullList] = useState(false);
+    const searchParams = useSearchParams();
+    const search = searchParams?.get('search');
+    const searchTerm = searchParams?.get('search-term')
 
-function MyComponent() {
-  const searchParams = useSearchParams();
-  const searchInputFocus = (searchParams?.get('search'));
-  if(searchInputFocus){
-    document.getElementById('type-search')?.focus();
-  }
-  const resultListing = searchParams?.get('result');
-  const term: string = searchParams?.get('term') || '';
+    const showAllResult = () => {
+        setShowFullList(true);
+    }
 
-  const sendToSearch = () => {
-    if(!searchInputFocus)
-      window.location.href = "?search=true"
-  }
+    const navToTypeSearch = () => {
+        if(!search)
+            window.location.href = "/search?search=true"
+    }
 
-  const sendToResult = (term: string) => {
-    if(searchInputFocus)
-      window.location.href = "?result=true&term="+term
-  }
+    const searchResult = (e: any) => {
+        if(e.key === "Enter")
+            window.location.href = `/search?search-term=${e.target.value}`
+    }
 
-  const goBack = () => {
-    window.history.back();
-  }
-
-  return (
-    <>
-    <SideNav/>
-    <div id="video-post-container" className="p-5">
-      <input type="text" placeholder='Type to Search'
-      id='type-search'
-      className='w-full rounded-lg border border-gray-600'
-      onMouseDown={sendToSearch}
-      value={term}
-      onKeyDown={(e)=>{
-        if(e.key === 'Enter'){
-          sendToResult(e.target.value);
-        }
-      }}
-      />
-      {
-        searchInputFocus && <TrendingCarousel />
-      }
-      {
-        resultListing && <SearchProfile/>
-      }
-      {
-        (!searchInputFocus || resultListing) && <SearchPosts/>
-      }
-    </div>
-    </>
-  );
+    return (
+        <>
+            <SideNav />
+            <div id="video-post-container" className="py-5">
+                <input className='w-full bg-gray-200 rounded-lg border border-gray-400'
+                type="text" placeholder='🔍 Search by category / name'
+                onMouseDown={navToTypeSearch} onKeyDown={searchResult}
+                />
+                {
+                    search && <TrendingCarousel /> 
+                }
+                {
+                    searchTerm && <SearchProfile showAllResult={showAllResult} showFullList={showFullList} />
+                }
+                {
+                    (!search && !showFullList) && <SearchPosts />
+                }
+            </div>
+        </>
+    )
 }
 
-export default MyComponent;
+export default Search
