@@ -136,7 +136,7 @@ const VideoPlayer: React.FC = () => {
 
   const [currentVideo, setCurrentVideo] = useState<{
     videoSrc: string;
-    title: string
+    title: string;
     description: string;
     queueOrder: { src: string; title: string; description: string }[];
   }>({
@@ -162,7 +162,7 @@ const VideoPlayer: React.FC = () => {
 
   const openModal = (
       index: number,
-      video: {description: string, title: string, videoSrc: string, queueOrder: {src: string, description: string}[]},
+      video: {description: string, title: string, videoSrc: string, queueOrder: {src: string, title: string, description: string}[]},
       currentVideo: React.RefObject<HTMLVideoElement>
     ) => {
       if ((isMobileDevice || isTabletDevice)) {

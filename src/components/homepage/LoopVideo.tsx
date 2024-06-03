@@ -11,7 +11,7 @@ const LoopVideo:React.FC<{
     data: {
         src: string;
         description: string;
-        queue_order: { src: string; description: string }[];
+        queue_order: { src: string; title: string; description: string }[];
         title: string
     };
     index: number;
@@ -21,7 +21,7 @@ const LoopVideo:React.FC<{
         videoSrc: string;
         title: string;
         description: string;
-        queueOrder: { src: string; description: string }[];
+        queueOrder: { src: string; title: string; description: string }[];
     }, videoRef: React.RefObject<HTMLVideoElement>) => void;
     handlePlayPauseVideo: (videoRef: React.RefObject<HTMLVideoElement>) => () => void;
 }> = ({data, index, openModal, handlePlayPauseVideo}) => {
