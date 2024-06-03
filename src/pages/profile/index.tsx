@@ -4,7 +4,7 @@ import { FaImage, FaVideo } from 'react-icons/fa';
 import Image from 'next/image';
 import Link from 'next/link';
 
-export const profile1 = () => {
+export const Profile = () => {
 
   useEffect(()=>{
     document.querySelector('.profile-core')?.classList.add('profile-minimized')
@@ -130,4 +130,4 @@ export const profile1 = () => {
      </div>
   </>
 }
-export default profile1;
+export default Profile;

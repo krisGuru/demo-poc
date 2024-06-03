@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react'
 import '../app/globals.css'
 import SearchPosts from '@/components/search/SearchPosts'
 
-const trending = () => {
+const Trending = () => {
   const [activeCategory, setActiveCategory] = useState('')
 
   const handleCategoryClick = (category: string) => {
@@ -73,10 +73,10 @@ const trending = () => {
             </div>
           </div>
         )}
-        {activeCategory && <SearchPosts selectedCategory={activeCategory} />}
+        {activeCategory && <SearchPosts />}
       </div>
     </>
   )
 }
 
-export default trending
+export default Trending
