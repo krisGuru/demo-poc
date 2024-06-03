@@ -7,6 +7,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
+import Image from 'next/image';
 
 const CarouselSlider: React.FC<{
   slides: { id: number; image: string; alt: string }[];
@@ -24,7 +25,7 @@ const CarouselSlider: React.FC<{
         {
           slides.map((slide, index) => (
             <SwiperSlide key={slide.id}>
-              <img src={slide.image} className="w-full" alt={slide.alt} />
+              <Image src={slide.image} className="w-full" alt={slide.alt} width={100} height={100} />
             </SwiperSlide>
           ))
         }

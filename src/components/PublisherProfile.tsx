@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import React from 'react'
 
 const PublisherProfile: React.FC<{
@@ -7,7 +8,8 @@ const PublisherProfile: React.FC<{
     <>
     <div className='flex items-center gap-3'
     onClick={e=>{window.location.href='/profile'}}>
-      <img src="https://cdn.iconscout.com/icon/free/png-256/free-avatar-370-456322.png" alt="" className='rounded w-8'/>
+      <Image src="https://cdn.iconscout.com/icon/free/png-256/free-avatar-370-456322.png"
+      alt="" width={100} height={100} className='rounded w-8'/>
       <strong className='text-base truncate'>{title}</strong>
       <button  className='text-xs p-0 px-2 rounded w-24'>View More</button>
     </div>

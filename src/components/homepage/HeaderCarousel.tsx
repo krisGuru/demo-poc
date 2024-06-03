@@ -7,6 +7,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
+import Image from 'next/image';
 
 const HeaderCarousel = () => {
     const images = [
@@ -71,7 +72,7 @@ const HeaderCarousel = () => {
           <SwiperSlide key={index} onClick={() => handleClick(index)}>
             <div className='images-card category-images px-2'>
               <div>
-                <img src={image.src} alt={image.alt} className='w-5' />
+                <Image src={image.src} alt={image.alt} className='w-5' width={100} height={100} />
               </div>
               <div className='text-guide'>
                 <span className='text-sm'>{image.title}</span>
@@ -95,7 +96,7 @@ const HeaderCarousel = () => {
           <SwiperSlide key={index} onClick={() => revertBack(index)}>
               <div className='images-card px-2'>
                 <div>
-                  <img src={image.src} alt={image.alt} />
+                  <Image src={image.src} alt={image.alt} width={100} height={100}/>
                 </div>
                 <div>
                   <span className='text-sm'>{image.title}</span>

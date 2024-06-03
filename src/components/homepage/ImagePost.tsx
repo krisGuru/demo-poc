@@ -3,6 +3,7 @@ import ContactActions from '../ContactActions'
 import PublisherProfile from '../PublisherProfile'
 import ShowDescription from '../ShowDescription'
 import GetQuote from '../GetQuote'
+import Image from 'next/image'
 
 const ImagePost: React.FC<{
     title: string,
@@ -13,7 +14,7 @@ const ImagePost: React.FC<{
         <div className='flex gap-2 items-center'>
             <PublisherProfile title={title} />
         </div>
-        <img src={src} alt="" className='w-full h-full'/>
+        <Image src={src} alt="" className='w-full h-full' width={100} height={100}/>
         <div>
             <GetQuote />
             <ContactActions getQuote={true} />

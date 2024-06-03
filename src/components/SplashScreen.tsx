@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React, { useEffect, useState } from 'react';
 
 const SplashScreen: React.FC = () => {
@@ -30,7 +31,7 @@ const SplashScreen: React.FC = () => {
         <>
             {
                 loading && (<div className="splashScreen">
-                    <img src="https://www.thehomeideas.in/wp-content/uploads/2024/01/thehomeideas.png" alt="" />
+                    <Image src="https://www.thehomeideas.in/wp-content/uploads/2024/01/thehomeideas.png" alt="" />
                     <span className='absolute bottom-5 font-bold text-sm'>The Home Ideas</span>
                 </div>)
             }
