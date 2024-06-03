@@ -134,7 +134,7 @@ button{
 }
 
 .image-carousel .mini img {
-  @apply w-8 h-8 rounded-full inline-block mr-3;
+  @apply w-8 h-8 rounded-full inline-block transition-all duration-1000 ease-in-out;
 }
 
 .image-carousel .mini .text-guide{
@@ -152,3 +152,80 @@ button{
 .splashScreen {
   @apply fixed top-0 left-0 w-full h-full flex justify-center items-center bg-white z-[9999];
 }
+
+.profile-core{
+  @apply text-center;
+  transition: 3s;
+}
+
+.profile-core img{
+  @apply rounded-full m-auto;
+  transition: 3s;
+}
+
+.profile-core h3{
+  @apply font-semibold;
+  transition: 3s;
+}
+
+.profile-large{
+  @apply  mt-32 ;
+}
+
+.profile-large img{
+  @apply  w-60 h-60;
+}
+
+.profile-large h3{
+  @apply  text-2xl mt-10 border;
+}
+
+.profile-large p{
+  @apply mt-6 text-base;
+  transition: 3s;
+}
+
+.profile-minimized{
+  @apply mt-12;
+}
+
+.profile-minimized img{
+  @apply w-28 h-28;
+}
+
+.profile-minimized h3{
+  @apply text-lg mt-5;
+}
+
+.profile-minimized p{
+  @apply mt-0 text-sm p-5 pt-1 border-b-2 border-gray-300;
+}
+
+.profile-header{
+  @apply transition duration-1000
+}
+
+.profile-header>div{
+  @apply block w-full transition duration-1000;
+}
+
+.profile-header.better-fit{
+  @apply flex border-b-2 border-gray-300;
+}
+
+.better-fit .profile-minimized p{
+  @apply border-b-0;
+}
+
+.profile-header.better-fit>div{
+  @apply inline-block w-1/2 transform scale-75 text-left
+}
+
+.profile-header.better-fit>div p{
+  @apply p-0
+}
+
+.profile-header.better-fit>div img{
+  @apply m-0 w-20 h-20;
+}
+
