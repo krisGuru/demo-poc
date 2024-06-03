@@ -27,7 +27,41 @@ const FullvideoPlayer: React.FC = () => {
         description: 'The art of managing sound within the home cinema space , for an enthralling sound experience out of every cinema watching experience.',
     };
 
-    const queueList = [
+    // const queueList = [
+    //     [
+    //         firstVideo, thirdVideo, secondVideo,
+    //     ],
+    //     [
+    //         secondVideo, firstVideo, thirdVideo,
+    //     ],
+    //     [
+    //         thirdVideo, secondVideo, firstVideo,
+    //     ],
+    // ];
+
+    const router = useRouter();
+    const {id } = router.query;
+    console.log(id)
+
+    const [queueOrder , setQueueOrder] = useState<{src: string; description: string}[]>([{
+        src: '',
+        description: '',
+    }]);
+
+    useEffect(() => {
+      const firstVideo = {
+        src: '/video/first-video.mp4',
+        description: 'The art of managing sound within the home cinema space , for an enthralling sound experience out of every cinema watching experience.',
+    };
+    const secondVideo = {
+        src: '/video/second-video.mp4',
+        description: 'Interior Designer Chirag Mehta of Nine Degree design Studio designed For religious yet fun loving family of five.',
+    };
+    const thirdVideo = {
+        src: '/video/third-video.mp4',
+        description: 'The art of managing sound within the home cinema space , for an enthralling sound experience out of every cinema watching experience.',
+    };
+      const queueList = [
         [
             firstVideo, thirdVideo, secondVideo,
         ],
@@ -38,23 +72,14 @@ const FullvideoPlayer: React.FC = () => {
             thirdVideo, secondVideo, firstVideo,
         ],
     ];
-
-    const router = useRouter();
-    const {id } = router.query;
-    console.log(id)
-
-    useEffect(() => {
         if (id) {
             const index = Number(id);
             setQueueOrder(queueList[index]);
         }
     }, [id]);
 
-  const [queueOrder, setQueueOrder] = useState<{ src: string; description: string }[]>([{
-    src: '',
-    description: '',
-  }]);
-  const [currentVideoRef, setCurrentVideoRef] = useState<HTMLVideoElement | null>(null);
+
+  // const [currentVideoRef, setCurrentVideoRef] = useState<HTMLVideoElement | null>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isMuted, setIsMuted] = useState(true);
 
