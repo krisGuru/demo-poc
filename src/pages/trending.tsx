@@ -32,11 +32,6 @@ const trending = () => {
     <>
       <SideNav />
       <div id="video-post-container" className="py-5">
-        {/* <input
-          className='w-full bg-gray-200 rounded-lg border border-gray-400'
-          type="text"
-          placeholder='🔍 Search by category / name'
-        /> */}
         {activeCategory && (
           <div className="flex justify-start">
             <button
