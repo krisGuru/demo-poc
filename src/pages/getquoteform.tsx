@@ -1,9 +1,10 @@
 import React from 'react'
 import '../app/globals.css'
 import Link from 'next/link'
+import Image from 'next/image'
 
 
-const getquoteform = () => {
+const GetQuoteForm = () => {
   return (
     <>
     <div id="video-post-container" className="py-5">
@@ -12,47 +13,43 @@ const getquoteform = () => {
                 &lt; Back
             </Link>
         </span>
-        <div className='text-center mt-10'>
-            <h3 className='font-semibold'>Quotation Form</h3>
+        <div>
+            <Image className='rounded-full m-auto w-20 h-20 mt-5' src={"https://media.designcafe.com/wp-content/uploads/2023/07/05195443/modern-interior-design.jpg"}
+            alt='' width={100} height={100} />
+            <h3 className='text-center font-bold mt-2'>Aristo Coimbatore</h3>
+            <p className='px-5'>Please Share your details below and our product expert will
+             attend your inquiry promptly!</p>
         </div>
         <div className='p-2'>
-            <div className='mt-5 border border-gray-200 p-3'>
-                <div className='mt-3'>
-                    <label htmlFor="" className='text-sm'>Name</label>
+            <div className=' p-3'>
+                <div className=''>
+                    <label htmlFor="" className='text-sm'>Full name</label>
                     <input type="text"
-                    className='w-full p-2 rounded-md border border-gray-400'
+                    className='w-full p-2 rounded-xl border border-gray-400'
                     placeholder='Enter Your name'/>
                 </div>
                 <div className='mt-3'>
                     <label htmlFor="" className='text-sm'>Mobile Number</label>
                     <input type="text" placeholder='Enter your Mobile Number '
-                    className='w-full p-2 rounded-md border border-gray-400'/>
+                    className='w-full p-2 rounded-xl border border-gray-400'/>
                 </div>
                 <div className='mt-3'>
                     <label htmlFor="" className='text-sm'>Email</label>
                     <input type="email" 
-                    className='w-full p-2 rounded-md border border-gray-400'
+                    className='w-full p-2 rounded-xl border border-gray-400'
                     placeholder='Enter your E-mail address'/>
                 </div>
-                <div className='grid grid-cols-2 items-center'>
+                <div>
                     <div className='mt-3 '>
-                        <label htmlFor="" className='text-sm'>Material Name</label>
+                        <label htmlFor="" className='text-sm'>City</label>
                         <input type="text" 
-                        className='w-full p-2 rounded-md border border-gray-400'
-                        placeholder='Enter Material here'/>
-                    </div>
-                    <div className='mt-3 ml-10'>
-                        <label htmlFor="" className='text-sm mr-2'>Quantity:</label>
-                        <select>
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                        </select>
+                        className='w-full p-2 rounded-xl border border-gray-400'
+                        placeholder='Enter your City'/>
                     </div>
                 </div>
+                <p className='mt-3 text-xs opacity-90'>By clicking submit, you agree to send your info to the company who agrees to use it according to their privacy policy. The Home Ideas will also use it subject to our Privacy Policy</p>
                 <div className='p-3 text-center'>
-                    <button className='bg-green-500 text-white rounded-md'>Submit</button>
+                    <button className='bg-green-500  text-white rounded-xl'>Submit</button>
                 </div>
             </div>
         </div>
@@ -61,4 +58,4 @@ const getquoteform = () => {
   )
 }
 
-export default getquoteform
+export default GetQuoteForm
