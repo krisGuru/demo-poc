@@ -21,9 +21,6 @@ button{
   @apply max-w-full max-h-full object-cover;
 }
 
-.fa-phone{
-  @apply rotate-90;
-}
 
 .video-cards{
   @apply bg-black relative;
@@ -229,3 +226,6 @@ button{
   @apply m-0 w-20 h-20;
 }
 
+.image-slider img {
+  @apply inline-block mr-2 mt-5;
+}
