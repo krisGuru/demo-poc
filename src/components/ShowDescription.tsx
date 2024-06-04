@@ -16,7 +16,7 @@ const ShowDescription: React.FC<{description: string}> = ({description}) => {
             isEllipsis ? <>
                 <p>
                     {description.substring(0, 50)}...
-                    <button className='p-0 m-0 border px-2 text-blue-800 font-semibold border-gray-300'
+                    <button className='p-0 m-0 border px-2 text-blue-600 font-semibold border-gray-300'
                         onClick={readMore}>Read More</button>
                 </p>
             </> : <p>{description}</p>
