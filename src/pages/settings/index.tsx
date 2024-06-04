@@ -2,12 +2,16 @@ import SideNav from '@/components/SideNav'
 import React from 'react'
 import { RiLogoutCircleLine } from "react-icons/ri";
 import './../../app/globals.css';
+import Head from 'next/head'
 import Link from 'next/link';
 
 const index = () => {
   return (
     <>
     <SideNav/>
+    <Head>
+         <title>Settings</title>
+    </Head>
     <div id="video-post-container" className="py-5">
         <div className='flex items-center gap-5 p-3'
         style={{borderBottom: '1px solid #ccc'}}>

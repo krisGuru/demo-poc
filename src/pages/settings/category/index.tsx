@@ -2,6 +2,7 @@ import React from 'react'
 import '../../../app/globals.css'
 import SideNav from '@/components/SideNav'
 import Link from 'next/link'
+import Head from 'next/head'
 
 const categorylist = () => {
     const categoryData=[
@@ -16,6 +17,9 @@ const categorylist = () => {
         <div className='hidden'>
             <SideNav />
         </div>
+        <Head>
+            <title>Category List</title>
+        </Head>
         <div id="video-post-container" className="py-5">
             <span className='absolute font-semibold text-base pl-2 opacity-50'>
                 <Link href={'/settings'}>

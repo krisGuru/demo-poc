@@ -2,6 +2,7 @@ import SideNav from '@/components/SideNav'
 import React, { useState, useEffect } from 'react'
 import '../app/globals.css'
 import SearchPosts from '@/components/search/SearchPosts'
+import Head from 'next/head'
 
 const Trending = () => {
   const [activeCategory, setActiveCategory] = useState('')
@@ -31,6 +32,9 @@ const Trending = () => {
   return (
     <>
       <SideNav />
+      <Head>
+         <title>Trending</title>
+      </Head>
       <div id="video-post-container" className="py-5">
         {activeCategory && (
           <div className="flex justify-start">

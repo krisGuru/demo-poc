@@ -5,6 +5,7 @@ import TrendingCarousel from '@/components/search/TrendingCarousel'
 import { useSearchParams } from 'next/navigation'
 import React, { useState } from 'react'
 import '../app/globals.css'
+import Head from 'next/head'
 
 const Search = () => {
     const [showFullList, setShowFullList] = useState(false);
@@ -29,6 +30,9 @@ const Search = () => {
     return (
         <>
             <SideNav />
+            <Head>
+                <title>Search</title>
+            </Head>
             <div id="video-post-container" className="py-5">
                 <input className='w-full bg-gray-200 rounded-lg border border-gray-400'
                 type="text" placeholder='🔍 Search by category / name'

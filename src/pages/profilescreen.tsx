@@ -5,13 +5,15 @@ import Link from 'next/link'
 import Image from 'next/image'
 import SearchPosts from '@/components/search/SearchPosts'
 import { GrCamera, GrGrid } from "react-icons/gr";
-
-
+import Head from 'next/head'
 
 const ProfileScreen = () => {
   return (
     <>
     <SideNav/>
+    <Head>
+        <title>Profile</title>
+    </Head>
     <div id="video-post-container" className="py-5">
     <span className='absolute font-semibold text-base pl-2 opacity-50'>
           <Link href={'/'}>

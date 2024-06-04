@@ -1,6 +1,7 @@
 import React from 'react'
 import '../app/globals.css'
 import SideNav from '@/components/SideNav'
+import Head from 'next/head'
 
 const addsubcategory = () => {
   return (
@@ -8,6 +9,9 @@ const addsubcategory = () => {
         <div className='hidden'>
             <SideNav />
         </div>
+        <Head>
+            <title>Add a sub category</title>
+        </Head>
         <div id="video-post-container" className="py-5">
             <span className='absolute font-semibold text-base pl-2 opacity-50'>&lt; Back</span>
             <div className='text-center'>

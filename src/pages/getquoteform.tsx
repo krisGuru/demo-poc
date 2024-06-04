@@ -2,7 +2,7 @@ import React from 'react'
 import '../app/globals.css'
 import Link from 'next/link'
 import Image from 'next/image'
-
+import Head from 'next/head'
 
 const GetQuoteForm = () => {
   return (
@@ -13,6 +13,9 @@ const GetQuoteForm = () => {
                 &lt; Back
             </Link>
         </span>
+        <Head>
+            <title> Quotation </title>
+        </Head>
         <div>
             <Image className='rounded-full m-auto w-20 h-20 mt-5' src={"https://media.designcafe.com/wp-content/uploads/2023/07/05195443/modern-interior-design.jpg"}
             alt='' width={100} height={100} />
