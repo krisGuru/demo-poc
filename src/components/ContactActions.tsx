@@ -7,10 +7,10 @@ const ContactActions: React.FC<{
   getQuote=false
 }) => {
   const telephoneOpen = () => {
-    window.open("tel:+919843044456", "_blank")
+    window.open("tel:+919600991871", "_blank")
   }
   const whatsappOpen = () => {
-    const phoneNumber = "+919843044456";
+    const phoneNumber = "+919600991871";
     const whatsappLink = `https://wa.me/${phoneNumber}`;
     window.open(whatsappLink, "_blank");
   }
