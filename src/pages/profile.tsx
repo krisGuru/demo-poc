@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import '../../app/globals.css'
+import '../app/globals.css'
 import { FaImage, FaVideo } from 'react-icons/fa';
 import Image from 'next/image';
 import Link from 'next/link';

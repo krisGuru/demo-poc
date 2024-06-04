@@ -4,7 +4,7 @@ import SideNav from '@/components/SideNav'
 import TrendingCarousel from '@/components/search/TrendingCarousel'
 import { useSearchParams } from 'next/navigation'
 import React, { useState } from 'react'
-import '../../app/globals.css'
+import '../app/globals.css'
 
 const Search = () => {
     const [showFullList, setShowFullList] = useState(false);
