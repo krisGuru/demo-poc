@@ -47,28 +47,28 @@ const Trending = () => {
         )}
         {!activeCategory && (
           <div className='grid grid-cols-2 gap-2 py-5'>
-            <div className=' py-20 bg-gray-400 rounded-3xl'>
+            <div className=' py-20 trending-img rounded-xl'>
               <h1
                 className='text-center text-white font-bold text-xl cursor-pointer'
                 onClick={() => handleCategoryClick('new-arrival')}>
                 New Arrival
               </h1>
             </div>
-            <div className=' py-20 bg-blue-400 rounded-3xl '>
+            <div className=' py-20 trending-img-I rounded-xl '>
               <h1
                 className='text-center text-white font-bold text-xl cursor-pointer'
                 onClick={() => handleCategoryClick('most-purchased')}>
                 Most Purchased
               </h1>
             </div>
-            <div className=' py-20 bg-red-400 rounded-3xl'>
+            <div className=' py-20 trending-img-I rounded-xl'>
               <h1
                 className='text-center text-white font-bold text-xl cursor-pointer'
                 onClick={() => handleCategoryClick('kitchen')}>
                 Kitchen
               </h1>
             </div>
-            <div className=' py-20 bg-violet-400 rounded-3xl'>
+            <div className=' py-20 trending-img rounded-xl'>
               <h1
                 className='text-center text-white font-bold text-xl cursor-pointer'
                 onClick={() => handleCategoryClick('bedroom')}>

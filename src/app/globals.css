@@ -9,6 +9,10 @@ button{
   border-radius: 10px;
 }
 
+body{
+  @apply bg-[#fdfdfd]
+}
+
 #video-post-container{
   @apply w-[400px] mx-auto
 }
@@ -49,7 +53,7 @@ button{
 }
 
 .video-description {
-  @apply p-[10px] mt-[5px] w-full;
+  @apply p-[10px]  w-full;
 }
 
 @media (max-width: 767px) {
@@ -74,7 +78,7 @@ button{
     @apply hidden;
   }
   #contact-actions{
-    @apply flex gap-3 mt-4 ml-4;
+    @apply flex gap-2 ;
   }
   .full-screen #contact-actions{
     @apply flex flex-col;
@@ -89,7 +93,7 @@ button{
     @apply ml-6;
   }
   #contact-actions{
-    @apply flex gap-4 mt-4 ml-4;
+    @apply flex gap-3 ;
   }
   @media (max-width: 900px){
     #side-menu {
@@ -99,7 +103,7 @@ button{
       @apply ml-8; 
     }
     #contact-actions {
-      @apply flex gap-4 mt-4 ml-8; 
+      @apply flex gap-3 ; 
     }
   }
 }
@@ -123,7 +127,7 @@ button{
 }
 
 .images-card{
-  @apply inline-block mr-3 pb-5;
+  @apply inline-block  pb-5;
 }
 
 .image-carousel img {
@@ -229,3 +233,22 @@ button{
 .image-slider img {
   @apply inline-block mr-2 mt-5;
 }
+
+.swiper-scrollbar-drag {
+  background: var(--swiper-scrollbar-drag-bg-color, rgba(0, 0, 0, 0.1)) !important;
+}
+
+.get-quote{
+  /* background: linear-gradient(112.1deg, rgb(32, 38, 57) 11.4%, rgb(63, 76, 119) 70.2%); */
+   /* background: radial-gradient(292deg, rgb(19, 55, 115) 11.4%, rgb(12, 51, 76) 70.2%) */
+  background: radial-gradient(780px at 96.8% 7.3%, rgb(19, 55, 115) 2.2%, rgb(32, 7, 80) 20.2%, rgb(27, 88, 111) 58.6%, rgb(115, 88, 44) 75%, rgb(99, 19, 90) 89.6%, rgb(12, 51, 76) 96.1%);
+}
+
+.trending-img{
+  background: radial-gradient(circle at 1.8% 4.8%, rgb(17, 23, 58) 0%, rgb(58, 85, 148) 90%);
+}
+
+.trending-img-I{
+  background: linear-gradient(98.61deg, rgb(60, 55, 106) 8.5%, rgb(23, 20, 69) 82.4%);
+}
+
