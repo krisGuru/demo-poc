@@ -33,9 +33,10 @@ const index = () => {
         </div>
         <div className='flex items-center gap-5 p-3 mt-10'>
             <h6 className='text-base font-semibold w-full'>
-                <span className='float-right'><RiLogoutCircleLine /></span>
+                
                 Logout
             </h6>
+            <span className=''><RiLogoutCircleLine /></span>
         </div>
     </div>
     </>

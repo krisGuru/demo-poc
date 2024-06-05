@@ -56,7 +56,7 @@ const LoopVideo:React.FC<{
         };
   return (
     <div>
-          <div className="my-7" key={index}>
+          <div className="my-0" key={index}>
             <div className="video-cards relative">
               <div className='absolute' style={{zIndex: 1000}}>
                 <div className='relative flex gap-2 items-center text-white m-3 text-shadow'>
@@ -94,13 +94,13 @@ const LoopVideo:React.FC<{
             </div>
             <div>
               <GetQuote />
-              <ContactActions getQuote={true} />
             </div>
             <div className="video-description text-black">
+            <ContactActions getQuote={true} />
               <p className='text-base '><strong>{data.title}</strong></p>
               <ShowDescription description={data.description} />
+            <p className='relative mt-1 text-xs opacity-80'>2 hours ago</p>
             </div>
-            <p className='relative mx-2 text-base opacity-80'>2 hours ago</p>
           </div>
     </div>
   )

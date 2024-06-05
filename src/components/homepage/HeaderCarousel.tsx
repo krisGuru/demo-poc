@@ -12,7 +12,6 @@ import Image from 'next/image';
 const HeaderCarousel = () => {
     const images = [
         { src: 'https://media.designcafe.com/wp-content/uploads/2022/07/29185240/industrial-rustic-living-room-in-earthy-tones.jpg', alt: 'Image 1', title: 'Interior Design' },
-        { src: 'https://media.designcafe.com/wp-content/uploads/2023/07/05195443/modern-interior-design.jpg', alt: 'Image 2', title: 'CNC Work' },
         { src: 'https://foyr.com/learn/wp-content/uploads/2021/10/rules-for-interior-designers-1024x656.png', alt: 'Image 3', title: 'Ceiling works' },
         { src: 'https://media.designcafe.com/wp-content/uploads/2022/07/29185240/industrial-rustic-living-room-in-earthy-tones.jpg', alt: 'Image 4', title: 'Floor works' },
         { src: 'https://media.designcafe.com/wp-content/uploads/2022/07/29185240/industrial-rustic-living-room-in-earthy-tones.jpg', alt: 'Image 1', title: 'Partition works' },
@@ -70,12 +69,12 @@ const HeaderCarousel = () => {
       >
         {images.map((image, index) => (
           <SwiperSlide key={index} onClick={() => handleClick(index)}>
-            <div className='images-card category-images px-2'>
-              <div>
-                <Image src={image.src} alt={image.alt} className='w-5' width={100} height={100} />
+            <div className='images-card category-images '>
+              <div className='flex justify-center'>
+                <Image src={image.src} alt={image.alt} className='w-5 border-2  border-gray-400' width={100} height={100} />
               </div>
               <div className='text-guide'>
-                <span className='text-sm'>{image.title}</span>
+                <span className='text-xs'>{image.title}</span>
               </div>
             </div>
           </SwiperSlide>

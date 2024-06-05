@@ -15,15 +15,16 @@ const CarouselComponent: React.FC<{
     <PublisherProfile title='Home'/>
   </div>
   <div>
+  
     <CarouselSlider slides={queue_images}/>
-    <div>
-      <GetQuote />
-      <ContactActions getQuote={true} />
-    </div>
+    <GetQuote />
+    <div className='p-[10px]'>
+    <ContactActions getQuote={true} />
     <p className='mt-2 text-base '><strong>{title}</strong></p>
     <ShowDescription description={description} />
+    <p className='relative text-xs mt-1 opacity-80'>2 hours ago</p>
+    </div>
   </div>
-  <p className='relative text-base opacity-80'>2 hours ago</p>
 </div>
 }
 

@@ -41,8 +41,9 @@ const CarouselSlider: React.FC<{
         ))}
       </Swiper>
       <div>
-        <div className="absolute text-xs top-4 right-4 bg-gray-800 bg-opacity-75 text-white z-[1001] px-1 py-1 rounded-full">
-          <span className="font-bold">{currentSlide + 1}</span> / {slides.length}
+        <div className="absolute text-[10px] flex top-4 right-4 bg-gray-800 bg-opacity-75
+         text-white z-[1001] px-[5px] pt-[3px] pb-[2px] rounded-full align-baseline">
+          <span className=" font-xs "> {currentSlide + 1} </span> / <span>{slides.length}</span>
         </div>
         <div>
             <div className="absolute top-1/2 left-1 transform z-[1001] -translate-y-1/2">
