@@ -1,5 +1,8 @@
 import React from 'react'
-import { FaPhone, FaWhatsapp, FaShareSquare } from 'react-icons/fa'
+import { BsSend } from "react-icons/bs";
+import { FaWhatsapp } from 'react-icons/fa';
+import { PiWhatsappLogo, PiPhone } from "react-icons/pi";
+
 
 const ContactActions: React.FC<{
   getQuote: boolean
@@ -19,10 +22,10 @@ const ContactActions: React.FC<{
   }
   return (
     <>
-      <div id='contact-actions' className='float-right'>
-        <FaPhone className='text-xl fa-phone' onClick={telephoneOpen} />
-        <FaWhatsapp className='text-xl' onClick={whatsappOpen}/>
-        <FaShareSquare className='text-xl' onClick={shareOpen} />
+      <div id='contact-actions' className='float-right align-baseline'>
+        <PiPhone className='text-xl' onClick={telephoneOpen} />
+        <FaWhatsapp className='text-xl opacity-90' onClick={whatsappOpen}/>
+        <BsSend className=' text-lg ' onClick={shareOpen} />
       </div>
     </>
   )
