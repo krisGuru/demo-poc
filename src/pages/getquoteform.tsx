@@ -3,57 +3,63 @@ import '../app/globals.css'
 import Link from 'next/link'
 import Image from 'next/image'
 import Head from 'next/head'
+import { IoChevronBackCircleOutline } from "react-icons/io5";
+
+
 
 const GetQuoteForm = () => {
   return (
     <>
-    <div id="video-post-container" className="py-5">
-        <span className='absolute font-semibold text-base pl-2 opacity-50'>
+    <div id="video-post-container" className="py-5 w-full">
+        <span className='get-quote-back'>
             <Link href={'/'}>
-                &lt; Back
+                <div className='flex items-center'>
+                    <IoChevronBackCircleOutline className='mt-[1px]'/> 
+                    <span>Back</span>
+                </div>
             </Link>
         </span>
         <Head>
             <title> Quotation </title>
         </Head>
         <div>
-            <Image className='rounded-full m-auto w-20 h-20 mt-5' src={"https://media.designcafe.com/wp-content/uploads/2023/07/05195443/modern-interior-design.jpg"}
+            <Image className='get-quote-img' src={"https://media.designcafe.com/wp-content/uploads/2023/07/05195443/modern-interior-design.jpg"}
             alt='' width={100} height={100} />
             <h3 className='text-center font-bold mt-2'>Aristo Coimbatore</h3>
             <p className='px-5'>Please Share your details below and our product expert will
              attend your inquiry promptly!</p>
         </div>
         <div className='p-2'>
-            <div className=' p-3'>
+            <div className='p-3'>
                 <div className=''>
-                    <label htmlFor="" className='text-sm font-semibold'>Full name</label>
-                    <input type="text"
-                    className='w-full p-2 rounded-xl border border-gray-400'
-                    placeholder='Enter Your name'/>
+                    <label htmlFor="" className='get-quote-title'>Full name</label>
+                    <input type="text" placeholder='Enter Your name'
+                    className='gq-form'
+                    />
                 </div>
                 <div className='mt-3'>
-                    <label htmlFor="" className='text-sm font-semibold'>Mobile Number</label>
+                    <label htmlFor="" className='get-quote-title'>Mobile Number</label>
                     <input type="text" placeholder='Enter your Mobile Number '
-                    className='w-full p-2 rounded-xl border border-gray-400'/>
+                    className='gq-form'/>
                 </div>
                 <div className='mt-3'>
-                    <label htmlFor="" className='text-sm font-semibold'>Email</label>
+                    <label htmlFor="" className='get-quote-title'>Email</label>
                     <input type="email" 
-                    className='w-full p-2 rounded-xl border border-gray-400'
+                    className='gq-form'
                     placeholder='Enter your E-mail address'/>
                 </div>
                 <div>
                     <div className='mt-3 '>
-                        <label htmlFor="" className='text-sm font-semibold'>City</label>
+                        <label htmlFor="" className='get-quote-title'>City</label>
                         <input type="text" 
-                        className='w-full p-2 rounded-xl border border-gray-400'
+                        className='gq-form'
                         placeholder='Enter your City'/>
                     </div>
                 </div>
                 <p className='mt-3 text-xs opacity-90'>By clicking submit, you agree to send your
                  info to the company who agrees to use it according to their privacy policy.
                   The Home Ideas will also use it subject to our Privacy Policy</p>
-                <div className='p-3 text-center'>
+                <div className='save-button'>
                     <button className='bg-green-500  text-white rounded-xl'>Submit</button>
                 </div>
             </div>
