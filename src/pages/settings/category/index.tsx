@@ -3,6 +3,7 @@ import '../../../app/globals.css'
 import SideNav from '@/components/SideNav'
 import Link from 'next/link'
 import Head from 'next/head'
+import { IoChevronBackCircleOutline } from 'react-icons/io5'
 
 const categorylist = () => {
     const categoryData=[
@@ -23,7 +24,10 @@ const categorylist = () => {
         <div id="video-post-container" className="py-5">
             <span className='absolute font-semibold text-base pl-2 opacity-50'>
                 <Link href={'/settings'}>
-                    &lt; Back
+                    <div className='flex items-center border-4'>
+                        <IoChevronBackCircleOutline className='mt-[1px]'/> 
+                        <span>Back</span>
+                    </div>
                 </Link>
             </span>
             <div className='text-center'>
