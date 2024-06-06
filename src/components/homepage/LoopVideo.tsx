@@ -95,7 +95,7 @@ const LoopVideo:React.FC<{
             <div>
               <GetQuote />
             </div>
-            <div className="video-description text-black">
+            <div className="video-description text-black mb-5">
             <ContactActions getQuote={true} />
               <p className='text-base '><strong>{data.title}</strong></p>
               <ShowDescription description={data.description} />

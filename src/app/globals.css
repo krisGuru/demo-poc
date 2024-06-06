@@ -10,7 +10,7 @@ button{
 }
 
 body{
-  @apply bg-[#fdfdfd]
+  @apply bg-[#fdfdfd] ;
 }
 
 #video-post-container{
@@ -62,7 +62,7 @@ body{
   }
 
   .w-4\/5 {
-    @apply w-full;
+    @apply w-[100%];
   }
 
   .w-1\/5 {
@@ -105,11 +105,12 @@ body{
     #contact-actions {
       @apply flex gap-3 ; 
     }
+
   }
 }
 
 #side-menu{
-  @apply fixed bg-white text-black font-normal;
+  @apply fixed bg-[#fdfdfd] text-black font-normal;
   z-index: 1001;
 }
 
@@ -122,7 +123,7 @@ body{
 }
 
 .image-carousel {
-  @apply w-full  whitespace-nowrap snap-x snap-mandatory snap-start;
+  @apply w-full whitespace-nowrap snap-x snap-mandatory snap-start;
   padding: 20px 5px;
 }
 
@@ -252,3 +253,59 @@ body{
   background: linear-gradient(98.61deg, rgb(60, 55, 106) 8.5%, rgb(23, 20, 69) 82.4%);
 }
 
+
+.carousel-container {
+  position: relative;
+}
+
+.image-carousel.mini {
+  filter: blur(3px);
+}
+
+.sub-carousel-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  z-index: 999;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.sub-carousel-overlay.show {
+  opacity: 1;
+}
+
+.sub-carousel {
+  @apply w-full ;
+  max-width: 600px;
+  margin-bottom: 20px;
+}
+
+.images-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.get-quote-back{
+  @apply absolute font-semibold text-base pl-2 opacity-65;
+}
+
+.get-quote-img{
+ @apply rounded-full m-auto w-20 h-20 mt-5
+}
+
+.gq-form{
+  @apply w-full p-2 rounded-xl border border-gray-400
+}
+
+.get-quote-title{
+  @apply text-sm font-semibold
+}
+
+.save-button{
+  @apply p-3 text-center
+}
