@@ -15,14 +15,16 @@ const ProfileScreen = () => {
         <title>Profile</title>
     </Head>
     <div id="video-post-container" className="py-5">
-    <span className='absolute font-semibold text-base pl-2 opacity-50'>
+    <span className='settings-profile'>
           <Link href={'/'}>
               &lt; Back
           </Link>
       </span>
-      <div className=' mt-10 border-b-2 border-solid border-gray-400 pb-4'>
+      <div className=' profile-screen'>
           <div className='grid grid-cols-4 text-center items-center'>
-          <Image className='w-20 h-20 rounded-full' src={"https://media.designcafe.com/wp-content/uploads/2023/07/05195443/modern-interior-design.jpg"} alt='' width={100} height={100} />
+          <Image className='profilee-screen'
+           src={"https://media.designcafe.com/wp-content/uploads/2023/07/05195443/modern-interior-design.jpg"} 
+           alt='' width={100} height={100} />
           <div><h2 className=' font-bold'>50</h2>Posts</div>
           <div><h2 className=' font-bold'>20</h2>Videos</div>          
           <div><h2 className=' font-bold'>30</h2>Images</div>
@@ -30,7 +32,7 @@ const ProfileScreen = () => {
             <h3 className='font-semibold'>Aristo Coimbatore</h3>
             <p className='w-full'>The art of managing sound within the home cinema space,
              for an enthralling sound cinema watching experience</p>
-             <div className='flex items-center mt-5'>
+             <div className='profile-icons'>
              <GrGrid className='w-1/2'/> <GrCamera className='w-1/2'/>
              </div>
       </div>   

@@ -60,7 +60,7 @@ const GetQuoteForm = () => {
                  info to the company who agrees to use it according to their privacy policy.
                   The Home Ideas will also use it subject to our Privacy Policy</p>
                 <div className='save-button'>
-                    <button className='bg-green-500  text-white rounded-xl'>Submit</button>
+                    <button className='save-btn'>Submit</button>
                 </div>
             </div>
         </div>

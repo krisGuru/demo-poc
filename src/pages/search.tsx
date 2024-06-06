@@ -34,7 +34,7 @@ const Search = () => {
                 <title>Search</title>
             </Head>
             <div id="video-post-container" className="py-5">
-                <input className='w-full bg-gray-200 rounded-lg border border-gray-400'
+                <input className='search-input'
                 type="text" placeholder='  ⌕ Search by category / name'
                 onMouseDown={navToTypeSearch} onKeyDown={searchResult}
                 />

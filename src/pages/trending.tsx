@@ -39,38 +39,38 @@ const Trending = () => {
         {activeCategory && (
           <div className="flex justify-start">
             <button
-              className="bg-gray-300 text-white  py-1 px-2 rounded"
+              className="trending-btn"
               onClick={handleBackClick}>
               &lt;
             </button>
           </div>
         )}
         {!activeCategory && (
-          <div className='grid grid-cols-2 gap-2 py-5'>
-            <div className=' py-20 trending-img rounded-xl'>
+          <div className='trending-grid'>
+            <div className=' py-20 trending-img '>
               <h1
-                className='text-center text-white font-bold text-xl cursor-pointer'
+                className='trending-grid-col'
                 onClick={() => handleCategoryClick('new-arrival')}>
                 New Arrival
               </h1>
             </div>
-            <div className=' py-20 trending-img-I rounded-xl '>
+            <div className=' py-20 trending-img-I  '>
               <h1
-                className='text-center text-white font-bold text-xl cursor-pointer'
+                className='trending-grid-col'
                 onClick={() => handleCategoryClick('most-purchased')}>
                 Most Purchased
               </h1>
             </div>
-            <div className=' py-20 trending-img-I rounded-xl'>
+            <div className=' py-20 trending-img-I '>
               <h1
-                className='text-center text-white font-bold text-xl cursor-pointer'
+                className='trending-grid-col'
                 onClick={() => handleCategoryClick('kitchen')}>
                 Kitchen
               </h1>
             </div>
-            <div className=' py-20 trending-img rounded-xl'>
+            <div className=' py-20 trending-img '>
               <h1
-                className='text-center text-white font-bold text-xl cursor-pointer'
+                className='trending-grid-col'
                 onClick={() => handleCategoryClick('bedroom')}>
                 Bedroom
               </h1>

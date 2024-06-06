@@ -25,9 +25,9 @@ const subcategorylist = () => {
             <title>Sub Category List</title>
         </Head>
         <div id="video-post-container" className="py-5">
-            <span className='absolute font-semibold text-base pl-2 opacity-50'>
+            <span className='settings-profile'>
                 <Link href={'/settings/category'}>
-                    <div className='flex items-center border-4'>
+                    <div className='settings-back'>
                         <IoChevronBackCircleOutline className='mt-[1px]'/> 
                         <span>Back</span>
                     </div>
@@ -37,10 +37,10 @@ const subcategorylist = () => {
                 <h4 className='font-semibold'>Sub Category List</h4>
             </div>
             <div className='p-2'>
-                <div className='mt-5 border border-gray-200 p-3'>
+                <div className='settings-page'>
                     <input type="text" name="" id=""
                     placeholder='Search Sub Category By Name'
-                    className='w-full border border-gray-400 rounded' />
+                    className='category-ph' />
                     {
                         subcategoryData.map((data,index)=>(
                             <div className='mt-3' key={index}>
@@ -50,8 +50,8 @@ const subcategorylist = () => {
                     }
                 </div>
             </div>
-            <div className='absolute bottom-1 w-full'>
-                <button className='bg-green-500 text-white rounded-md w-96'
+            <div className='category-btn'>
+                <button className='save-btn w-96'
                 onClick={e=>{window.location.href='/settings/subcategory/add'}}>
                     Add sub category
                 </button>

@@ -25,6 +25,25 @@ body{
   @apply max-w-full max-h-full object-cover;
 }
 
+.video-full{
+  @apply fixed inset-0 bg-black z-50 flex
+}
+
+.mobile-swiper{
+  @apply w-full h-full relative;
+}
+
+.mobile-contact{
+  @apply absolute right-0 p-2 text-shadow bottom-[130px]
+}
+
+.mobile-description{
+  @apply absolute bottom-0 left-0 p-4 text-white text-shadow
+}
+
+.mobile-profile{
+  @apply flex gap-2 items-center
+}
 
 .video-cards{
   @apply bg-black relative;
@@ -246,13 +265,26 @@ body{
 }
 
 .trending-img{
+  @apply rounded-xl;
   background: radial-gradient(circle at 1.8% 4.8%, rgb(17, 23, 58) 0%, rgb(58, 85, 148) 90%);
 }
 
 .trending-img-I{
+  @apply rounded-xl;
   background: linear-gradient(98.61deg, rgb(60, 55, 106) 8.5%, rgb(23, 20, 69) 82.4%);
 }
 
+.trending-grid{
+  @apply grid grid-cols-2 gap-2 py-5
+}
+
+.trending-grid-col{
+  @apply text-center text-white font-bold text-xl cursor-pointer
+}
+
+.trending-btn{
+  @apply bg-gray-300 text-white  py-1 px-2 rounded
+}
 
 .carousel-container {
   position: relative;
@@ -309,3 +341,56 @@ body{
 .save-button{
   @apply p-3 text-center
 }
+
+.save-btn{
+  @apply bg-green-500 text-white rounded-md
+}
+
+.settings-profile{
+  @apply absolute font-semibold text-base pl-2 opacity-50
+}
+
+.settings-back{
+  @apply flex items-center border-4
+}
+
+.settings-page{
+  @apply mt-5 border border-gray-200 p-3
+}
+
+.settings-ph{
+  @apply w-full p-2 rounded-md border border-gray-400
+}
+
+.category-ph{
+  @apply w-full border border-gray-400 rounded
+}
+
+.category-btn{
+  @apply absolute bottom-1 w-full
+}
+
+.settings-pg{
+  @apply flex items-center gap-5 p-3
+}
+
+.settings-title{
+  @apply text-base font-semibold w-full
+}
+
+.profile-screen{
+  @apply mt-10 border-b-2 border-solid border-gray-400 pb-4
+}
+
+.profile-screen img{
+  @apply w-20 h-20 rounded-full
+}
+
+.profile-icons{
+  @apply flex items-center mt-5
+}
+
+.search-input{
+  @apply w-full bg-gray-200 rounded-lg border border-gray-400
+}
+

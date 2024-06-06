@@ -37,7 +37,7 @@ const FullscreenVideoPlayer: React.FC<{
   }, [onClose, currentVideoIndex, queueOrder.length]);
 
   return (
-    <div className="fixed inset-0 bg-black z-50 flex" id='fullscreen-overlay'>
+    <div className="video-full" id='fullscreen-overlay'>
       {queueOrder.length > 0 && (
         <>
           {

@@ -98,12 +98,12 @@ const FullvideoPlayer: React.FC = () => {
   }
 
   return (
-    <div className="fixed inset-0 bg-black z-50 flex">
+    <div className="video-full">
       {queueOrder.length > 0 && (
         <>
           {
             (
-            <div className="w-full h-full relative mobile-fullscreen">
+            <div className="mobile-swiper mobile-fullscreen">
               <Swiper
               direction={'vertical'}
               modules={[Pagination]}
@@ -119,13 +119,13 @@ const FullvideoPlayer: React.FC = () => {
                       ref={videoRef}
                       onTouchStart={handleTouchVideo}
                     />
-                    <div className="absolute right-0 p-2 text-shadow bottom-[130px]">
+                    <div className="mobile-contact">
                       <div className='text-white mt-3 full-screen'>
                       <ContactActions getQuote={false} />
                       </div>
                     </div>
-                    <div className="absolute bottom-0 left-0 p-4 text-white text-shadow">
-                      <div className='flex gap-2 items-center'>
+                    <div className="mobile-description">
+                      <div className='mobile-profile'>
                       <PublisherProfile title={'Builder Profile'} />
                       </div>
                       <ShowDescription description={video.description} />

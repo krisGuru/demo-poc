@@ -13,27 +13,26 @@ const index = () => {
          <title>Settings</title>
     </Head>
     <div id="video-post-container" className="py-5">
-        <div className='flex items-center gap-5 p-3'
+        <div className='settings-pg'
         style={{borderBottom: '1px solid #ccc'}}>
-            <h6 className='text-base font-semibold w-full'>
+            <h6 className='settings-title'>
                 <Link href="/settings/addcompany">
                     <span className='float-right'>&gt;</span>
                     Add a company
                 </Link>
             </h6>
         </div>
-        <div className='flex items-center gap-5 p-3 mt-2'
+        <div className='settings-pg mt-2'
         style={{borderBottom: '1px solid #ccc'}}>
-            <h6 className='text-base font-semibold w-full'>
+            <h6 className='settings-title'>
                 <Link href="/settings/category">
                     <span className='float-right'>&gt;</span>
                     Category Manager
                 </Link>
             </h6>
         </div>
-        <div className='flex items-center gap-5 p-3 mt-10'>
-            <h6 className='text-base font-semibold w-full'>
-                
+        <div className='settings-pg mt-10'>
+            <h6 className='settings-title'>   
                 Logout
             </h6>
             <span className=''><RiLogoutCircleLine /></span>

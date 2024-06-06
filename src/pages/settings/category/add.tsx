@@ -15,9 +15,9 @@ const addcategory = () => {
             <title>Add Category</title>
         </Head>
         <div id="video-post-container" className="py-5">
-            <span className='absolute font-semibold text-base pl-2 opacity-50'>
+            <span className='settings-profile'>
                 <Link href={'/settings/category'}>
-                <div className='flex items-center border-4'>
+                <div className='settings-back'>
                     <IoChevronBackCircleOutline className='mt-[1px]'/> 
                     <span>Back</span>
                 </div>
@@ -27,26 +27,26 @@ const addcategory = () => {
                 <h4 className='font-semibold'>Add Category</h4>
             </div>
             <div className='p-2'>
-                <div className='mt-5 border border-gray-200 p-3'>
+                <div className='settings-page'>
                     <div className='mt-3'>
                         <label htmlFor="" className='text-sm'>Category name</label>
                         <input type="text"
-                        className='w-full p-2 rounded-md border border-gray-400'
+                        className='settings-ph'
                         placeholder='Enter a category name'/>
                     </div>
                     <div className='mt-3'>
                         <label htmlFor="" className='text-sm'>Category logo</label>
                         <input type="file"
-                        className='w-full p-2 rounded-md border border-gray-400'/>
+                        className='settings-ph'/>
                     </div>
                     <div className='mt-3'>
                         <label htmlFor="" className='text-sm'>Category description</label>
                         <textarea name="" id="" cols={30} rows={10}
-                        className='w-full p-2 rounded-md border border-gray-400'
+                        className='settings-ph'
                         placeholder='Enter a category description'></textarea>
                     </div>
                     <div className='save-button'>
-                        <button className='bg-green-500 text-white rounded-md'>Save</button>
+                        <button className='save-btn'>Save</button>
                     </div>
                 </div>
             </div>
