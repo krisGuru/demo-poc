@@ -31,7 +31,7 @@ const SplashScreen: React.FC = () => {
         <>
             {
                 loading && (<div className="splashScreen">
-                    <Image src="https://www.thehomeideas.in/wp-content/uploads/2024/01/thehomeideas.png" alt="" />
+                    <Image src="https://www.thehomeideas.in/wp-content/uploads/2024/01/thehomeideas.png" alt="" width={100} height={100} />
                     <span className='absolute bottom-5 font-bold text-sm'>The Home Ideas</span>
                 </div>)
             }
