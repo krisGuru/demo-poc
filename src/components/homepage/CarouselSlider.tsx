@@ -41,21 +41,20 @@ const CarouselSlider: React.FC<{
         ))}
       </Swiper>
       <div>
-        <div className="absolute text-[10px] flex top-4 right-4 bg-gray-800 bg-opacity-75
-         text-white z-[1001] px-[5px] pt-[3px] pb-[2px] rounded-full align-baseline">
-          <span className=" font-xs "> {currentSlide + 1} </span> / <span>{slides.length}</span>
+        <div className="post-count-slider">
+          <span className="font-xs"> {currentSlide + 1} </span> / <span>{slides.length}</span>
         </div>
         <div>
-            <div className="absolute top-1/2 left-1 transform z-[1001] -translate-y-1/2">
+            <div className="slider-arrow-left">
               <button
-                className="bg-gray-800 bg-opacity-50 text-white outline-none border-none px-2 py-1 rounded-full"
+                className="slider-btn"
                 onClick={handlePrevSlide}>
                 &lt;
               </button>
             </div>
-            <div className="absolute top-1/2 right-1 transform z-[1001] -translate-y-1/2">
+            <div className="slider-arrow-right">
               <button
-                className="bg-gray-800 bg-opacity-50 text-white outline-none border-none px-2 py-1 rounded-full"
+                className="slider-btn"
                 onClick={handleNextSlide}>
                 &gt;
               </button>

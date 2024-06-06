@@ -259,6 +259,7 @@ body{
 }
 
 .get-quote{
+  @apply text-white w-full p-2;
   /* background: linear-gradient(112.1deg, rgb(32, 38, 57) 11.4%, rgb(63, 76, 119) 70.2%); */
    /* background: radial-gradient(292deg, rgb(19, 55, 115) 11.4%, rgb(12, 51, 76) 70.2%) */
   background: radial-gradient(780px at 96.8% 7.3%, rgb(19, 55, 115) 2.2%, rgb(32, 7, 80) 20.2%, rgb(27, 88, 111) 58.6%, rgb(115, 88, 44) 75%, rgb(99, 19, 90) 89.6%, rgb(12, 51, 76) 96.1%);
@@ -394,3 +395,92 @@ body{
   @apply w-full bg-gray-200 rounded-lg border border-gray-400
 }
 
+.carousal-header{
+  @apply flex gap-2 mt-5 items-center
+}
+
+.carousal-title{
+  @apply mt-2 text-base 
+}
+
+.post-time{
+  @apply relative text-xs mt-1 opacity-80
+}
+
+.post-count-slider{
+  @apply absolute text-[10px] flex top-4 right-4 bg-gray-800 bg-opacity-75
+  text-white z-[1001] px-[5px] pt-[3px] pb-[2px] rounded-full align-baseline
+}
+
+.slider-arrow-left{
+  @apply absolute top-1/2 left-1 transform z-[1001] -translate-y-1/2
+}
+
+.slider-btn{
+  @apply bg-gray-800 bg-opacity-50 text-white outline-none border-none px-2 py-1 rounded-full
+}
+
+.slider-arrow-right{
+  @apply absolute top-1/2 right-1 transform z-[1001] -translate-y-1/2
+}
+
+.full-screen-btn{
+  @apply mt-5 text-white absolute top-1/2 left-2
+}
+
+.fullscreen-des{
+  @apply w-1/4 p-4 bg-gray-800 text-white
+}
+
+.full-hw{
+  @apply w-full h-full
+}
+
+.header-mini-img{
+  @apply rounded-full w-12 h-12
+}
+
+.header-title{
+  @apply text-xs flex
+}
+
+.header-img{
+  @apply w-5 border-2 border-gray-400 rounded-full
+}
+
+.header-carousal{
+  @apply flex justify-center
+}
+
+.loop-profile{
+  @apply relative flex gap-2 items-center text-white m-3 text-shadow
+}
+
+.loop-video{
+  @apply relative w-full flex justify-center align-middle min-h-[600]
+}
+
+.loop-btn{
+  @apply absolute bottom-2 right-2
+}
+
+.unmute-btn{
+  @apply text-white bg-transparent border-none outline-none
+}
+
+.view-more{
+  @apply flex items-center gap-3
+}
+
+.view-more-title{
+  @apply text-base truncate
+}
+
+.view-more-btn{
+  @apply text-xs p-0 px-2 rounded w-24 shadow-md bg-gray-800 bg-opacity-10 
+}
+
+.decription-btn{
+  @apply p-0 m-0 border rounded-lg px-2 text-blue-600
+  shadow-md bg-white bg-opacity-10 text-xs border-gray-300
+}

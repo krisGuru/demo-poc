@@ -45,7 +45,7 @@ const FullscreenVideoPlayer: React.FC<{
             <>
               <div className="w-3/4 relative fullscreen-video">
                 {currentVideoIndex !== 0 && (
-                  <button onClick={() => setCurrentVideoIndex(currentVideoIndex - 1)} className="mt-5 text-white absolute top-1/2 left-2">
+                  <button onClick={() => setCurrentVideoIndex(currentVideoIndex - 1)} className="full-screen-btn">
                     <FaArrowLeft className="ml-1" />
                   </button>
                 )}
@@ -70,7 +70,7 @@ const FullscreenVideoPlayer: React.FC<{
                   controls={false}
                 />
               </div>
-              <div className="w-1/4 p-4 bg-gray-800 text-white">
+              <div className="fullscreen-des">
                 <PublisherProfile title={queueOrder[currentVideoIndex].title} />     
                 <ShowDescription description={queueOrder[currentVideoIndex].description} />
                 <ContactActions  getQuote={false}/>

@@ -108,7 +108,7 @@ const FullvideoPlayer: React.FC = () => {
               direction={'vertical'}
               modules={[Pagination]}
               onSlideChange={slideChange}
-              className='mySwiper w-full h-full'>
+              className='mySwiper full-hw'>
                 {queueOrder.map((video, index) => (
                   <SwiperSlide key={index}>
                     <video

@@ -59,11 +59,11 @@ const LoopVideo:React.FC<{
           <div className="my-0" key={index}>
             <div className="video-cards relative">
               <div className='absolute' style={{zIndex: 1000}}>
-                <div className='relative flex gap-2 items-center text-white m-3 text-shadow'>
+                <div className='loop-profile'>
                   <PublisherProfile title={data.title}/>
                 </div>
               </div>
-              <div className='relative w-full flex justify-center align-middle min-h-[600]:'>
+              <div className='loop-video'>
               <video
                 ref={videoRef}
                 autoPlay={true}
@@ -85,8 +85,8 @@ const LoopVideo:React.FC<{
                 <source src={data.src} type="video/mp4" />
               </video>
               </div>
-              <div className="absolute bottom-2 right-2"> 
-                <button className="unmute-btn text-white bg-transparent border-none outline-none"
+              <div className="loop-btn"> 
+                <button className="unmute-btn"
                 onClick={() => setIsMuted(!isMuted)}>
                   {isMuted ? <FaVolumeMute /> : <FaVolumeUp />}
                 </button>                
@@ -99,7 +99,7 @@ const LoopVideo:React.FC<{
             <ContactActions getQuote={true} />
               <p className='text-base '><strong>{data.title}</strong></p>
               <ShowDescription description={data.description} />
-            <p className='relative mt-1 text-xs opacity-80'>2 hours ago</p>
+            <p className='post-time'>2 hours ago</p>
             </div>
           </div>
     </div>

@@ -82,7 +82,7 @@ return (
               <div className="images-card">
                 <div>
                   <Image
-                    className="rounded-full w-12 h-12"
+                    className="header-mini-img"
                     src={image.src}
                     alt={image.alt}
                     width={100}
@@ -90,7 +90,7 @@ return (
                   />
                 </div>
                 <div>
-                  <span className="text-xs flex">{image.title}</span>
+                  <span className="header-title">{image.title}</span>
                 </div>
               </div>
             </SwiperSlide>
@@ -111,11 +111,11 @@ return (
       {images.map((image, index) => (
         <SwiperSlide key={index} onClick={() => handleClick(index)}>
           <div className="images-card category-images">
-            <div className="flex justify-center">
+            <div className="header-carousal">
               <Image
+                className="header-img"
                 src={image.src}
                 alt={image.alt}
-                className="w-5 border-2 border-gray-400 rounded-full"
                 width={100}
                 height={100}
               />

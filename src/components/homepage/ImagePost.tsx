@@ -11,16 +11,16 @@ const ImagePost: React.FC<{
     src: string
 }> = ({title, description, src}) => {
     return <div className='mt-5 '>
-        <div className='flex gap-2 items-center'>
+        <div className='mobile-profile'>
             <PublisherProfile title={title} />
         </div>
-        <Image src={src} alt="" className='w-full h-full' width={100} height={100}/>
+        <Image src={src} alt="" className='full-hw' width={100} height={100}/>
         <GetQuote />
         <div className='p-[10px]'>
             <ContactActions  getQuote={true}/>
-            <p className='mt-2 text-base '><strong>{title}</strong></p>
+            <p className='carousal-title'><strong>{title}</strong></p>
             <ShowDescription description={description} />
-            <p className='relative  text-xs mt-1 opacity-80'>2 hours ago</p>
+            <p className='post-time'>2 hours ago</p>
         </div>
     </div>
 }

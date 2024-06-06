@@ -11,7 +11,7 @@ const CarouselComponent: React.FC<{
     queue_images: { id: number; image: string; alt: string }[]
 }> = ({title, description, queue_images}) => {
   return <div className='mt-5'>
-  <div className='flex gap-2 mt-5 items-center'>
+  <div className='carousal-header'>
     <PublisherProfile title='Home'/>
   </div>
   <div>
@@ -20,9 +20,9 @@ const CarouselComponent: React.FC<{
     <GetQuote />
     <div className='p-[10px]'>
     <ContactActions getQuote={true} />
-    <p className='mt-2 text-base '><strong>{title}</strong></p>
+    <p className='carousal-title'><strong>{title}</strong></p>
     <ShowDescription description={description} />
-    <p className='relative text-xs mt-1 opacity-80'>2 hours ago</p>
+    <p className='post-time'>2 hours ago</p>
     </div>
   </div>
 </div>
