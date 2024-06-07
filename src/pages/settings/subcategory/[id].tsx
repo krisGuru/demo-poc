@@ -7,7 +7,7 @@ import { IoChevronBackCircleOutline } from 'react-icons/io5'
 import apiCall from '@/utils/apiCall'
 import { useRouter } from 'next/router'
 
-const subcategorylist = () => {
+const SubCategoryList = () => {
     const router = useRouter();
     const id = router.query.id;
 
@@ -70,4 +70,4 @@ const subcategorylist = () => {
   )
 }
 
-export default subcategorylist
+export default SubCategoryList

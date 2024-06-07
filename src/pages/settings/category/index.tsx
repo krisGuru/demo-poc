@@ -6,7 +6,7 @@ import Head from 'next/head'
 import { IoChevronBackCircleOutline } from 'react-icons/io5'
 import apiCall from '@/utils/apiCall'
 
-const categorylist = () => {
+const CategoryList = () => {
     const [categoryData, setCategoryData] = useState<{id: string, category_name:string}[]>([])
 
     useEffect(()=>{
@@ -68,4 +68,4 @@ const categorylist = () => {
   )
 }
 
-export default categorylist
+export default CategoryList

@@ -6,7 +6,7 @@ import Head from 'next/head'
 import { IoChevronBackCircleOutline } from 'react-icons/io5'
 import apiCall from '@/utils/apiCall'
 
-const addcompany = () => {
+const AddCompany = () => {
     const [companyData, setFormData] = useState({
         company_name: '',
         company_website: '',
@@ -130,4 +130,4 @@ const addcompany = () => {
   )
 }
 
-export default addcompany
+export default AddCompany

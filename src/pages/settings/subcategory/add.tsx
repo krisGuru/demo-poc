@@ -6,7 +6,7 @@ import Head from 'next/head'
 import { IoChevronBackCircleOutline } from 'react-icons/io5'
 import apiCall from '@/utils/apiCall'
 
-const addsubcategory = () => {
+const AddSubCategory = () => {
     const [subCategoryForm, setSubCategoryForm] = useState({
         subcategory_name: '',
         subcategory_logo: null,
@@ -86,4 +86,4 @@ const addsubcategory = () => {
   )
 }
 
-export default addsubcategory
+export default AddSubCategory
