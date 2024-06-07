@@ -18,6 +18,7 @@ const subcategorylist = () => {
     ]
   return (
     <>
+    <div className='category-pg'>
         <div className='hidden'>
             <SideNav />
         </div>
@@ -57,6 +58,7 @@ const subcategorylist = () => {
                 </button>
             </div>
         </div>
+    </div>
     </>
   )
 }

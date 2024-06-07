@@ -80,6 +80,14 @@ body{
     flex-direction: column;
   }
 
+  .mobile-video{
+    @apply mt-4
+  }
+
+  .minified-menu #side-menu{
+    @apply hidden
+  }
+
   .w-4\/5 {
     @apply w-[100%];
   }
@@ -111,20 +119,55 @@ body{
   #side-menu ul{
     @apply ml-6;
   }
+
   #contact-actions{
-    @apply flex gap-3 ;
+    @apply flex gap-3;
   }
   @media (max-width: 900px){
     #side-menu {
-      @apply block top-0 left-0 h-screen border-2 p-4 space-y-4 w-1/4;
+      @apply block top-0 left-0 h-screen border-none p-4 space-y-4 w-1/4;
     }
     #side-menu ul {
-      @apply ml-8; 
+      @apply ml-8 text-xl; 
     }
     #contact-actions {
-      @apply flex gap-3 ; 
+      @apply block ; 
     }
 
+    .contact-tab{
+      @apply text-4xl mr-5  mt-8
+    }
+
+    .mobile-swiper{
+      @apply w-full h-full relative;
+    }
+    .mobile-fullscreen video, .fullscreen-video video{
+      @apply max-w-full max-h-full mt-10 object-cover m-auto;
+    }
+    .trending-grid{
+      @apply grid grid-cols-2 gap-2 py-10 mt-32 ml-2
+    }
+
+    .settings-pg #video-post-container{
+      @apply w-[80%] h-full;
+    }
+    .category-pg #video-post-container{
+      @apply w-[80%] h-full;
+    }
+
+    .save-btn{
+      @apply w-[80%] m-auto
+    }
+    .minified-menu #side-menu ul{
+      @apply ml-2 ;
+    }
+    .minified-menu .menu-label{
+      @apply hidden;
+    }
+    
+    .minified-menu #side-menu{
+      @apply w-auto h-auto bg-black text-white ;
+    }
   }
 }
 
@@ -352,7 +395,7 @@ body{
 }
 
 .settings-back{
-  @apply flex items-center border-4
+  @apply flex items-center
 }
 
 .settings-page{
@@ -368,7 +411,7 @@ body{
 }
 
 .category-btn{
-  @apply absolute bottom-1 w-full
+  @apply absolute bottom-1 w-full h-auto
 }
 
 .settings-pg{
@@ -477,10 +520,11 @@ body{
 }
 
 .view-more-btn{
-  @apply text-xs p-0 px-2 rounded w-24 shadow-md bg-gray-800 bg-opacity-10 
+  @apply text-xs p-0 px-2 rounded w-24 shadow-md bg-gray-800 bg-opacity-10
 }
 
 .decription-btn{
   @apply p-0 m-0 border rounded-lg px-2 text-blue-600
   shadow-md bg-white bg-opacity-10 text-xs border-gray-300
 }
+

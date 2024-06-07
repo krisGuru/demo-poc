@@ -47,7 +47,7 @@ const Trending = () => {
         )}
         {!activeCategory && (
           <div className='trending-grid'>
-            <div className=' py-20 trending-img '>
+            <div className=' py-20 trending-img'>
               <h1
                 className='trending-grid-col'
                 onClick={() => handleCategoryClick('new-arrival')}>

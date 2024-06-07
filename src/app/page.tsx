@@ -229,7 +229,7 @@ const VideoPlayer: React.FC = () => {
     <>
     <SplashScreen />
     <SideNav/>
-    <div id="video-post-container" className="py-5">
+    <div id="video-post-container" className="py-5 vdo-tab">
       <HeaderCarousel />
       {
         videoFullScreen && <FullscreenVideoPlayer

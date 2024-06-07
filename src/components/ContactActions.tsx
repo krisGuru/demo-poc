@@ -23,9 +23,9 @@ const ContactActions: React.FC<{
   return (
     <>
       <div id='contact-actions' className='float-right align-baseline'>
-        <PiPhone className='text-xl' onClick={telephoneOpen} />
-        <FaWhatsapp className='text-xl opacity-90' onClick={whatsappOpen}/>
-        <BsSend className=' text-lg ' onClick={shareOpen} />
+        <PiPhone className='text-xl contact-tab' onClick={telephoneOpen} />
+        <FaWhatsapp className='text-xl contact-tab opacity-90' onClick={whatsappOpen}/>
+        <BsSend className=' text-lg  contact-tab' onClick={shareOpen} />
       </div>
     </>
   )

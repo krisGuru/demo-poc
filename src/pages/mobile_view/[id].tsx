@@ -11,6 +11,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 
 import { Pagination } from 'swiper/modules';
+import SideNav from '@/components/SideNav';
 
 const FullvideoPlayer: React.FC = () => {
 
@@ -99,6 +100,9 @@ const FullvideoPlayer: React.FC = () => {
 
   return (
     <div className="video-full">
+      <div className='minified-menu'>
+        <SideNav />
+      </div>
       {queueOrder.length > 0 && (
         <>
           {
@@ -112,6 +116,7 @@ const FullvideoPlayer: React.FC = () => {
                 {queueOrder.map((video, index) => (
                   <SwiperSlide key={index}>
                     <video
+                    className='mt-6'
                       src={video.src}
                       autoPlay={true}
                       controls={false}

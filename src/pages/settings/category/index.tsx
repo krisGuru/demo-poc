@@ -15,6 +15,7 @@ const categorylist = () => {
     ]
   return (
     <>
+    <div className='category-pg'>
         <div className='hidden'>
             <SideNav />
         </div>
@@ -56,6 +57,7 @@ const categorylist = () => {
                     Add category
                 </button>
             </div>
+        </div>
         </div>
     </>
   )
