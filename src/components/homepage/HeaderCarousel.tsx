@@ -65,14 +65,14 @@ const revertBack = () => {
 };
 
 return (
-  <div className="carousel-container py-5">
+  <div className="carousel-container py-7">
     {showSubCategory && (
       <div className="sub-carousel-overlay" ref={subCarouselRef}>
         <Swiper
           className="sub-carousel"
           modules={[Navigation, Pagination, Scrollbar, A11y]}
           spaceBetween={20}
-          slidesPerView={6}
+          slidesPerView={4}
           scrollbar={{ draggable: true }}
           onSlideChange={() => console.log('slide change')}
           onSwiper={(swiper) => console.log(swiper)}

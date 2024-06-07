@@ -12,7 +12,8 @@ const index = () => {
     <Head>
          <title>Settings</title>
     </Head>
-    <div id="video-post-container" className="py-5">
+    <div className="settings-menu p-5">
+    <div id="video-post-container" className="py-5 ">
         <div className='settings-pg'
         style={{borderBottom: '1px solid #ccc'}}>
             <h6 className='settings-title'>
@@ -37,6 +38,7 @@ const index = () => {
             </h6>
             <span className=''><RiLogoutCircleLine /></span>
         </div>
+    </div>
     </div>
     </>
   )

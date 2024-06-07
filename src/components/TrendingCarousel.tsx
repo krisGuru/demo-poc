@@ -10,22 +10,18 @@ import 'swiper/css/scrollbar';
 
 const TrendingCarousel = () => {
     const trending_tags = [
-        'Virat Kohli',
-        'Rohit Sharma',
-        'Sachin Tendulkar',
-        'MS Dhoni',
-        'KL Rahul',
-        'Rishabh Pant',
-        'Suresh Raina',
-        'Shikhar Dhawan',
-        'Virat Kohli',
-        'Rohit Sharma',
-        'Sachin Tendulkar',
-        'MS Dhoni',
-        'KL Rahul',
-        'Rishabh Pant',
-        'Suresh Raina',
-        'Shikhar Dhawan',
+      'Dharma furniture',
+      'Core Design Studios',
+      'Home & Living studios',
+      'Dharma furniture',
+      'Core Design Studios',
+      'Home & Living studios',
+      'Dharma furniture',
+      'Core Design Studios',
+      'Home & Living studios',
+      'Dharma furniture',
+      'Core Design Studios',
+      'Home & Living studios',
     ]
   return (
     <Swiper className="image-carousel" modules={[Navigation, Pagination, Scrollbar, A11y]}

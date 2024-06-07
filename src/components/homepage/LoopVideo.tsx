@@ -95,8 +95,8 @@ const LoopVideo:React.FC<{
             <div>
               <GetQuote />
             </div>
-            <div className="video-description text-black mb-5">
-            <ContactActions getQuote={true} />
+            <div className="video-description  text-black mb-5">
+            <ContactActions getQuote={false}  />
               <p className='text-base '><strong>{data.title}</strong></p>
               <ShowDescription description={data.description} />
             <p className='post-time'>2 hours ago</p>

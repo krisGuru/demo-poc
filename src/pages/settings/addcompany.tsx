@@ -57,7 +57,7 @@ const addcompany = () => {
                         <div className="input">
                             <form>
                             <div className='mt-3'>
-                                <label htmlFor="" className='text-sm font-semibold'>Company name</label>
+                                <label htmlFor="" className='company-form'>Company name</label>
                                 <input type="text"
                                 className='settings-ph'
                                 placeholder='Enter a company name'
@@ -67,14 +67,14 @@ const addcompany = () => {
                                 />
                             </div>
                             <div className='mt-3'>
-                                <label htmlFor="" className='text-sm'>Company logo</label>
+                                <label htmlFor="" className='company-form'>Company logo</label>
                                 <input type="file"
                                 className='settings-ph'
                                 id='company-logo'
                                 />
                             </div>
                             <div className='mt-3'>
-                                <label htmlFor="" className='text-sm'>Company website</label>
+                                <label htmlFor="" className='company-form'>Company website</label>
                                 <input type="text" 
                                 className='settings-ph'
                                 placeholder='Enter a company website'
@@ -84,7 +84,7 @@ const addcompany = () => {
                                 />
                             </div>
                             <div className='mt-3'>
-                                <label htmlFor="" className='text-sm'>Mobile Number</label>
+                                <label htmlFor="" className='company-form'>Mobile Number</label>
                                 <input type="text" 
                                 className='settings-ph'
                                 placeholder='Enter your Mobile Number'
@@ -94,7 +94,7 @@ const addcompany = () => {
                                 />
                             </div>
                             <div className='mt-3'>
-                                <label htmlFor="" className='text-sm'>Email</label>
+                                <label htmlFor="" className=' company-form'>Email</label>
                                 <input type="text" 
                                 className='settings-ph'
                                 placeholder='Enter your E-mail'
@@ -104,7 +104,7 @@ const addcompany = () => {
                                 />
                             </div>
                             <div className='mt-3'>
-                                <label htmlFor="" className='text-sm'>Company description</label>
+                                <label htmlFor="" className=' company-form'>Company description</label>
                                 <textarea name="" id="" cols={30} rows={10}
                                 className='settings-ph'
                                 placeholder='Enter a company description'
@@ -113,7 +113,7 @@ const addcompany = () => {
                                 }}
                                 ></textarea>
                             </div>
-                            <p className='text-xs opacity-90'> By clicking the Save button a new company will be created and you 
+                            <p className='text-xs opacity-90 com-pcy'> By clicking the Save button a new company will be created and you 
                                 can post videos and images </p>
                             <div className='save-button'>
                                 <button className='save-btn'

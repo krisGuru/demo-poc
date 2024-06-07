@@ -33,20 +33,22 @@ const Search = () => {
             <Head>
                 <title>Search</title>
             </Head>
-            <div id="video-post-container" className="py-5">
-                <input className='search-input'
-                type="text" placeholder='  ⌕ Search by category / name'
-                onMouseDown={navToTypeSearch} onKeyDown={searchResult}
-                />
-                {
-                    search && <TrendingCarousel /> 
-                }
-                {
-                    searchTerm && <SearchProfile showAllResult={showAllResult} showFullList={showFullList} />
-                }
-                {
-                    (!search && !showFullList) && <SearchPosts />
-                }
+            <div className='search-tab'>
+                <div id="video-post-container" className="py-5">
+                    <input className='search-input'
+                    type="text" placeholder='  ⌕ Search by category / name'
+                    onMouseDown={navToTypeSearch} onKeyDown={searchResult}
+                    />
+                    {
+                        search && <TrendingCarousel /> 
+                    }
+                    {
+                        searchTerm && <SearchProfile showAllResult={showAllResult} showFullList={showFullList} />
+                    }
+                    {
+                        (!search && !showFullList) && <SearchPosts />
+                    }
+                </div>
             </div>
         </>
     )

@@ -6,27 +6,27 @@ const SearchProfile: React.FC<{
 }> = ({showFullList, showAllResult}) => {
     const profileList = [
         {
-            name: "Virat",
+            name: "Aristo",
             location: ["Coimbatore"],
             designation: "Interior Designer"
         },
         {
-            name: "Rohit",
+            name: "Dharmo furniture",
             location: ['Chennai', 'Trichy'],
             designation: "Interior Designer"
         },
         {
-            name: "Rahul",
+            name: "Nifya Furniture",
             location: ["Coimbatore", "Trichy"],
             designation: "Interior Designer"
         },
         {
-            name: "Sachin",
+            name: "Dream Interior",
             location: ["Coimbatore"],
             designation: "Interior Designer"
         },
         {
-            name: "Kohli",
+            name: "Core Design Studio",
             location: ["Coimbatore"],
             designation: "Interior Designer"
         }

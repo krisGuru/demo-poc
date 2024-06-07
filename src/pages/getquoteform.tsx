@@ -10,6 +10,7 @@ import { IoChevronBackCircleOutline } from "react-icons/io5";
 const GetQuoteForm = () => {
   return (
     <>
+    <div className='get-quote-form'>
     <div id="video-post-container" className="py-5 w-full">
         <span className='get-quote-back'>
             <Link href={'/'}>
@@ -22,48 +23,51 @@ const GetQuoteForm = () => {
         <Head>
             <title> Quotation </title>
         </Head>
-        <div>
-            <Image className='get-quote-img' src={"https://media.designcafe.com/wp-content/uploads/2023/07/05195443/modern-interior-design.jpg"}
-            alt='' width={100} height={100} />
-            <h3 className='text-center font-bold mt-2'>Aristo Coimbatore</h3>
-            <p className='px-5'>Please Share your details below and our product expert will
-             attend your inquiry promptly!</p>
-        </div>
-        <div className='p-2'>
-            <div className='p-3'>
-                <div className=''>
-                    <label htmlFor="" className='get-quote-title'>Full name</label>
-                    <input type="text" placeholder='Enter Your name'
-                    className='gq-form'
-                    />
-                </div>
-                <div className='mt-3'>
-                    <label htmlFor="" className='get-quote-title'>Mobile Number</label>
-                    <input type="text" placeholder='Enter your Mobile Number '
-                    className='gq-form'/>
-                </div>
-                <div className='mt-3'>
-                    <label htmlFor="" className='get-quote-title'>Email</label>
-                    <input type="email" 
-                    className='gq-form'
-                    placeholder='Enter your E-mail address'/>
-                </div>
-                <div>
-                    <div className='mt-3 '>
-                        <label htmlFor="" className='get-quote-title'>City</label>
-                        <input type="text" 
+        <div className='gq-tab'>
+            <div>
+                <Image className='get-quote-img' src={"https://media.designcafe.com/wp-content/uploads/2023/07/05195443/modern-interior-design.jpg"}
+                alt='' width={100} height={100} />
+                <h3 className='gq-title'>Aristo Coimbatore</h3>
+                <p className='px-5 get-p'>Please Share your details below and our product expert will
+                attend your inquiry promptly!</p>
+            </div>
+            <div className='p-2 get-qt'>
+                <div className='get-form p-3'>
+                    <div className=''>
+                        <label htmlFor="" className='get-quote-title'>Full name</label>
+                        <input type="text" placeholder='Enter Your name'
                         className='gq-form'
-                        placeholder='Enter your City'/>
+                        />
                     </div>
-                </div>
-                <p className='mt-3 text-xs opacity-90'>By clicking submit, you agree to send your
-                 info to the company who agrees to use it according to their privacy policy.
-                  The Home Ideas will also use it subject to our Privacy Policy</p>
-                <div className='save-button'>
-                    <button className='save-btn'>Submit</button>
+                    <div className='mt-3'>
+                        <label htmlFor="" className='get-quote-title'>Mobile Number</label>
+                        <input type="text" placeholder='Enter your Mobile Number '
+                        className='gq-form'/>
+                    </div>
+                    <div className='mt-3'>
+                        <label htmlFor="" className='get-quote-title'>Email</label>
+                        <input type="email" 
+                        className='gq-form'
+                        placeholder='Enter your E-mail address'/>
+                    </div>
+                    <div>
+                        <div className='mt-3 '>
+                            <label htmlFor="" className='get-quote-title'>City</label>
+                            <input type="text" 
+                            className='gq-form'
+                            placeholder='Enter your City'/>
+                        </div>
+                    </div>
+                    <p className='get-p'>By clicking submit, you agree to send your
+                    info to the company who agrees to use it according to their privacy policy.
+                    The Home Ideas will also use it subject to our Privacy Policy</p>
+                    <div className='save-button'>
+                        <button className='save-btn'>Submit</button>
+                    </div>
                 </div>
             </div>
         </div>
+    </div>
     </div>
     </>
   )

@@ -130,13 +130,9 @@ body{
     #side-menu ul {
       @apply ml-8 text-xl; 
     }
-    #contact-actions {
+    /* #contact-actions {
       @apply block ; 
-    }
-
-    .contact-tab{
-      @apply text-4xl mr-5  mt-8
-    }
+    } */
 
     .mobile-swiper{
       @apply w-full h-full relative;
@@ -148,15 +144,28 @@ body{
       @apply grid grid-cols-2 gap-2 py-10 mt-32 ml-2
     }
 
-    .settings-pg #video-post-container{
-      @apply w-[80%] h-full;
-    }
-    .category-pg #video-post-container{
-      @apply w-[80%] h-full;
+    .settings-pg{
+      @apply flex items-center gap-5 p-3
     }
 
+    .settings-menu #video-post-container{
+      @apply  w-3/4 float-right ;
+    }
+ 
+    .settings-pg #video-post-container{
+      @apply w-[90%] text-xl h-full;
+    }
+    .settings-pg .settings-title{
+      @apply text-xl font-semibold w-full
+    }
+    .category-pg #video-post-container{
+      @apply w-full items-center text-xl m-0;
+    }
+    .category-btn{
+      @apply  flex text-center bottom-1 h-auto mb-20
+    }
     .save-btn{
-      @apply w-[80%] m-auto
+      @apply m-auto;
     }
     .minified-menu #side-menu ul{
       @apply ml-2 ;
@@ -168,8 +177,57 @@ body{
     .minified-menu #side-menu{
       @apply w-auto h-auto bg-black text-white ;
     }
+    .settings-page .company-title{
+      @apply text-xl font-medium text-center 
+    }
+    .settings-pg .company-form{
+      @apply text-xl font-semibold
+    }
+    .com-pcy{
+      @apply text-base
+    }
+    .contact-tab{
+      @apply text-3xl mt-7 mr-4 !important;
+    }
+    #contact-actions {
+      @apply block ; 
+    }
+    .get-ph{
+      @apply text-xl
+    }
+    .get-quote-form #video-post-container{
+      @apply w-[90%]
+    }
+    .gq-tab .get-quote-img{
+      @apply rounded-full m-auto w-36 h-36 mt-5
+    }
+    .gq-title{
+      @apply text-center font-bold mt-2 text-xl
+    }
+    .gq-tab .get-qt .get-quote-title{
+      @apply text-lg font-semibold
+    }
+    .gq-tab .get-qt .get-form{
+      @apply text-lg
+    }
+    .gq-tab .get-qt .get-p{
+      @apply mt-3 text-base  opacity-90
+    }
+    .gq-tab .get-p{
+      @apply text-base
+    }
+    .gq-tab .get-qt .save-button .save-btn{
+      @apply w-full mt-10 mr-2
+    }
+    .search-tab #video-post-container{
+      @apply ml-[25%] w-[65%] 
+    }
+    .search-input{
+      @apply w-full bg-gray-200 rounded-2xl h-12 text-base border border-gray-400
+    }
   }
 }
+
 
 #side-menu{
   @apply fixed bg-[#fdfdfd] text-black font-normal;
@@ -301,6 +359,8 @@ body{
   background: var(--swiper-scrollbar-drag-bg-color, rgba(0, 0, 0, 0.1)) !important;
 }
 
+
+
 .get-quote{
   @apply text-white w-full p-2;
   /* background: linear-gradient(112.1deg, rgb(32, 38, 57) 11.4%, rgb(63, 76, 119) 70.2%); */
@@ -387,7 +447,7 @@ body{
 }
 
 .save-btn{
-  @apply bg-green-500 text-white rounded-md
+  @apply bg-green-500  text-white rounded-md
 }
 
 .settings-profile{
@@ -403,11 +463,11 @@ body{
 }
 
 .settings-ph{
-  @apply w-full p-2 rounded-md border border-gray-400
+  @apply w-full p-2 rounded-xl border border-gray-400
 }
 
 .category-ph{
-  @apply w-full border border-gray-400 rounded
+  @apply w-full border border-gray-400 rounded-xl
 }
 
 .category-btn{
@@ -435,7 +495,7 @@ body{
 }
 
 .search-input{
-  @apply w-full bg-gray-200 rounded-lg border border-gray-400
+  @apply w-full bg-gray-200 rounded-xl border border-gray-400
 }
 
 .carousal-header{
@@ -526,5 +586,20 @@ body{
 .decription-btn{
   @apply p-0 m-0 border rounded-lg px-2 text-blue-600
   shadow-md bg-white bg-opacity-10 text-xs border-gray-300
+}
+
+.company-title{
+  @apply text-base font-medium text-center 
+}
+
+.company-form{
+  @apply text-sm font-semibold
+}
+
+.gq-title{
+  @apply text-center font-bold mt-2
+}
+.get-p{
+  @apply mt-3 text-xs opacity-90
 }
 
