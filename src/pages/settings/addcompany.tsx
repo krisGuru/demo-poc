@@ -4,7 +4,7 @@ import SideNav from '@/components/SideNav'
 import Link from 'next/link'
 import Head from 'next/head'
 import { IoChevronBackCircleOutline } from 'react-icons/io5'
-import apiCall from './../../utils/apiCall'
+import apiCall from '@/utils/apiCall'
 
 const addcompany = () => {
     const [companyData, setFormData] = useState({
