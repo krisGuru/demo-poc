@@ -1,19 +1,24 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import '../../../app/globals.css'
 import SideNav from '@/components/SideNav'
 import Link from 'next/link'
 import Head from 'next/head'
 import { IoChevronBackCircleOutline } from 'react-icons/io5'
+import apiCall from '@/utils/apiCall'
 
 const categorylist = () => {
-    const categoryData=[
-        'Doors',
-        'Curtains',
-        'Furniture',
-        'Fixtures',
-        'Lighting',
-    ]
-  return (
+    const [categoryData, setCategoryData] = useState<{id: string, category_name:string}[]>([])
+
+    useEffect(()=>{
+        getCategory()
+    },[])
+
+    const getCategory = async() => {
+        const category = await apiCall('category', 'get')
+        setCategoryData(category.data.Items)
+    }
+
+    return (
     <>
     <div className='category-pg'>
         <div className='hidden'>
@@ -35,16 +40,16 @@ const categorylist = () => {
                 <h4 className='font-semibold'>Category List</h4>
             </div>
             <div className='p-2'>
-                <div className='settings-page'>
+                <div className=' settings-page rounded-xl'>
                     <input type="text" name="" id=""
-                    placeholder='Search Category By Name'
+                    placeholder='  ⌕ Search Category By Name'
                     className='category-ph'/>
                     {
-                        categoryData.map((data,index)=>(
-                            <div className='mt-3' key={index}>
-                                <Link href={'/settings/subcategory'}>
+                        categoryData.map((data, index)=>(
+                            data.category_name && <div className='mt-3' key={index}>
+                                <Link href={`/settings/subcategory/${data.id}`}>
                                     <span className='float-right'>&gt;</span>
-                                    {data}
+                                    { data.category_name }
                                 </Link>
                             </div>
                         ))
