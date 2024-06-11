@@ -8,11 +8,13 @@ import GetQuote from '../GetQuote'
 const CarouselComponent: React.FC<{
     title: string,
     description: string,
+    company_id: string,
     queue_images: { id: number; image: string; alt: string }[]
-}> = ({title, description, queue_images}) => {
+}> = ({title, description, company_id, queue_images}) => {
   return <div className='mt-5'>
   <div className='carousal-header'>
-    <PublisherProfile title='Home'/>
+    <PublisherProfile title='Home'
+    company_id={company_id} />
   </div>
   <div>
   

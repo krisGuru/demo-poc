@@ -1,14 +1,18 @@
 import SideNav from '@/components/SideNav'
 import React from 'react'
-import '../app/globals.css'
+import '@/app/globals.css'
 import Link from 'next/link'
 import Image from 'next/image'
 import SearchPosts from '@/components/search/SearchPosts'
 import { GrCamera, GrGrid } from "react-icons/gr";
 import Head from 'next/head'
 import { IoChevronBackCircleOutline } from 'react-icons/io5'
+import { useRouter } from 'next/router'
 
 const ProfileScreen = () => {
+  const router = useRouter();
+  const {id } = router.query;
+
   return (
     <>
     <SideNav/>
@@ -37,7 +41,7 @@ const ProfileScreen = () => {
             <p className='w-full'>The art of managing sound within the home cinema space,
              for an enthralling sound cinema watching experience</p>
              <button className='bg-gray-100 w-full p-2 rounded-md'
-                onClick={e=>{window.location.href='/addpost'}}>
+                onClick={e=>{window.location.href='/addpost/'+id}}>
              Add Post</button>
              <div className='profile-icons'>
              <GrGrid className='w-1/2'/> <GrCamera className='w-1/2'/>

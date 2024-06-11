@@ -42,7 +42,6 @@ const FullvideoPlayer: React.FC = () => {
 
     const router = useRouter();
     const {id } = router.query;
-    console.log(id)
 
     const [queueOrder , setQueueOrder] = useState<{src: string; description: string}[]>([{
         src: '',

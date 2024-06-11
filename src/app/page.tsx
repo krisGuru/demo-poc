@@ -14,6 +14,7 @@ import apiCall from '@/utils/apiCall';
 const VideoPlayer: React.FC = () => {
   const [videoSources, setVideoSources] = useState<{
     type: string;
+    company_id: string;
     src: string;
     title: string;
     description: string;
@@ -26,6 +27,7 @@ const VideoPlayer: React.FC = () => {
   }[]>([
     {
       type:'video',
+      company_id: 'asjkdfjlasjd',
       src:'./video/first-video.mp4',
       title:'Aristo Coimbatore',
       description: 'The art of managing sound within the home cinema space , for an enthralling sound experience out of every cinema watching experience.',
@@ -50,6 +52,7 @@ const VideoPlayer: React.FC = () => {
     },
     {
       type:'video',
+      company_id: 'asdfdsafjlkasd',
       src:'./video/second-video.mp4',
       title:'Nine Degree Design Studio',
       description: 'Interior Designer Chirag Mehta of Nine Degree design Studio designed For religious yet fun loving family of five.',
@@ -74,6 +77,7 @@ const VideoPlayer: React.FC = () => {
     },
     {
       type:'video',
+      company_id: 'asdfdsafjlkasd',
       src:'./video/third-video.mp4',
       title: 'The Audio Cube', 
       description: 'The art of managing sound within the home cinema space , for an enthralling sound experience out of every cinema watching experience.',
@@ -98,6 +102,7 @@ const VideoPlayer: React.FC = () => {
     },
     {
       type: 'image',
+      company_id: 'asdfdsafjlkasd',
       src: 'https://www.trade4asia.com/ProductImg/inf.jpg',
       title: 'The Audio Cube',
       description: 'The art of managing sound within the home cinema space , for an enthralling sound experience out of every cinema watching experience.',
@@ -106,6 +111,7 @@ const VideoPlayer: React.FC = () => {
     },
     {
       type: 'gallery',
+      company_id: 'asdfdsafjlkasd',
       src: '',
       title: 'The Audio Cube',
       description: 'The art of managing sound within the home cinema space , for an enthralling sound experience out of every cinema watching experience.',
@@ -140,6 +146,7 @@ const VideoPlayer: React.FC = () => {
 
   const convertData = (inputData:[{
       post_content:[{file_url:string, file_type:string}],
+      company_id: string,
       post_description: string}]) => {
     const outputData = [];
     for (let i = 0; i < inputData.length; i++) {
@@ -147,6 +154,7 @@ const VideoPlayer: React.FC = () => {
       if(item.post_content.length > 1){
         const data = {
           type: 'gallery',
+          company_id: item.company_id,
           src: '',
           title: 'The Audio Cube',
           description: item.post_description,
@@ -159,6 +167,7 @@ const VideoPlayer: React.FC = () => {
         if(item.post_content[0].file_type==='image'){
           const data = {
             type: 'image',
+            company_id: item.company_id,
             src: item.post_content[0].file_url,
             title: 'The Audio Cube',
             description: item.post_description,
@@ -170,6 +179,7 @@ const VideoPlayer: React.FC = () => {
         else{
           const data = {
             type: 'video',
+            company_id: item.company_id,
             src: item.post_content[0].file_url,
             title: 'The Audio Cube',
             description: item.post_description,
@@ -317,9 +327,11 @@ const VideoPlayer: React.FC = () => {
             handlePlayPauseVideo={handlePlayPauseVideo} />
         else if(data.type==='image')
           return <ImagePost key={index} src={data.src}
+            company_id={data.company_id}
             title={data.title} description={data.description} />
         else if(data.type==='gallery')
           return <CarouselComponent title={data.title} key={index}
+            company_id={data.company_id}
             description={data.description} queue_images={data.queue_images} />
       })}
     </div>

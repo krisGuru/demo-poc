@@ -1,15 +1,19 @@
 import React, { useEffect, useState } from 'react'
-import '../app/globals.css'
+import '@/app/globals.css'
 import Link from 'next/link'
 import { IoChevronBackCircleOutline } from 'react-icons/io5'
 import apiCall from '@/utils/apiCall'
+import { useRouter } from 'next/router'
 
 const AddPost = () => {
+    const router = useRouter();
+    const {id} = router.query;
+
     const [categoryID, setCategoryID] = useState<string>('')
     const [subCategoryID, setSubCategoryID] = useState<string>('')
     const [postDescription, setPostDescription] = useState<string>('')
     const [categoryData, setCategoryData] = useState<{
-        id: string, category_name:string}[]>([])
+        id: string, category_name: string}[]>([])
     const [subCategoryData, setSubCategoryData] = useState<{
         id: string, subcategory_name: string}[]>([])
 
@@ -48,11 +52,11 @@ const AddPost = () => {
     <>
         <div id="video-post-container" className='py-5'>
         <span className='settings-profile flex'>
-          <Link href={'/profilescreen'}>
-          <div className='flex items-center'>
-          <IoChevronBackCircleOutline className='mt-[1px]'/> 
-          <span>Back</span>
-          </div>
+          <Link href={'/profile/'+id}>
+            <div className='flex items-center'>
+                <IoChevronBackCircleOutline className='mt-[1px]'/> 
+                <span>Back</span>
+            </div>
           </Link>
       </span>
             <div className=' text-center'>

@@ -10,6 +10,7 @@ import GetQuote from '../GetQuote';
 const LoopVideo:React.FC<{
     data: {
         src: string;
+        company_id: string,
         description: string;
         queue_order: { src: string; title: string; description: string }[];
         title: string
@@ -60,7 +61,8 @@ const LoopVideo:React.FC<{
             <div className="video-cards relative">
               <div className='absolute' style={{zIndex: 1000}}>
                 <div className='loop-profile'>
-                  <PublisherProfile title={data.title}/>
+                  <PublisherProfile title={data.title}
+                  company_id={data.company_id} />
                 </div>
               </div>
               <div className='loop-video'>
