@@ -9,6 +9,7 @@ const AddPost = () => {
     const router = useRouter();
     const {id} = router.query;
 
+    const [companyID, setCompanyID] = useState('');
     const [categoryID, setCategoryID] = useState<string>('')
     const [subCategoryID, setSubCategoryID] = useState<string>('')
     const [postDescription, setPostDescription] = useState<string>('')
@@ -21,18 +22,24 @@ const AddPost = () => {
         getCategory();
     }, [])
 
+    useEffect(()=>{
+        if(id){
+            setCompanyID(id.toString())
+        }
+    }, [id])
+
     const createPost = async () => {
         const fd = new FormData();
         const post_files = document.getElementById('post-file') as HTMLInputElement
         if( post_files.files && post_files.files?.length > 0){
             for(let i=0; i<post_files.files.length; i++){
-                fd.append('post_files[]', post_files.files[i])
+                fd.append(`post_content`, post_files.files[i])
             }
         }
         fd.append('post_description', postDescription)
         fd.append('category_id', categoryID)
         fd.append('subcategory_id', subCategoryID)
-        fd.append('company_id', 'fasjdljasdklsa')
+        fd.append('company_id', companyID)
         const data = await apiCall('post', 'post', fd, true)
         console.log(data)
     }
