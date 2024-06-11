@@ -130,7 +130,7 @@ const FullvideoPlayer: React.FC = () => {
                     </div>
                     <div className="mobile-description">
                       <div className='mobile-profile'>
-                      <PublisherProfile title={'Builder Profile'} />
+                      <PublisherProfile title={'Builder Profile'} company_id='asjdfklasd' />
                       </div>
                       <ShowDescription description={video.description} />
                     </div>

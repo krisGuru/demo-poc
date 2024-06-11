@@ -8,8 +8,9 @@ const FullscreenVideoPlayer: React.FC<{
   videoSrc: string;
   description: string;
   title: string;
+  company_id: string;
   onClose: () => void;
-  queueOrder: { src: string; title: string; description: string }[];
+  queueOrder: { src: string; title: string; company_id: string, description: string }[];
 }> = ({ videoSrc, description, title, onClose, queueOrder }) => {
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -71,7 +72,8 @@ const FullscreenVideoPlayer: React.FC<{
                 />
               </div>
               <div className="fullscreen-des">
-                <PublisherProfile title={queueOrder[currentVideoIndex].title} />     
+                <PublisherProfile title={queueOrder[currentVideoIndex].title}
+                company_id={queueOrder[currentVideoIndex].company_id} />     
                 <ShowDescription description={queueOrder[currentVideoIndex].description} />
                 <ContactActions  getQuote={false}/>
               </div>

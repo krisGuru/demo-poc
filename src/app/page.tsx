@@ -21,6 +21,7 @@ const VideoPlayer: React.FC = () => {
     queue_order: {
       src: string;
       title: string;
+      company_id: string;
       description: string;
     }[];
     queue_images: { id: number; image: string; alt: string }[];
@@ -35,16 +36,19 @@ const VideoPlayer: React.FC = () => {
         {
           src: './video/first-video.mp4',
           title: 'Aristo Coimbatore',
+          company_id: 'asjkdfjlasjd',
           description: 'The art of managing sound within the home cinema space , for an enthralling sound experience out of every cinema watching experience.',
         },
         {
           src: './video/third-video.mp4',
           title: 'The Audio Cube',
+          company_id: 'asjkdfjlasjd',
           description: 'The art of managing sound within the home cinema space , for an enthralling sound experience out of every cinema watching experience.',
         },
         {
           src: './video/second-video.mp4',
           title: 'Nine Degree Design Studio',
+          company_id: 'asjkdfjlasjd',
           description: 'Interior Designer Chirag Mehta of Nine Degree design Studio designed For religious yet fun loving family of five.',
         },
       ],
@@ -60,16 +64,19 @@ const VideoPlayer: React.FC = () => {
         {
           src: './video/second-video.mp4',
           title: 'Nine Degree Design Studio',
+          company_id: 'asjkdfjlasjd',
           description: 'Interior Designer Chirag Mehta of Nine Degree design Studio designed For religious yet fun loving family of five.',
         },
         {
           src: './video/first-video.mp4',
           title: 'Aristo Coimbatore',
+          company_id: 'asjkdfjlasjd',
           description: 'The art of managing sound within the home cinema space , for an enthralling sound experience out of every cinema watching experience.',
         },
         {
           src: './video/third-video.mp4',
           title: 'The Audio Cube',
+          company_id: 'asjkdfjlasjd',
           description: 'The art of managing sound within the home cinema space , for an enthralling sound experience out of every cinema watching experience.',
         },
       ],
@@ -85,16 +92,19 @@ const VideoPlayer: React.FC = () => {
         {
           src: './video/third-video.mp4',
           title: 'The Audio Cube',
+          company_id: 'asjkdfjlasjd',
           description: 'The art of managing sound within the home cinema space , for an enthralling sound experience out of every cinema watching experience.',
         },
         {
           src: './video/first-video.mp4',
           title: 'Aristo Coimbatore',
+          company_id: 'asjkdfjlasjd',
           description: 'The art of managing sound within the home cinema space , for an enthralling sound experience out of every cinema watching experience.',
         },
         {
           src: './video/second-video.mp4',
           title: 'Nine Degree Design Studio',
+          company_id: 'asjkdfjlasjd',
           description: 'Interior Designer Chirag Mehta of Nine Degree design Studio designed For religious yet fun loving family of five.',
         },
       ],
@@ -217,11 +227,13 @@ const VideoPlayer: React.FC = () => {
   const [currentVideo, setCurrentVideo] = useState<{
     videoSrc: string;
     title: string;
+    company_id: string;
     description: string;
-    queueOrder: { src: string; title: string; description: string }[];
+    queueOrder: { src: string; title: string; company_id: string; description: string }[];
   }>({
     videoSrc: '',
     title: '',
+    company_id: '',
     description: '',
     queueOrder: []
   });
@@ -242,7 +254,10 @@ const VideoPlayer: React.FC = () => {
 
   const openModal = (
       index: number,
-      video: {description: string, title: string, videoSrc: string, queueOrder: {src: string, title: string, description: string}[]},
+      video: {description: string, title: string, company_id: string,
+        videoSrc: string, queueOrder: {
+          src: string, title: string, company_id: string, description: string
+        }[]},
       currentVideo: React.RefObject<HTMLVideoElement>
     ) => {
       if ((isMobileDevice || isTabletDevice)) {
@@ -257,7 +272,7 @@ const VideoPlayer: React.FC = () => {
   };
 
   const closeModal = () => {
-    setCurrentVideo({ videoSrc: '', description: '', title: '', queueOrder: [] });
+    setCurrentVideo({ videoSrc: '', description: '', company_id: '', title: '', queueOrder: [] });
     setVideoFullScreen(false);
     const video = pausedVideo;
     if (video) {
@@ -315,6 +330,7 @@ const VideoPlayer: React.FC = () => {
         videoFullScreen && <FullscreenVideoPlayer
         videoSrc={currentVideo.videoSrc}
         description={currentVideo.description}
+        company_id={currentVideo.company_id}
         onClose={closeModal}
         title={currentVideo.title}
         queueOrder={currentVideo.queueOrder}

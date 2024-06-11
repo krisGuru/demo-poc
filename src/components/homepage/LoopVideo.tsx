@@ -12,7 +12,7 @@ const LoopVideo:React.FC<{
         src: string;
         company_id: string,
         description: string;
-        queue_order: { src: string; title: string; description: string }[];
+        queue_order: { src: string; title: string; company_id:string; description: string }[];
         title: string
     };
     index: number;
@@ -21,8 +21,9 @@ const LoopVideo:React.FC<{
       data: {
         videoSrc: string;
         title: string;
+        company_id: string,
         description: string;
-        queueOrder: { src: string; title: string; description: string }[];
+        queueOrder: { src: string; title: string; company_id: string; description: string }[];
     }, videoRef: React.RefObject<HTMLVideoElement>) => void;
     handlePlayPauseVideo: (videoRef: React.RefObject<HTMLVideoElement>) => () => void;
 }> = ({data, index, openModal, handlePlayPauseVideo}) => {
@@ -78,6 +79,7 @@ const LoopVideo:React.FC<{
                 {
                   videoSrc: data.src,
                   title: data.title,
+                  company_id: data.company_id,
                   description: data.description,
                   queueOrder: data.queue_order
                 }, videoRef)}
