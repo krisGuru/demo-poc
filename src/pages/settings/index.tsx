@@ -12,7 +12,7 @@ const index = () => {
     <Head>
          <title>Settings</title>
     </Head>
-    <div className="settings-menu p-5">
+    <div className="settings-menu p-2">
     <div id="video-post-container" className="py-5 ">
         <div className='settings-pg'
         style={{borderBottom: '1px solid #ccc'}}>
