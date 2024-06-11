@@ -130,9 +130,9 @@ body{
     #side-menu ul {
       @apply ml-8 text-xl; 
     }
-    /* #contact-actions {
+    #contact-actions {
       @apply block ; 
-    } */
+    }
 
     .mobile-swiper{
       @apply w-full h-full relative;
@@ -186,11 +186,12 @@ body{
     .com-pcy{
       @apply text-base
     }
-    .contact-tab{
-      @apply text-3xl mt-7 mr-4 !important;
-    }
-    #contact-actions {
-      @apply block ; 
+
+    /* #contact-actions {
+      @apply flex text-base ; 
+    } */
+    .video-full .contact-tab{
+      @apply text-3xl block mt-7 mr-4 !important;
     }
     .get-ph{
       @apply text-xl
@@ -395,7 +396,7 @@ body{
 }
 
 .image-carousel.mini {
-  filter: blur(3px);
+  filter: blur(2px);
 }
 
 .sub-carousel-overlay {
