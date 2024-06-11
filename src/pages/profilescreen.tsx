@@ -6,6 +6,7 @@ import Image from 'next/image'
 import SearchPosts from '@/components/search/SearchPosts'
 import { GrCamera, GrGrid } from "react-icons/gr";
 import Head from 'next/head'
+import { IoChevronBackCircleOutline } from 'react-icons/io5'
 
 const ProfileScreen = () => {
   return (
@@ -15,9 +16,12 @@ const ProfileScreen = () => {
         <title>Profile</title>
     </Head>
     <div id="video-post-container" className="py-5">
-    <span className='settings-profile'>
+    <span className='settings-profile flex'>
           <Link href={'/'}>
-              &lt; Back
+          <div className='flex items-center'>
+          <IoChevronBackCircleOutline className='mt-[1px]'/> 
+          <span>Back</span>
+          </div>
           </Link>
       </span>
       <div className=' profile-screen'>
@@ -32,6 +36,9 @@ const ProfileScreen = () => {
             <h3 className='font-semibold'>Aristo Coimbatore</h3>
             <p className='w-full'>The art of managing sound within the home cinema space,
              for an enthralling sound cinema watching experience</p>
+             <button className='bg-gray-100 w-full p-2 rounded-md'
+                onClick={e=>{window.location.href='/addpost'}}>
+             Add Post</button>
              <div className='profile-icons'>
              <GrGrid className='w-1/2'/> <GrCamera className='w-1/2'/>
              </div>
