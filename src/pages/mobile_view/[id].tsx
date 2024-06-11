@@ -124,7 +124,7 @@ const FullvideoPlayer: React.FC = () => {
                       ref={videoRef}
                       onTouchStart={handleTouchVideo}
                     />
-                    <div className="mobile-contact">
+                    <div className="mobile-contact contact-tab">
                       <div className='text-white mt-3 full-screen'>
                       <ContactActions getQuote={false} />
                       </div>
