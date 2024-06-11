@@ -9,6 +9,7 @@ import CarouselComponent from '@/components/homepage/CarouselComponent';
 import ImagePost from '@/components/homepage/ImagePost';
 import HeaderCarousel from '@/components/homepage/HeaderCarousel';
 import SplashScreen from '@/components/SplashScreen';
+import apiCall from '@/utils/apiCall';
 
 const VideoPlayer: React.FC = () => {
   const [videoSources, setVideoSources] = useState<{
@@ -122,6 +123,74 @@ const VideoPlayer: React.FC = () => {
   const [isTabletDevice, setIsTabletDevice] = useState(false);
   const [isDesktopDevice, setIsDesktopDevice] = useState(false);
 
+  const toQueueImages = (postContent:[{file_url:string}]) => {
+    const outputData = [];
+    let count = 1;
+    for (let i = 0; i < postContent.length; i++) {
+      const item = postContent[i];
+      outputData.push({
+        id: count,
+        image: item.file_url,
+        alt: `Slide ${count}`,
+      });
+      count++;
+    }
+    return outputData;
+  }
+
+  const convertData = (inputData:[{
+      post_content:[{file_url:string, file_type:string}],
+      post_description: string}]) => {
+    const outputData = [];
+    for (let i = 0; i < inputData.length; i++) {
+      const item = inputData[i];
+      if(item.post_content.length > 1){
+        const data = {
+          type: 'gallery',
+          src: '',
+          title: 'The Audio Cube',
+          description: item.post_description,
+          queue_order: [],
+          queue_images: toQueueImages(item.post_content)
+        };
+        outputData.push(data);
+      }
+      else if(item.post_content.length>0){
+        if(item.post_content[0].file_type==='image'){
+          const data = {
+            type: 'image',
+            src: item.post_content[0].file_url,
+            title: 'The Audio Cube',
+            description: item.post_description,
+            queue_order: [],
+            queue_images: []
+          };
+          outputData.push(data);
+        }
+        else{
+          const data = {
+            type: 'video',
+            src: item.post_content[0].file_url,
+            title: 'The Audio Cube',
+            description: item.post_description,
+            queue_order: [],
+            queue_images: []
+          };
+          outputData.push(data);
+        }
+      }
+    }
+    return outputData;
+  }
+
+  const getPosts = async ()=>{
+    const data = await apiCall('post', 'GET')
+    const outputData = convertData(data.data.Items)
+    outputData.map((item)=>{
+      setVideoSources((prev) => [...prev, item]);
+    })
+  }
+
   useEffect(() => {
     // width wise mobile or tablet detect
     const width = window.innerWidth;
@@ -132,6 +201,7 @@ const VideoPlayer: React.FC = () => {
     } else {
       setIsDesktopDevice(true);
     }
+    getPosts()
   }, []);
 
   const [currentVideo, setCurrentVideo] = useState<{
@@ -230,7 +300,7 @@ const VideoPlayer: React.FC = () => {
     <SplashScreen />
     <SideNav/>
     <div id="video-post-container" className="py-5 vdo-tab">
-      <HeaderCarousel />
+      {/* <HeaderCarousel /> */}
       {
         videoFullScreen && <FullscreenVideoPlayer
         videoSrc={currentVideo.videoSrc}
