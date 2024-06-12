@@ -28,7 +28,9 @@ const AddCompany = () => {
             fd.append('company_logo', company_logo.files[0])
 
         const data = await apiCall('company', 'post', fd, true)
-        console.log(data)
+        if(data.status===200){
+            window.location.href='/profile/'+data.data.id
+        }
     }
 
     return (
