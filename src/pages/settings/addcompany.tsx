@@ -9,26 +9,27 @@ import apiCall from '@/utils/apiCall'
 const AddCompany = () => {
     const [companyData, setFormData] = useState({
         company_name: '',
-        company_website: '',
+        // company_website: '',
         contact_number: '',
-        contact_email: '',
+        // contact_email: '',
         company_logo: null,
         company_description:''
     })
 
     const handleSubmit = async() => {
         const fd = new FormData()
-        fd.append('company_name', companyData.company_name)
-        fd.append('company_website', companyData.company_website)
+        fd.append('company_name', companyData.company_name.toLowerCase()) 
+        // fd.append('company_website', companyData.company_website)
         fd.append('company_description', companyData.company_description)
         fd.append('contact_number', companyData.contact_number)
-        fd.append('contact_email', companyData.contact_email)
+        // fd.append('contact_email', companyData.contact_email)
         const company_logo = document.getElementById('company-logo') as HTMLInputElement
         if( company_logo.files && company_logo.files?.length > 0)
             fd.append('company_logo', company_logo.files[0])
 
         const data = await apiCall('company', 'post', fd, true)
         if(data.status===200){
+            console.log(data)
             window.location.href='/profile/'+data.data.id
         }
     }
@@ -60,7 +61,7 @@ const AddCompany = () => {
                             <form>
                             <div className='mt-3'>
                                 <label htmlFor="" className='company-form'>Company name</label>
-                                <input type="text"
+                                <input type="text" 
                                 className='settings-ph'
                                 placeholder='Enter a company name'
                                 onChange={(e)=>{
@@ -75,7 +76,7 @@ const AddCompany = () => {
                                 id='company-logo'
                                 />
                             </div>
-                            <div className='mt-3'>
+                            {/* <div className='mt-3'>
                                 <label htmlFor="" className='company-form'>Company website</label>
                                 <input type="text" 
                                 className='settings-ph'
@@ -84,7 +85,7 @@ const AddCompany = () => {
                                     setFormData({...companyData, company_website: e.target.value})
                                 }}
                                 />
-                            </div>
+                            </div> */}
                             <div className='mt-3'>
                                 <label htmlFor="" className='company-form'>Mobile Number</label>
                                 <input type="text" 
@@ -95,7 +96,7 @@ const AddCompany = () => {
                                 }}
                                 />
                             </div>
-                            <div className='mt-3'>
+                            {/* <div className='mt-3'>
                                 <label htmlFor="" className=' company-form'>Email</label>
                                 <input type="text" 
                                 className='settings-ph'
@@ -104,7 +105,7 @@ const AddCompany = () => {
                                     setFormData({...companyData, contact_email: e.target.value})
                                 }}
                                 />
-                            </div>
+                            </div> */}
                             <div className='mt-3'>
                                 <label htmlFor="" className=' company-form'>Company description</label>
                                 <textarea name="" id="" cols={30} rows={10}
