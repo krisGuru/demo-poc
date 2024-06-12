@@ -13,7 +13,7 @@ const CarouselComponent: React.FC<{
 }> = ({title, description, company_id, queue_images}) => {
   return <div className='mt-5'>
   <div className='carousal-header'>
-    <PublisherProfile title='Home'
+    <PublisherProfile title={title}
     company_id={company_id} />
   </div>
   <div>
