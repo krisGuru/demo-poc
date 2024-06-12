@@ -3,28 +3,29 @@ import SearchProfile from '@/components/search/SearchProfile'
 import SideNav from '@/components/SideNav'
 import TrendingCarousel from '@/components/search/TrendingCarousel'
 import { useSearchParams } from 'next/navigation'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import '../app/globals.css'
 import Head from 'next/head'
+import apiCall from '@/utils/apiCall'
 
 const Search = () => {
+    const [profileList, setProfileList] = useState([])
     const [showFullList, setShowFullList] = useState(false);
-    const searchParams = useSearchParams();
-    const search = searchParams?.get('search');
-    const searchTerm = searchParams?.get('search-term')
 
     const showAllResult = () => {
         setShowFullList(true);
     }
 
-    const navToTypeSearch = () => {
-        if(!search)
-            window.location.href = "/search?search=true"
+    const getCompaniesByName = async(term: string) => {
+        const data = await apiCall('company/'+term, "GET")
+        setProfileList(data.data.Items)
     }
 
     const searchResult = (e: any) => {
         if(e.key === "Enter")
-            window.location.href = `/search?search-term=${e.target.value}`
+        {
+            getCompaniesByName(e.target.value)
+        }
     }
 
     return (
@@ -37,13 +38,15 @@ const Search = () => {
                 <div id="video-post-container" className="py-5">
                     <input className='search-input'
                     type="text" placeholder='  ⌕ Search by category / name'
-                    onMouseDown={navToTypeSearch} onKeyDown={searchResult}
+                    onKeyDown={searchResult}
                     />
                     {
                         // search && <TrendingCarousel /> 
                     }
                     {
-                        searchTerm && <SearchProfile showAllResult={showAllResult} showFullList={showFullList} />
+                        profileList.length > 0 && <SearchProfile showAllResult={showAllResult}
+                        profileList={profileList}
+                        showFullList={showFullList} />
                     }
                     {
                         // (!search && !showFullList) && <SearchPosts />

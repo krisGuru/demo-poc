@@ -2,35 +2,10 @@ import Image from 'next/image'
 import React from 'react'
 
 const SearchProfile: React.FC<{
-    showFullList: boolean, showAllResult: () => void
-}> = ({showFullList, showAllResult}) => {
-    const profileList = [
-        {
-            name: "Aristo",
-            location: ["Coimbatore"],
-            designation: "Interior Designer"
-        },
-        {
-            name: "Dharmo furniture",
-            location: ['Chennai', 'Trichy'],
-            designation: "Interior Designer"
-        },
-        {
-            name: "Nifya Furniture",
-            location: ["Coimbatore", "Trichy"],
-            designation: "Interior Designer"
-        },
-        {
-            name: "Dream Interior",
-            location: ["Coimbatore"],
-            designation: "Interior Designer"
-        },
-        {
-            name: "Core Design Studio",
-            location: ["Coimbatore"],
-            designation: "Interior Designer"
-        }
-    ]
+    showFullList: boolean, showAllResult: () => void, profileList: {
+        company_name: string; company_description: string;
+    }[]
+}> = ({showFullList, showAllResult, profileList}) => {
   return (
     <div className='mt-2'>
         {profileList.map((profile, index) => {
@@ -45,18 +20,18 @@ const SearchProfile: React.FC<{
                         </div>
                         <div>
                             <div>
-                                <strong>{profile.name}</strong>
+                                <strong>{profile.company_name}</strong>
                             </div>
                             <div className='opacity-80 text-sm'>
-                                <span >{profile.designation}</span>
+                                <span >{profile.company_description}</span>
                             </div>
-                            <div className='flex gap-2 opacity-80 text-sm'>
+                            {/* <div className='flex gap-2 opacity-80 text-sm'>
                                 {
                                     profile.location.map((location, index) => (
                                         <span key={index}>{location}</span>
                                     ))
                                 }
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                     }
