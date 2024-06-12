@@ -36,7 +36,8 @@ const CarouselSlider: React.FC<{
       >
         {slides.map((slide, index) => (
           <SwiperSlide key={slide.id}>
-            <Image src={slide.image} className="w-full" alt={slide.alt} width={100} height={100} />
+            <img src={slide.image} alt={slide.alt} className='w-full' />
+            {/* <Image src={slide.image} className="w-full" alt={slide.alt} width={100} height={100} /> */}
           </SwiperSlide>
         ))}
       </Swiper>

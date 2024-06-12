@@ -16,7 +16,7 @@ const ImagePost: React.FC<{
             <PublisherProfile title={title}
             company_id={company_id} />
         </div>
-        <Image src={src} alt="" className='full-hw' width={100} height={100}/>
+        <img src={src} alt="" className='full-hw' />
         <GetQuote />
         <div className='p-[10px]'>
             <ContactActions  getQuote={true}/>
