@@ -21,7 +21,7 @@ const AddCategory = () => {
         if( category_logo.files && category_logo.files?.length > 0)
             fd.append('category_logo', category_logo.files[0])
 
-        const data = await apiCall('category', 'post', fd, true)
+        const data = await apiCall('category', 'POST', fd, true)
         console.log(data)
     }
   return (

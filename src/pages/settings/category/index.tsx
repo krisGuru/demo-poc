@@ -14,7 +14,7 @@ const CategoryList = () => {
     },[])
 
     const getCategory = async() => {
-        const category = await apiCall('category', 'get')
+        const category = await apiCall('category', 'GET')
         setCategoryData(category.data.Items)
     }
 
