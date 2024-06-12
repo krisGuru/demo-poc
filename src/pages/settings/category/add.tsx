@@ -12,7 +12,8 @@ const AddCategory = () => {
         category_logo: null,
         category_description: ''
     })
-
+    
+    
     const handleSubmit = async()=>{
         const fd = new FormData();
         fd.append('category_name', categoryForm.category_name)
@@ -22,7 +23,8 @@ const AddCategory = () => {
             fd.append('category_logo', category_logo.files[0])
 
         const data = await apiCall('category', 'POST', fd, true)
-        console.log(data)
+        if(data.status === 200)
+            window.location.href = '/settings/category'
     }
   return (
     <>
