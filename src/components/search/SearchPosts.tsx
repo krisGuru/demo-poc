@@ -1,88 +1,10 @@
 import React from 'react'
 
-const SearchPosts = () => {
-  const videoList = [
-    {
-      id: 1,
-      title: 'video 1',
-      description: 'description 1',
-      thumbnail: './video/thumbnail-1.mp4',
-      video: './video/first-video.mp4',
-      seq_no: 0
-    },
-    {
-      id: 2,
-      title: 'video 2',
-      description: 'description 2',
-      thumbnail: './video/thumbnail-2.mp4',
-      video: './video/second-video.mp4',
-      seq_no: 1
-    },
-    {
-      id: 3,
-      title: 'video 3',
-      description: 'description 3',
-      thumbnail: './video/thumbnail-3.mp4',
-      video:'./video/third-video.mp4',
-      seq_no: 2
-    },
-    {
-      id: 4,
-      title: 'video 4',
-      description: 'description 4',
-      thumbnail: './video/thumbnail-1.mp4',
-      video: './video/first-video.mp4',
-      seq_no: 0
-    },
-    {
-      id: 5,
-      title: 'video 5',
-      description: 'description 5',
-      thumbnail: './video/thumbnail-2.mp4',
-      video: './video/second-video.mp4',
-      seq_no: 1
-    },
-    {
-      id: 1,
-      title: 'video 1',
-      description: 'description 1',
-      thumbnail: './video/thumbnail-3.mp4',
-      video:'./video/third-video.mp4',
-      seq_no: 2
-    },
-    {
-      id: 2,
-      title: 'video 2',
-      description: 'description 2',
-      thumbnail: './video/thumbnail-1.mp4',
-      video: './video/first-video.mp4',
-      seq_no: 0
-    },
-    {
-      id: 3,
-      title: 'video 3',
-      description: 'description 3',
-      thumbnail: './video/thumbnail-2.mp4',
-      video: './video/first-video.mp4',
-      seq_no: 1
-    },
-    {
-      id: 4,
-      title: 'video 4',
-      description: 'description 4',
-      thumbnail: './video/thumbnail-3.mp4',
-      video: './video/first-video.mp4',
-      seq_no: 2
-    },
-    {
-      id: 5,
-      title: 'video 5',
-      description: 'description 5',
-      thumbnail: './video/thumbnail-1.mp4',
-      video: './video/first-video.mp4',
-      seq_no: 0
-    },
-  ]
+const SearchPosts:React.FC<{videoList: {
+  post_content: {
+    file_type: string; file_url: string;
+  }[];
+}[]}> = ({videoList}) => {
 
   const randomVideo = () => {
     setTimeout(()=>{
@@ -104,15 +26,21 @@ const SearchPosts = () => {
     <div id="posts-component" className='mt-2'>
       <div className='grid grid-cols-3'>
         {
-          videoList.length > 0 && videoList.map((video, index) => <div
+          videoList.length > 0 && videoList.map((video: { post_content: {
+            file_type: string; file_url: string; 
+}[]; }, index: React.Key | null | undefined) => <div
             key={index}
             className={`video-container `+((index===2||index===5) ? `row-span-2 h-full`: `h-48`)}
             >
-                <video src={video.thumbnail} muted={true}
+              {
+                video.post_content[0].file_type === 'video' ? <video
+                src={"http://d1o5ovax38ru7n.cloudfront.net/"+video.post_content[0].file_url}
                 onClick={(e)=>{
-                  window.location.href=`/mobile_view/${video.seq_no}`
-                }}
-                autoPlay={false} controls={false}></video>
+                  window.location.href=`/mobile_view/0`
+                }} muted={true} autoPlay={false} controls={false}></video> :
+                <img src={"http://d1o5ovax38ru7n.cloudfront.net/"+video.post_content[0].file_url}
+                alt="thumbnail" />
+              }
             </div>)
         }
       </div>
