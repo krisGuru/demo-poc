@@ -41,7 +41,9 @@ const AddPost = () => {
         fd.append('subcategory_id', subCategoryID)
         fd.append('company_id', companyID)
         const data = await apiCall('post', 'post', fd, true)
-        console.log(data)
+        if(data.status === 200){
+            window.location.href = `/profile/${companyID}`
+        }
     }
 
     const getCategory = async() => {
