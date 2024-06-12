@@ -3,7 +3,9 @@ import React from 'react'
 
 const SearchProfile: React.FC<{
     showFullList: boolean, showAllResult: () => void, profileList: {
-        company_name: string; company_description: string;
+        company_name: string;
+        company_description: string;
+        id: string
     }[]
 }> = ({showFullList, showAllResult, profileList}) => {
   return (
@@ -12,7 +14,8 @@ const SearchProfile: React.FC<{
             return (
                 <>
                     {
-                        (index < 3 || showFullList) && <div className='flex items-center gap-4' key={index}>
+                        (index < 3 || showFullList) && <div className='flex items-center gap-4' key={index}
+                        onClick={()=>{window.location.href="/profile/"+profile.id}}>
                         <div>
                             <Image src="https://cdn.iconscout.com/icon/free/png-256/free-avatar-370-456322.png"
                             alt="" width={100} height={100}
