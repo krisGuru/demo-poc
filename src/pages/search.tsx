@@ -40,13 +40,13 @@ const Search = () => {
                     onMouseDown={navToTypeSearch} onKeyDown={searchResult}
                     />
                     {
-                        search && <TrendingCarousel /> 
+                        // search && <TrendingCarousel /> 
                     }
                     {
                         searchTerm && <SearchProfile showAllResult={showAllResult} showFullList={showFullList} />
                     }
                     {
-                        (!search && !showFullList) && <SearchPosts />
+                        // (!search && !showFullList) && <SearchPosts />
                     }
                 </div>
             </div>
