@@ -60,7 +60,7 @@ const SubCategoryList = () => {
             </div>
             <div className='category-btn'>
                 <button className='save-btn w-[360px]'
-                onClick={e=>{window.location.href='/settings/subcategory/add'}}>
+                onClick={e=>{window.location.href='/settings/subcategory/add/'+id}}>
                     Add sub category
                 </button>
             </div>

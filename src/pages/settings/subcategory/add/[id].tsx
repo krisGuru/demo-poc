@@ -33,7 +33,9 @@ const AddSubCategory = () => {
             fd.append('subcategory_logo', subcategory_logo.files[0])
 
         const data = await apiCall('subcategory', 'post', fd, true)
-        console.log(data)
+        if(data.status === 200){
+            window.location.href = `/settings/subcategory/${categoryID}`
+        }
     }
 
 
@@ -87,8 +89,8 @@ const AddSubCategory = () => {
                         </div>
                         <div className='save-button'>
                             <button className='save-btn'
-                            onClick={e=>{window.location.href='/settings/subcategory/add/'+id}}
-                           >Save</button>
+                            onClick={handleSubmit}
+                            >Save</button>
                         </div>
                     </div>
                 </div>
